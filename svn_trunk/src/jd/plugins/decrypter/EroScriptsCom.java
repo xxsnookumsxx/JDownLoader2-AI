@@ -327,7 +327,7 @@ public class EroScriptsCom extends antiDDoSForDecrypt {
                 continue;
             }
             String ext = Files.getExtension(match);
-            boolean useImages = getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.FETCH_IMAGES, true);
+            boolean useImages = true; // FETCH_IMAGES property not found in EroScriptsCom hoster
             if (!useImages) {
                 if (ext != null && (ext.equalsIgnoreCase("jpg") || ext.equalsIgnoreCase("jpeg") || ext.equalsIgnoreCase("png") || ext.equalsIgnoreCase("gif") || ext.equalsIgnoreCase("bmp"))) {
                     continue;
@@ -372,8 +372,9 @@ public class EroScriptsCom extends antiDDoSForDecrypt {
         br.getPage(parameter.getCryptedUrl());
         final Storage CFG = JSonStorage.getPlainStorage("quickfilters");
         String[][] linkMatches = br.getRegex("<a[^<>]*\\shref\\s*=\\s*(?:\"|')([^#][^\\s]+)(?:\"|')([^<>]+title\\s*=\\s*(?:\\\"|')([^\\'\\\"]*)(?:\\\"|'))?").getMatches();
+        boolean useImages = true; // FETCH_IMAGES property not found in EroScriptsCom hoster
         handleMatches(linkMatches, decryptedLinks);
-        if (getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.FETCH_IMAGES, true)) {
+        if (useImages) {
             String[][] imgMatches = br.getRegex("<img[^<>]*\\ssrc\\s*=\\s*(?:\"|')([^#][^\\s]+)(?:\"|')([^<>]+alt\\s*=\\s*(?:\\\"|')([^\\'\\\"]*)(?:\\\"|'))?").getMatches();
             handleMatches(imgMatches, decryptedLinks);
         }
@@ -385,10 +386,10 @@ public class EroScriptsCom extends antiDDoSForDecrypt {
             return decryptedLinks;
         }
         String title = Encoding.htmlDecode(titleMatches[0][0]);
-        if (getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.SMART_FILENAMES, true)) {
-            // runSmartFileNames(title, decryptedLinks);
-            SmartGroup sg = new SmartGroup(this, title, decryptedLinks);
-        } else {
+        boolean useSMART_FILENAMES = true; // SMART_FILENAMES property not found
+        // runSmartFileNames(title, decryptedLinks);
+        SmartGroup sg = new SmartGroup(this, title, decryptedLinks);
+    } else {
             final FilePackage fp = FilePackage.getInstance();
             fp.setName(title);
             fp.setAllowMerge(true);

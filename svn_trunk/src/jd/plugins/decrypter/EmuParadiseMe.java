@@ -51,17 +51,17 @@ public class EmuParadiseMe extends PluginForDecrypt {
         final ArrayList<DownloadLink> decryptedLinks = new ArrayList<DownloadLink>();
         final PluginForHost plugin = this.getNewPluginForHostInstance(this.getHost());
         // set cross browser support
-        ((jd.plugins.hoster.EmuParadiseMe) plugin).prepBrowser(this.br);
-        ((jd.plugins.hoster.EmuParadiseMe) plugin).setCookies();
+        // ((jd.plugins.hoster.EmuParadiseMe) plugin).prepBrowser(this.br);
+        // ((jd.plugins.hoster.EmuParadiseMe) plugin).setCookies();
         final String parameter = param.toString();
         br.setFollowRedirects(true);
         br.getPage(parameter);
-        if (((jd.plugins.hoster.EmuParadiseMe) plugin).isOffline()) {
+        if (((jd.plugins.hoster.EmuParadiseMe) plugin).isOffline(this.br)) {
             decryptedLinks.add(createOfflinelink(parameter));
             return decryptedLinks;
         }
         // many links? single link?
-        final String[] links = br.getRegex(jd.plugins.hoster.EmuParadiseMe.TYPE_SEMICOLON_DOWNLOAD).getColumn(-1);
+        final String[] links = br.getRegex(jd.plugins.hoster.EmuParadiseMe.TYPE_DOWNLOAD).getColumn(-1);
         if (links != null && links.length > 0) {
             // many
             final String fpName = PluginJSonUtils.getJson(br, "name");

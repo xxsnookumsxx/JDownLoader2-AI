@@ -20,7 +20,7 @@ public class LetitBitAccountBuilderImpl extends DefaultEditAccountPanel {
     }
 
     public LetitBitAccountBuilderImpl(InputChangedCallbackInterface callback) {
-        super(callback);
+        super(callback, null, false);
 
         add(new JLabel(_GUI.T.LetitBitAccountFactory_LetitBitPanel_key()), "newline");
         add(this.key = new ExtTextField() {

@@ -73,7 +73,6 @@ public class DociPl extends PluginForDecrypt {
         }
         for (final String singleLink[] : files) {
             String filename = singleLink[1];
-            filename = this.correctOrApplyFileNameExtension(filename, ".pdf");
             final String url = br.getURL(singleLink[0]).toString().replaceFirst("https?://", Matcher.quoteReplacement(host_plugin_string));
             final DownloadLink link = createDownloadlink(url);
             link.setAvailable(true);

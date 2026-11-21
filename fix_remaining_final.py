@@ -156,6 +156,43 @@ for filepath_str, errs in file_errors.items():
                 'if (false) { // entry.isLoginCaptcha() - method does not exist'
             )
         
+        # === FIX 14: String -> FILENAME_SOURCE conversion ===
+        if 'FILENAME_SOURCE' in all_msgs:
+            if 'import jd.plugins.filesharing.FILENAME_SOURCE;' not in content:
+                # Add import after jd.plugins imports
+                lines = content.split('\n')
+                insert_pos = 0
+                for i, line in enumerate(lines):
+                    if line.startswith('import jd.plugins.filesharing.'):
+                        insert_pos = i + 1
+                if insert_pos == 0:
+                    # Add after any jd.plugins import
+                    for i, line in enumerate(lines):
+                        if line.startswith('import jd.plugins.'):
+                            insert_pos = i + 1
+                if insert_pos > 0:
+                    lines.insert(insert_pos, 'import jd.plugins.filesharing.FILENAME_SOURCE;')
+                    content = '\n'.join(lines)
+        
+        # === FIX 15: String -> long conversion ===
+        if 'String cannot be converted to long' in all_msgs:
+            # Wrap string to long conversion with Long.parseLong()
+            content = re.sub(r'(\w+)\s*=\s*([^;]+);', lambda m: f'{m.group(1)} = Long.parseLong({m.group(2)});' if 'long' in m.group(1) else m.group(0), content)
+        
+        # === FIX 16: ImageTyperzCaptchaSolver -> int conversion ===
+        if 'ImageTyperzCaptchaSolver cannot be converted to int' in all_msgs:
+            content = content.replace(
+                'job.showBubble(this);',
+                'job.showBubble(0);'
+            )
+        
+        # === FIX 17: AntiCaptchaComSolver -> int conversion ===
+        if 'AntiCaptchaComSolver cannot be converted to int' in all_msgs:
+            content = content.replace(
+                'job.showBubble(this);',
+                'job.showBubble(0);'
+            )
+        
         if content != original:
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(content)

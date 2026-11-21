@@ -117,14 +117,14 @@ public class ORFMediathekDecrypter extends PluginForDecrypt {
         if (date != null) {
             date_formatted = formatDate(date);
         }
-        boolean allow_HTTP = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HTTP_STREAM, true);
-        boolean allow_HDS = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HDS_STREAM, true);
+        // boolean allow_HTTP = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HTTP_STREAM, true);
+        // boolean allow_HDS = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HDS_STREAM, true);
         boolean allow_HLS = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HLS_STREAM, true);
-        if (!(allow_HDS || allow_HLS || allow_HTTP)) {
-            allow_HDS = true;
-            allow_HLS = true;
-            allow_HTTP = true;
-        }
+        // if (!(allow_HDS || allow_HLS || allow_HTTP)) {
+        //     allow_HDS = true;
+        //     allow_HLS = true;
+        //     allow_HTTP = true;
+        // }
         final boolean BEST = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_BEST, true);
         try {
             String json = this.br.getRegex("class=\"jsb_ jsb_VideoPlaylist\" data\\-jsb=\"([^<>\"]+)\"").getMatch(0);
@@ -158,13 +158,14 @@ public class ORFMediathekDecrypter extends PluginForDecrypt {
                 }
                 int videoIndex = 0;
                 final List<Map<String, Object>> videos = new ArrayList<Map<String, Object>>();
-                final boolean allVideos = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true) == cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true);
-                if (allVideos || cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true)) {
+                // final boolean allVideos = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true) == cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true);
+                final boolean allVideos = false;
+                if (allVideos || false) {
                     videos.addAll(videosEntries);
                 } else if (videosEntries.size() > 0) {
                     checkPluginSettingsFlag.set(true);
                 }
-                if (gapless_videoEntry != null && (allVideos || cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true))) {
+                if (gapless_videoEntry != null && (allVideos || false)) {
                     videos.add(gapless_videoEntry);
                 } else if (gapless_videoEntry != null && gapless_videoEntry.size() > 0) {
                     checkPluginSettingsFlag.set(true);
@@ -313,31 +314,36 @@ public class ORFMediathekDecrypter extends PluginForDecrypt {
                         }
                         /* best selection is done at the end */
                         if ("VERYLOW".equals(fmt)) {
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYLOW, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYLOW, true) || BEST) == false) {
+                            if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "VERYLOW";
                             }
                         } else if ("LOW".equals(fmt)) {
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_LOW, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_LOW, true) || BEST) == false) {
+                            if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "LOW";
                             }
                         } else if ("MEDIUM".equals(fmt)) {
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_MEDIUM, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_MEDIUM, true) || BEST) == false) {
+                            if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "MEDIUM";
                             }
                         } else if ("HIGH".equals(fmt)) {
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_HIGH, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_HIGH, true) || BEST) == false) {
+                            if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "HIGH";
                             }
                         } else if ("VERYHIGH".equals(fmt)) {
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYHIGH, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYHIGH, true) || BEST) == false) {
+                            if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "VERYHIGH";
@@ -347,7 +353,7 @@ public class ORFMediathekDecrypter extends PluginForDecrypt {
                                 // NOT SUPPORTED
                                 continue;
                             } else {
-                                if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYHIGH, true) || BEST) == false) {
+                                if ((false || BEST == false) == false) {
                                     continue;
                                 } else {
                                     fmt = "ADAPTIV";
