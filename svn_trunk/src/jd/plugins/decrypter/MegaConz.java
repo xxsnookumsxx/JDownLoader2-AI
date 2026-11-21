@@ -115,6 +115,7 @@ public class MegaConz extends PluginForDecrypt {
         return folderID;
     }
 
+    /** Returns non-validated result! */
     public static String getFolderMasterKey(final String url) {
         return getFolderMasterKey__hahacompile_error(url);
     }

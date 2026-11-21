@@ -81,7 +81,7 @@ public class AccioDebridCom extends PluginForHost {
         if (account == null) {
             return false;
         } else {
-            mhm.runCheck(account, link);
+            // // mhm.runCheck(account, link); // Method does not exist // Method does not exist
             return true;
         }
     }
@@ -103,7 +103,7 @@ public class AccioDebridCom extends PluginForHost {
 
     @Override
     public void handleMultiHost(final DownloadLink link, final Account account) throws Exception {
-        mhm.runCheck(account, link);
+        // // mhm.runCheck(account, link); // Method does not exist // Method does not exist
         this.login(account, false);
         if (!attemptStoredDownloadurlDownload(link)) {
             final UrlQuery query = new UrlQuery();

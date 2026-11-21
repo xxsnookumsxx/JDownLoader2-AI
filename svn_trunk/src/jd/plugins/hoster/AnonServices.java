@@ -238,16 +238,16 @@ public class AnonServices extends PluginForHost {
         final String hash_crc32 = br.getRegex("CRC32:\\s*([a-f0-9]{8})").getMatch(0);
         /* Set hashes for CRC check */
         if (!StringUtils.isEmpty(hash_crc32)) {
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_crc32, HashInfo.TYPE.CRC32));
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_crc32, HashInfo.TYPE.valueOf("CRC32")));
         }
         if (!StringUtils.isEmpty(hash_md5)) {
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_md5, HashInfo.TYPE.MD5));
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_md5, HashInfo.TYPE.valueOf("MD5")));
         }
         if (!StringUtils.isEmpty(hash_sha1)) {
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha1, HashInfo.TYPE.SHA1));
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha1, HashInfo.TYPE.valueOf("SHA1")));
         }
         if (!StringUtils.isEmpty(hash_sha256)) {
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha256, HashInfo.TYPE.SHA256));
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha256, HashInfo.TYPE.valueOf("SHA256")));
         }
         if (link.getHashInfo() == null) {
             logger.warning("Failed to find any file hashes");

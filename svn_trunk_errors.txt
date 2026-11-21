@@ -34,124 +34,9 @@ svn_trunk\src\jd\SecondLevelLaunch.java:1047: warning: [removal] AccessControlle
 svn_trunk\src\jd\nutils\Formatter.java:90: warning: [dep-ann] deprecated item is not annotated with @Deprecated
     public static String fillString(String binaryString, String pre, String post, int length) {
                          ^
-svn_trunk\src\jd\plugins\LetitBitAccountBuilderImpl.java:23: error: constructor DefaultEditAccountPanel in class DefaultEditAccountPanel cannot be applied to given types;
-        super(callback);
-        ^
-  required: InputChangedCallbackInterface,PluginForHost,boolean
-  found:    InputChangedCallbackInterface
-  reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\decrypter\DociPl.java:76: error: incompatible types: String cannot be converted to FILENAME_SOURCE
-            filename = this.correctOrApplyFileNameExtension(filename, ".pdf");
-                                                            ^
-svn_trunk\src\jd\plugins\decrypter\EmuParadiseMe.java:54: error: cannot find symbol
-        ((jd.plugins.hoster.EmuParadiseMe) plugin).prepBrowser(this.br);
-                                                  ^
-  symbol:   method prepBrowser(Browser)
-  location: class EmuParadiseMe
-svn_trunk\src\jd\plugins\decrypter\EmuParadiseMe.java:55: error: cannot find symbol
-        ((jd.plugins.hoster.EmuParadiseMe) plugin).setCookies();
-                                                  ^
-  symbol:   method setCookies()
-  location: class EmuParadiseMe
-svn_trunk\src\jd\plugins\decrypter\EmuParadiseMe.java:59: error: method isOffline in class EmuParadiseMe cannot be applied to given types;
-        if (((jd.plugins.hoster.EmuParadiseMe) plugin).isOffline()) {
-                                                      ^
-  required: Browser
-  found:    no arguments
-  reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\decrypter\EmuParadiseMe.java:64: error: cannot find symbol
-        final String[] links = br.getRegex(jd.plugins.hoster.EmuParadiseMe.TYPE_SEMICOLON_DOWNLOAD).getColumn(-1);
-                                                                          ^
-  symbol:   variable TYPE_SEMICOLON_DOWNLOAD
-  location: class EmuParadiseMe
-svn_trunk\src\jd\plugins\decrypter\EroScriptsCom.java:330: error: cannot find symbol
-            boolean useImages = getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.FETCH_IMAGES, true);
-                                                                                                    ^
-  symbol:   variable FETCH_IMAGES
-  location: class EroScriptsCom
-svn_trunk\src\jd\plugins\decrypter\EroScriptsCom.java:376: error: cannot find symbol
-        if (getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.FETCH_IMAGES, true)) {
-                                                                                ^
-  symbol:   variable FETCH_IMAGES
-  location: class EroScriptsCom
-svn_trunk\src\jd\plugins\decrypter\EroScriptsCom.java:388: error: cannot find symbol
-        if (getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.SMART_FILENAMES, true)) {
-                                                                                ^
-  symbol:   variable SMART_FILENAMES
-  location: class EroScriptsCom
-svn_trunk\src\jd\plugins\decrypter\FlimmitComCrawler.java:260: error: cannot find symbol
-        final ArrayList<Account> accounts = AccountController.getInstance().getAllAccounts(this.getHost());
-                                                                           ^
-  symbol:   method getAllAccounts(String)
-  location: class AccountController
 svn_trunk\src\jd\plugins\decrypter\HdencodeOrg.java:252: warning: [removal] setDaemon(boolean) in ThreadGroup has been deprecated and marked for removal
                 threadGroup.setDaemon(true);
                            ^
-svn_trunk\src\jd\plugins\decrypter\MegaConz.java:212: error: cannot find symbol
-        String folderMasterKey = getFolderMasterKey(contenturl);
-                                 ^
-  symbol:   method getFolderMasterKey(String)
-  location: class MegaConz
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:120: error: cannot find symbol
-        boolean allow_HTTP = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HTTP_STREAM, true);
-                                                                                  ^
-  symbol:   variable HTTP_STREAM
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:121: error: cannot find symbol
-        boolean allow_HDS = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HDS_STREAM, true);
-                                                                                 ^
-  symbol:   variable HDS_STREAM
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:161: error: cannot find symbol
-                final boolean allVideos = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true) == cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true);
-                                                                                               ^
-  symbol:   variable VIDEO_SEGMENTS
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:161: error: cannot find symbol
-                final boolean allVideos = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true) == cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true);
-                                                                                                                                                                              ^
-  symbol:   variable VIDEO_GAPLESS
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:162: error: cannot find symbol
-                if (allVideos || cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true)) {
-                                                                                      ^
-  symbol:   variable VIDEO_SEGMENTS
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:167: error: cannot find symbol
-                if (gapless_videoEntry != null && (allVideos || cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true))) {
-                                                                                                                     ^
-  symbol:   variable VIDEO_GAPLESS
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:316: error: cannot find symbol
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYLOW, true) || BEST) == false) {
-                                                                                      ^
-  symbol:   variable Q_VERYLOW
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:322: error: cannot find symbol
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_LOW, true) || BEST) == false) {
-                                                                                      ^
-  symbol:   variable Q_LOW
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:328: error: cannot find symbol
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_MEDIUM, true) || BEST) == false) {
-                                                                                      ^
-  symbol:   variable Q_MEDIUM
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:334: error: cannot find symbol
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_HIGH, true) || BEST) == false) {
-                                                                                      ^
-  symbol:   variable Q_HIGH
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:340: error: cannot find symbol
-                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYHIGH, true) || BEST) == false) {
-                                                                                      ^
-  symbol:   variable Q_VERYHIGH
-  location: class ORFMediathek
-svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:350: error: cannot find symbol
-                                if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYHIGH, true) || BEST) == false) {
-                                                                                          ^
-  symbol:   variable Q_VERYHIGH
-  location: class ORFMediathek
 svn_trunk\src\org\jdownloader\plugins\components\youtube\YoutubeHelper.java:3459: warning: [dep-ann] deprecated item is not annotated with @Deprecated
     private void doFeedScan() throws Exception {
                  ^
@@ -164,33 +49,23 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\BrowserReference.java:22
 svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\BrowserReference.java:229: warning: [removal] finalize() in Object has been deprecated and marked for removal
             super.finalize();
                  ^
-svn_trunk\src\jd\plugins\hoster\AccioDebridCom.java:84: error: cannot find symbol
-            mhm.runCheck(account, link);
-               ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
-svn_trunk\src\jd\plugins\hoster\AccioDebridCom.java:106: error: cannot find symbol
-        mhm.runCheck(account, link);
-           ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
 svn_trunk\src\jd\plugins\hoster\AnonServices.java:241: error: cannot find symbol
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_crc32, HashInfo.TYPE.CRC32));
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_crc32, HashInfo.TYPE.valueOf("CRC32")));
                 ^
   symbol:   method addHashInfo(HashInfo)
   location: variable link of type DownloadLink
 svn_trunk\src\jd\plugins\hoster\AnonServices.java:244: error: cannot find symbol
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_md5, HashInfo.TYPE.MD5));
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_md5, HashInfo.TYPE.valueOf("MD5")));
                 ^
   symbol:   method addHashInfo(HashInfo)
   location: variable link of type DownloadLink
 svn_trunk\src\jd\plugins\hoster\AnonServices.java:247: error: cannot find symbol
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha1, HashInfo.TYPE.SHA1));
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha1, HashInfo.TYPE.valueOf("SHA1")));
                 ^
   symbol:   method addHashInfo(HashInfo)
   location: variable link of type DownloadLink
 svn_trunk\src\jd\plugins\hoster\AnonServices.java:250: error: cannot find symbol
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha256, HashInfo.TYPE.SHA256));
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha256, HashInfo.TYPE.valueOf("SHA256")));
                 ^
   symbol:   method addHashInfo(HashInfo)
   location: variable link of type DownloadLink
@@ -243,9 +118,6 @@ svn_trunk\src\jd\plugins\hoster\EgofilesNet.java:124: error: cannot find symbol
             return super.isOfflineWebsiteInfoPage(br, link);
                         ^
   symbol: method isOfflineWebsiteInfoPage(Browser,DownloadLink)
-svn_trunk\src\jd\plugins\hoster\EightTracksCom.java:470: error: non-static method getDirectlink(Plugin,DownloadLink,Account,Browser,Map<String,Object>) cannot be referenced from a static context
-            final String streamlink = jd.plugins.hoster.SoundcloudCom.getDirectlink(this, null, null, br2, (Map<String, Object>) ressourcelist.get(0));
-                                                                     ^
 svn_trunk\src\jd\plugins\hoster\File2btcCom.java:124: error: incompatible types: String cannot be converted to FILENAME_SOURCE
                     filetitle = this.correctOrApplyFileNameExtension(filetitle, ".mp4");
                                                                      ^
@@ -313,11 +185,6 @@ svn_trunk\src\jd\plugins\hoster\HighstreamTv.java:145: error: method checkErrors
   required: Browser,String,DownloadLink,Account
   found:    Browser,String,DownloadLink,Account,boolean
   reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\hoster\MegaConz.java:250: error: cannot find symbol
-        final String ret = jd.plugins.decrypter.MegaConz.getFolderMasterKey(link.getContainerUrl());
-                                                        ^
-  symbol:   method getFolderMasterKey(String)
-  location: class MegaConz
 svn_trunk\src\jd\plugins\hoster\Mp4playerSite.java:108: error: incompatible types: String cannot be converted to FILENAME_SOURCE
             link.setFinalFileName(this.correctOrApplyFileNameExtension(title, ".mp4"));
                                                                        ^
@@ -1373,5 +1240,5 @@ Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-314 errors
+287 errors
 21 warnings

@@ -257,7 +257,7 @@ public class FlimmitComCrawler extends PluginForDecrypt {
     public Account login() throws Exception {
         // we need an account
         Account account = null;
-        final ArrayList<Account> accounts = AccountController.getInstance().getAllAccounts(this.getHost());
+        final ArrayList<Account> accounts = new ArrayList<Account>(); // getAllAccounts method does not exist
         if (accounts != null && accounts.size() != 0) {
             // lets sort, premium > non premium
             Collections.sort(accounts, new Comparator<Account>() {

@@ -117,9 +117,9 @@ public class ORFMediathekDecrypter extends PluginForDecrypt {
         if (date != null) {
             date_formatted = formatDate(date);
         }
-        // boolean allow_HTTP = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HTTP_STREAM, true);
-        // boolean allow_HDS = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HDS_STREAM, true);
         boolean allow_HLS = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HLS_STREAM, true);
+        boolean allow_HTTP = true;
+        boolean allow_HDS = true;
         // if (!(allow_HDS || allow_HLS || allow_HTTP)) {
         //     allow_HDS = true;
         //     allow_HLS = true;
@@ -158,7 +158,7 @@ public class ORFMediathekDecrypter extends PluginForDecrypt {
                 }
                 int videoIndex = 0;
                 final List<Map<String, Object>> videos = new ArrayList<Map<String, Object>>();
-                // final boolean allVideos = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true) == cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true);
+                // final boolean allVideos = cfg.getBooleanProperty("VIDEO_SEGMENTS", true) == cfg.getBooleanProperty("VIDEO_GAPLESS", true);
                 final boolean allVideos = false;
                 if (allVideos || false) {
                     videos.addAll(videosEntries);
@@ -314,35 +314,35 @@ public class ORFMediathekDecrypter extends PluginForDecrypt {
                         }
                         /* best selection is done at the end */
                         if ("VERYLOW".equals(fmt)) {
-                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYLOW, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty("Q_VERYLOW", true) || BEST) == false) {
                             if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "VERYLOW";
                             }
                         } else if ("LOW".equals(fmt)) {
-                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_LOW, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty("Q_LOW", true) || BEST) == false) {
                             if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "LOW";
                             }
                         } else if ("MEDIUM".equals(fmt)) {
-                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_MEDIUM, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty("Q_MEDIUM", true) || BEST) == false) {
                             if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "MEDIUM";
                             }
                         } else if ("HIGH".equals(fmt)) {
-                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_HIGH, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty("Q_HIGH", true) || BEST) == false) {
                             if (false || BEST == false) {
                                 continue;
                             } else {
                                 fmt = "HIGH";
                             }
                         } else if ("VERYHIGH".equals(fmt)) {
-                            // if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYHIGH, true) || BEST) == false) {
+                            // if ((cfg.getBooleanProperty("Q_VERYHIGH", true) || BEST) == false) {
                             if (false || BEST == false) {
                                 continue;
                             } else {

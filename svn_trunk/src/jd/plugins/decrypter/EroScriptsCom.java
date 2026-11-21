@@ -389,13 +389,6 @@ public class EroScriptsCom extends antiDDoSForDecrypt {
         boolean useSMART_FILENAMES = true; // SMART_FILENAMES property not found
         // runSmartFileNames(title, decryptedLinks);
         SmartGroup sg = new SmartGroup(this, title, decryptedLinks);
-    } else {
-            final FilePackage fp = FilePackage.getInstance();
-            fp.setName(title);
-            fp.setAllowMerge(true);
-            fp.setAllowInheritance(true);
-            fp.addLinks(decryptedLinks);
-        }
         return decryptedLinks;
     }
 }
