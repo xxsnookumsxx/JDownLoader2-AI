@@ -34,6 +34,7 @@ import jd.plugins.LinkStatus;
 import jd.plugins.PluginException;
 import jd.plugins.PluginForHost;
 import jd.plugins.components.SiteType.SiteTemplate;
+import jd.plugins.filesharing.FILENAME_SOURCE;
 
 /**
  * hostedtube template by pimproll. These guys have various scripts. This is the most common.

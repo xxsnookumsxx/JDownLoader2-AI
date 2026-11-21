@@ -38,6 +38,7 @@ import jd.plugins.HostPlugin;
 import jd.plugins.LinkStatus;
 import jd.plugins.PluginException;
 import jd.plugins.PluginForHost;
+import jd.plugins.filesharing.FILENAME_SOURCE;
 
 @HostPlugin(revision = "$Revision: 47506 $", interfaceVersion = 3, names = {}, urls = {})
 public class File2btcCom extends PluginForHost {

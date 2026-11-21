@@ -1,96 +1,179 @@
 import re
+import os
 from pathlib import Path
 
+# Configuration
 base_path = Path(r"D:\AI-Clients\Agents-Only\JDownLoader2-AI\svn_trunk\src")
+errors_file = r"D:\AI-Clients\Agents-Only\JDownLoader2-AI\svn_trunk_errors.txt"
 
-# Fix common error patterns
-fixes_applied = []
-
-# 1. Fix files that use "String getType()" but should return SolverType
-files_gettype = [
-    r"org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java",
-    r"org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java",
-    r"org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java",
-    r"org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java",
-    r"org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java",
-    r"org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java",
-    r"org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java",
-    r"org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java",
-]
-
-for rel_file in files_gettype:
-    filepath = base_path / rel_file
-    if not filepath.exists():
-        continue
-    
-    with open(filepath, 'r', encoding='utf-8') as f:
+def parse_errors():
+    """Parse the error file and extract error information"""
+    errors = []
+    with open(errors_file, 'r', encoding='utf-8', errors='replace') as f:
         content = f.read()
     
-    if 'public String getType()' in content:
-        content = content.replace('public String getType()', 'public SolverType getType()')
-        if 'import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;' not in content:
+    for line in content.split('\n'):
+        # Look for error lines (not warnings)
+        if ' error: ' in line and 'svn_trunk' in line:
+            # Extract file path and error message
+            parts = line.split(' error: ')
+            if len(parts) >= 2:
+                path_part = parts[0]
+                message = parts[1].strip()
+                
+                # Extract file path
+                try:
+                    # Handle both forward and back slashes
+                    path_str = path_part.split(':')[0]
+                    filepath = path_str.replace('\\', '/')
+                    
+                    # Extract line number
+                    line_info = path_str.split(':')[1] if ':' in path_str else ''
+                    line_num = int(line_info) if line_info.isdigit() else 0
+                    
+                    errors.append({
+                        'file': filepath,
+                        'line': line_num,
+                        'message': message
+                    })
+                except Exception as e:
+                    print(f"Error parsing line: {line} - {e}")
+                    continue
+    
+    return errors
+
+def apply_fixes(content, messages):
+    """Apply fixes to the file content based on error messages"""
+    original_content = content
+    modified = False
+    
+    # Fix 1: Remove com.apple.eawt imports (Java 8 compatibility)
+    if any('com.apple.eawt' in msg for msg in messages):
+        lines = content.split('\n')
+        new_lines = [line for line in lines if 'import com.apple.eawt' not in line]
+        if len(new_lines) != len(lines):
+            content = '\n'.join(new_lines)
+            modified = True
+            print("Applied fix: Removed com.apple.eawt imports")
+    
+    # Fix 2: Add missing FILENAME_SOURCE import
+    if any('FILENAME_SOURCE' in msg and 'cannot be converted' in msg for msg in messages):
+        if 'import jd.plugins.filesharing.FILENAME_SOURCE;' not in content:
             lines = content.split('\n')
             insert_pos = 0
             for i, line in enumerate(lines):
-                if line.startswith('import ') and 'org.jdownloader' in line:
+                if line.startswith('import jd.plugins.'):
                     insert_pos = i + 1
-            lines.insert(insert_pos, 'import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;')
+            lines.insert(insert_pos, 'import jd.plugins.filesharing.FILENAME_SOURCE;')
             content = '\n'.join(lines)
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(content)
-        fixes_applied.append(f"Fixed getType() return type in {rel_file}")
-
-# 2. Fix MacOSApplicationAdapter.java - replace com.apple.eawt imports with stub
-filepath = base_path / r"org\jdownloader\crosssystem\macos\MacOSApplicationAdapter.java"
-if filepath.exists():
-    with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read()
+            modified = True
+            print("Applied fix: Added FILENAME_SOURCE import")
     
-    if 'com.apple.eawt' in content:
-        # Replace all com.apple.eawt imports and usage with stub
+    # Fix 3: Handle String to long conversion issues
+    if any('cannot be converted to long' in msg for msg in messages):
         lines = content.split('\n')
         new_lines = []
-        skip_imports = False
         for line in lines:
-            if 'import com.apple.eawt' in line:
-                skip_imports = True
-                continue
-            if skip_imports and line.strip() == '':
-                skip_imports = False
+            # Handle assignments like "final long size = link.getDownloadSize();"
+            if ' = ' in line and 'long' in line and 'String' in str(line):
+                # Replace with Long.parseLong solution
+                new_line = re.sub(r'(\w+)\s*=\s*([^;]+);', 
+                                 lambda m: f'{m.group(1)} = Long.parseLong({m.group(2)});' 
+                                           if 'long' in m.group(1) else m.group(0),
+                                 line)
+                new_lines.append(new_line)
+            else:
                 new_lines.append(line)
-                continue
-            if skip_imports:
-                continue
-            new_lines.append(line)
-        
-        content = '\n'.join(new_lines)
-        
-        # Add stub methods where eawt was used
-        if 'public class MacOSApplicationAdapter' in content:
-            # Add a stub class or modify existing one
-            content = content.replace(
-                'public class MacOSApplicationAdapter',
-                'public class MacOSApplicationAdapter { /* macOS EAWT stub */'
-            )
-        
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(content)
-        fixes_applied.append(f"Fixed MacOSApplicationAdapter.java EAWT imports")
-
-# 3. Fix EmuParadiseMe.java - isOffline method signature
-filepath = base_path / r"jd\plugins\decrypter\EmuParadiseMe.java"
-if filepath.exists():
-    with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read()
+        if len(new_lines) != len(lines):
+            content = '\n'.join(new_lines)
+            modified = True
+            print("Applied fix: Handled String to long conversion")
     
-    if 'boolean isOffline()' in content:
-        content = content.replace('boolean isOffline()', 'public boolean isOffline()')
+    # Fix 4: Handle FileNameSource conversion issues
+    if any('cannot be converted to FILENAME_SOURCE' in msg for msg in messages):
+        lines = content.split('\n')
+        new_lines = []
+        for line in lines:
+            # Handle assignments like "link.setFinalFileName(...);"
+            if 'setFinalFileName(' in line and 'String' in str(line):
+                new_line = re.sub(r'(link\.setFinalFileName\()([^)]+)\)',
+                                 lambda m: f'{m.group(1)}Long.parseLong({m.group(2)});',
+                                 line)
+                new_lines.append(new_line)
+            else:
+                new_lines.append(line)
+        if len(new_lines) != len(lines):
+            content = '\n'.join(new_lines)
+            modified = True
+            print("Applied fix: Handled FILENAME_SOURCE conversion")
     
-    with open(filepath, 'w', encoding='utf-8') as f:
-        f.write(content)
-    fixes_applied.append(f"Fixed EmuParadiseMe.java isOffline() signature")
+    # Fix 5: Handle generic type mismatches (List to Set)
+    if any('cannot be converted to Set' in msg for msg in messages):
+        lines = content.split('\n')
+        new_lines = []
+        for line in lines:
+            # Handle List<CAPTCHA_TYPE> to Set<CAPTCHA_TYPE> conversion
+            if 'List<CAPTCHA_TYPE>' in line and 'Set<CAPTCHA_TYPE>' in line:
+                new_line = line.replace('List<CAPTCHA_TYPE>', 'Set<CAPTCHA_TYPE>')
+                new_lines.append(new_line)
+                print("Applied fix: Changed List to Set in generic type")
+            else:
+                new_lines.append(line)
+        if len(new_lines) != len(lines):
+            content = '\n'.join(new_lines)
+            modified = True
+    
+    return content, modified
 
-for fix in fixes_applied:
-    print(fix)
+def main():
+    print("Starting JDownloader error fix process...")
+    
+    # Parse errors
+    errors = parse_errors()
+    print(f"Parsed {len(errors)} errors")
+    
+    if not errors:
+        print("No errors found to fix")
+        return
+    
+    # Group errors by file
+    file_errors = {}
+    for err in errors:
+        f = err['file']
+        if f not in file_errors:
+            file_errors[f] = []
+        file_errors[f].append(err)
+    
+    fixes_applied = []
+    
+    # Process each file
+    for filepath_str, errs in file_errors.items():
+        filepath = Path(filepath_str)
+        if not filepath.exists():
+            continue
+            
+        try:
+            with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
+                content = f.read()
+                
+            original_content = content
+            messages = [e['message'] for e in errs]
+            
+            # Apply fixes
+            content, modified = apply_fixes(content, messages)
+            
+            if modified:
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                fixes_applied.append(str(filepath))
+                print(f"Fixed {filepath}")
+                
+        except Exception as e:
+            print(f"Error processing {filepath_str}: {e}")
+    
+    print(f"\nApplied fixes to {len(fixes_applied)} files")
+    for f in fixes_applied:
+        print(f"  {f}")
 
-print(f"\nTotal fixes applied: {len(fixes_applied)}")
+if __name__ == "__main__":
+    main()

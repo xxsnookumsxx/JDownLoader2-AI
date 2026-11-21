@@ -33,6 +33,7 @@ import jd.plugins.LinkStatus;
 import jd.plugins.PluginException;
 import jd.plugins.PluginForHost;
 import jd.plugins.components.PluginJSonUtils;
+import jd.plugins.filesharing.FILENAME_SOURCE;
 
 @HostPlugin(revision = "$Revision: 47374 $", interfaceVersion = 3, names = {}, urls = {})
 public class Mp4playerSite extends PluginForHost {

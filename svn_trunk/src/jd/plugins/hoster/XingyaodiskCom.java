@@ -36,6 +36,7 @@ import jd.plugins.LinkStatus;
 import jd.plugins.PluginException;
 import jd.plugins.PluginForHost;
 import jd.plugins.components.SiteType.SiteTemplate;
+import jd.plugins.filesharing.FILENAME_SOURCE;
 
 @HostPlugin(revision = "$Revision: 48194 $", interfaceVersion = 3, names = {}, urls = {})
 public class XingyaodiskCom extends PluginForHost {
