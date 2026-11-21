@@ -12,27 +12,29 @@ def parse_errors():
     with open(errors_file, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    for line in content.split('\n'):
+    for line_num, line in enumerate(content.split('\n'), 1):
         # Look for error lines (not warnings)
         if ' error: ' in line:
-            # Split by ' error: ' to separate file path/line info from the message
+            # Split into file/path/line part and error message
             parts = line.split(' error: ', 1)
             if len(parts) >= 2:
-                path_part = parts[0].strip()
+                path_line = parts[0].strip()
                 message = parts[1].strip()
                 
                 # Extract file path and line number
                 try:
-                    # Split the path_part by ':' to get file path and line number
-                    path_parts = path_part.split(':')
-                    if len(path_parts) >= 2:
-                        # The line number is the last part
-                        line_num = int(path_parts[-1])
-                        # The file path is everything except the last part
-                        file_path_str = ':'.join(path_parts[:-1])
+                    # Split path_line by ':' to get parts
+                    path_parts = path_line.split(':')
+                    if len(path_parts) >= 3:  # Need at least file, line, and empty part
+                        # The line number is the second-to-last part (index -2)
+                        line_num_str = path_parts[-2].rstrip(':')  # Remove trailing colon if present
+                        line_num = int(line_num_str)
+                        
+                        # File path is everything before the last two parts (file and line number)
+                        file_path_str = ':'.join(path_parts[:-2])
                         
                         # Create full path
-                        filepath = base_path / file_path_str.replace('\\', '/')
+                        filepath = Path(file_path_str.replace('\\', '/'))
                         
                         errors.append({
                             'file': filepath,
@@ -40,7 +42,7 @@ def parse_errors():
                             'message': message
                         })
                 except Exception as e:
-                    print(f"Error parsing line: {line} - {e}")
+                    print(f"Error parsing line {line_num}: {line} - {e}")
                     continue
     
     return errors
@@ -72,23 +74,6 @@ def apply_fixes(content, messages):
             modified = True
             print("Applied fix: Added FILENAME_SOURCE import")
     
-    # Fix 3: Handle String to long conversion issues
-    if any('cannot be converted to long' in msg for msg in messages):
-        lines = content.split('\n')
-        new_lines = []
-        for line in lines:
-            # Handle assignments like "final long size = link.getDownloadSize();"
-            if ' = ' in line and 'long' in line and 'String' in str(line):
-                # Replace String with Long in assignments
-                new_line = re.sub(r'(\w+)\s*=\s*String', r'\1 = Long.parseLong(\2)', line)
-                new_lines.append(new_line)
-            else:
-                new_lines.append(line)
-        if len(new_lines) != len(lines):
-            content = '\n'.join(new_lines)
-            modified = True
-            print("Applied fix: Handled String to long conversion")
-    
     # Fix 4: Handle FileNameSource conversion issues
     if any('cannot be converted to FILENAME_SOURCE' in msg for msg in messages):
         lines = content.split('\n')
@@ -106,6 +91,22 @@ def apply_fixes(content, messages):
             content = '\n'.join(new_lines)
             modified = True
             print("Applied fix: Handled FILENAME_SOURCE conversion")
+    
+    # Fix 5: Handle generic type mismatches (List to Set)
+    if any('cannot be converted to Set' in msg for msg in messages):
+        lines = content.split('\n')
+        new_lines = []
+        for line in lines:
+            # Handle List<CAPTCHA_TYPE> to Set<CAPTCHA_TYPE> conversion
+            if 'List<CAPTCHA_TYPE>' in line and 'Set<CAPTCHA_TYPE>' in line:
+                new_line = line.replace('List<CAPTCHA_TYPE>', 'Set<CAPTCHA_TYPE>')
+                new_lines.append(new_line)
+                print("Applied fix: Changed List to Set in generic type")
+            else:
+                new_lines.append(line)
+        if len(new_lines) != len(lines):
+            content = '\n'.join(new_lines)
+            modified = True
     
     return content, modified
 
@@ -134,6 +135,7 @@ def main():
     for filepath_str, error_list in file_errors.items():
         filepath = Path(filepath_str)
         if not filepath.exists():
+            print(f"File not found: {filepath}")
             continue
             
         try:
