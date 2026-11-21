@@ -47,6 +47,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLEngine;
 import javax.net.ssl.SSLException;
@@ -60,6 +61,8 @@ import org.appwork.utils.Exceptions;
 import org.appwork.utils.JVMVersion;
 import org.appwork.utils.JavaVersion;
 import org.appwork.utils.StringUtils;
+import org.appwork.utils.net.httpconnection.trust.TrustCallback;
+import org.appwork.utils.net.httpconnection.trust.TrustProviderInterface;
 
 /**
  * @author daniel
@@ -73,6 +76,11 @@ public class NativeSSLSocketStreamFactory implements SSLSocketStreamFactory {
     }
 
     public SSLSocketFactory getSSLSocketFactory(final SSLSocketStreamOptions options, final String sniHostName) throws IOException {
+        return getSSLSocketFactory(options, sniHostName, null, null);
+    }
+
+    @Override
+    public SSLSocketFactory getSSLSocketFactory(final SSLSocketStreamOptions options, final String sniHostName, final KeyManager[] keyManagers, final TrustCallback trustCallback) throws IOException {
         final boolean sniEnabled = !StringUtils.isEmpty(sniHostName) && (options == null || options.isSNIEnabled());
         return getSSLSocketFactory(getSSLContext(options), options, sniEnabled ? sniHostName : null);
     }
@@ -215,8 +223,14 @@ public class NativeSSLSocketStreamFactory implements SSLSocketStreamFactory {
         public SSLSocketFactory getSSLSocketFactory();
     }
 
+    @Deprecated
     @Override
-    public SSLSocketStreamInterface create(final SocketStreamInterface socketStream, final String host, final int port, final boolean autoClose, final SSLSocketStreamOptions options) throws IOException {
+    public SSLSocketStreamInterface create(final SocketStreamInterface socketStream, final String host, final int port, final boolean autoclose, final SSLSocketStreamOptions options, final TrustProviderInterface trustProvider, final KeyManager[] keyManagers) throws IOException {
+        return create(socketStream, host, port, autoclose, options, null);
+    }
+
+    @Override
+    public SSLSocketStreamInterface create(final SocketStreamInterface socketStream, final String host, final int port, final boolean autoClose, final SSLSocketStreamOptions options, final TrustCallback trustCallback) throws IOException {
         final boolean sniEnabled = !StringUtils.isEmpty(host) && (options == null || options.isSNIEnabled());
         final SSLContext sslContext = getSSLContext(options);
         final SSLSocketFactory sslFactory = getSSLSocketFactory(sslContext, options, sniEnabled ? host : null);
@@ -279,6 +293,21 @@ public class NativeSSLSocketStreamFactory implements SSLSocketStreamFactory {
             @Override
             public SSLSession getSSLSession() {
                 return sslSocket.getSession();
+            }
+
+            @Override
+            public TrustProviderInterface getTrustProvider() {
+                return null;
+            }
+
+            @Override
+            public KeyManager[] getKeyManager() {
+                return null;
+            }
+
+            @Override
+            public TrustResult getTrustResult() {
+                return null;
             }
         };
     }

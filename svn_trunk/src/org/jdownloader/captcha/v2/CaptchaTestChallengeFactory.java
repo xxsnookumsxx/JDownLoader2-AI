@@ -22,6 +22,7 @@ import org.jdownloader.plugins.controller.host.LazyHostPlugin;
 import jd.plugins.Plugin;
 import jd.plugins.PluginException;
 import jd.plugins.PluginForHost;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 /**
  * Builds throwaway {@link Challenge}s used by the "Test Captcha solver" column (see {@code CaptchaSolverCaptchaTypesSettingsPanelBuilder}

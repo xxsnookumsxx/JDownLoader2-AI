@@ -2,6 +2,8 @@ package org.jdownloader.settings;
 
 import org.appwork.storage.Storable;
 
+
+
 public class UrlDisplayEntry implements Storable {
     public UrlDisplayEntry(/* storable */) {
     }

@@ -10,6 +10,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.Set;
 
 import org.appwork.exceptions.WTFException;
 import org.appwork.storage.JSonStorage;
@@ -44,6 +45,7 @@ import org.jdownloader.settings.staticreferences.CFG_DBC;
 import jd.http.Browser;
 import jd.http.requests.FormData;
 import jd.http.requests.PostFormDataRequest;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class DeathByCaptchaSolver extends CESChallengeSolver<String> {
     private DeathByCaptchaSettings            config;
@@ -400,5 +402,10 @@ public class DeathByCaptchaSolver extends CESChallengeSolver<String> {
         br.getHeaders().put("Accept", "application/json");
         br.getHeaders().put("User-Agent", "JDownloader");
         return br;
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return null;
     }
 }

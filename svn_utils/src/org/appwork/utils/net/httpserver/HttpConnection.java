@@ -61,6 +61,8 @@ import org.appwork.utils.net.HTTPHeader;
 import org.appwork.utils.net.HeaderCollection;
 import org.appwork.utils.net.httpconnection.HTTPConnectionUtils;
 import org.appwork.utils.net.httpconnection.RequestMethod;
+import org.appwork.utils.net.httpconnection.TrustResult;
+import org.appwork.utils.net.httpserver.HttpServerConnection.ConnectionHook;
 import org.appwork.utils.net.httpserver.handler.ExtendedHttpRequestHandler;
 import org.appwork.utils.net.httpserver.handler.HttpProxyHandler;
 import org.appwork.utils.net.httpserver.handler.HttpRequestHandler;
@@ -514,7 +516,7 @@ public class HttpConnection implements HttpConnectionRunnable, RawHttpConnection
             CorsHandler corsHandler = server.getCorsHandler();
             // Only add CORS headers if CORS is enabled
             if (corsHandler != null) {
-                corsHandler.addCorsHeaders(request.getRequestHeaders(), response.getResponseHeaders());
+                corsHandler.addCorsHeaders(request, response);
             }
         }
 
@@ -606,9 +608,9 @@ public class HttpConnection implements HttpConnectionRunnable, RawHttpConnection
             return;
         }
         long breakAt = 0;
-        final TimeSpan timeout = limits.getDrainInputStreamTimeout();
-        if (timeout != null && timeout.isMoreThan(TimeSpan.ZERO)) {
-            breakAt = Time.systemIndependentCurrentJVMTimeMillis() + timeout.toMillis();
+        final long timeoutMillis = limits.getDrainInputStreamTimeout();
+        if (timeoutMillis > 0) {
+            breakAt = Time.systemIndependentCurrentJVMTimeMillis() + timeoutMillis;
         }
         final long maxDrain = limits.getMaxDrainInputStreamBytes();
         // Check if we would exceed drain limits
@@ -793,7 +795,7 @@ public class HttpConnection implements HttpConnectionRunnable, RawHttpConnection
                 configure(request, response);
             }
 
-            server.validateRequest(request);
+            server.validateRequest(request, response);
 
             if (this.deferRequest(request)) {
                 closeConnection = false;
@@ -928,21 +930,35 @@ public class HttpConnection implements HttpConnectionRunnable, RawHttpConnection
         return ret;
     }
 
-    public static interface ConnectionHook {
+    public static interface ConnectionHook extends HttpServerConnection.ConnectionHook {
         /**
          * @param httpConnection
          */
         void onBeforeSendHeaders(HttpResponse response);
     }
 
-    private ConnectionHook hook;
+    private HttpServerConnection.ConnectionHook hook;
 
-    public ConnectionHook getHook() {
+    public HttpServerConnection.ConnectionHook getHook() {
         return hook;
     }
 
-    public void setHook(ConnectionHook hook) {
+    public void setHook(HttpServerConnection.ConnectionHook hook) {
         this.hook = hook;
+    }
+
+    public boolean isSSL() {
+        return false;
+    }
+
+    @Override
+    public TimingContext getTimingContext() {
+        return null;
+    }
+
+    @Override
+    public TrustResult getTrustResult() {
+        return null;
     }
 
     /**

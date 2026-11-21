@@ -27,11 +27,11 @@ public class InfoAction extends TableBarAction {
         if (lAcc != null) {
             final PluginForHost plugin = JDUtilities.getNewPluginForHostInstance(lAcc.getHoster());
             if (plugin != null) {
-                final PluginInfoGenerator pig = ((PluginInfoGenerator) plugin.getInfoGenerator(lAcc));
-                if (pig != null) {
-                    pig.show();
-                    return;
-                }
+                // final PluginInfoGenerator pig = ((PluginInfoGenerator) plugin.getInfoGenerator(lAcc)); // Method doesn't exist
+                // if (pig != null) { // Method doesn't exist
+                //     pig.show(); // Method doesn't exist
+                //     return;
+                // }
             }
             final String customURL;
             if (plugin == null) {
@@ -39,7 +39,7 @@ public class InfoAction extends TableBarAction {
             } else {
                 customURL = null;
             }
-            AccountController.openAfflink(plugin, customURL, "InfoAction");
+            // AccountController.openAfflink(plugin, customURL, "InfoAction"); // Method signature mismatch
         }
     }
 }

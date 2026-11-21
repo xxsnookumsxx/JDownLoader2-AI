@@ -1,0 +1,1377 @@
+svn_trunk\src\org\jdownloader\net\BCSSLSocketStreamFactory.java:589: warning: [removal] getPeerCertificateChain() in SSLSession has been deprecated and marked for removal
+        public javax.security.cert.X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
+                                                     ^
+svn_trunk\src\org\jdownloader\net\BCSSLSocketStreamFactory.java:589: warning: [removal] X509Certificate in javax.security.cert has been deprecated and marked for removal
+        public javax.security.cert.X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
+                                  ^
+svn_trunk\src\org\jdownloader\net\BCSSLSocketStreamFactory.java:592: warning: [removal] X509Certificate in javax.security.cert has been deprecated and marked for removal
+                final javax.security.cert.X509Certificate[] chain = new javax.security.cert.X509Certificate[peerCerts.length];
+                                         ^
+svn_trunk\src\org\jdownloader\net\BCSSLSocketStreamFactory.java:592: warning: [removal] X509Certificate in javax.security.cert has been deprecated and marked for removal
+                final javax.security.cert.X509Certificate[] chain = new javax.security.cert.X509Certificate[peerCerts.length];
+                                                                                           ^
+svn_trunk\src\org\jdownloader\net\BCSSLSocketStreamFactory.java:594: warning: [removal] X509Certificate in javax.security.cert has been deprecated and marked for removal
+                    chain[i] = javax.security.cert.X509Certificate.getInstance(peerCerts[i].getEncoded());
+                                                  ^
+svn_trunk\src\jd\plugins\DownloadLink.java:327: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+    public long getDownloadTime() {
+                ^
+svn_trunk\src\jd\plugins\DownloadLink.java:416: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+    public long getDownloadCurrent() {
+                ^
+svn_trunk\src\jd\plugins\DownloadLink.java:474: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+    public long getDownloadSize() {
+                ^
+svn_trunk\src\jd\plugins\DownloadLink.java:488: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+    public long getDownloadSpeed() {
+                ^
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\components\Spinner.java:122: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+    public void setValue(Object value) {
+                ^
+svn_trunk\src\jd\SecondLevelLaunch.java:1047: warning: [removal] AccessController in java.security has been deprecated and marked for removal
+                final File[] baseFolders = AccessController.doPrivileged(new PrivilegedAction<File[]>() {
+                                           ^
+svn_trunk\src\jd\nutils\Formatter.java:90: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+    public static String fillString(String binaryString, String pre, String post, int length) {
+                         ^
+svn_trunk\src\jd\plugins\LetitBitAccountBuilderImpl.java:23: error: constructor DefaultEditAccountPanel in class DefaultEditAccountPanel cannot be applied to given types;
+        super(callback);
+        ^
+  required: InputChangedCallbackInterface,PluginForHost,boolean
+  found:    InputChangedCallbackInterface
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\decrypter\DociPl.java:76: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+            filename = this.correctOrApplyFileNameExtension(filename, ".pdf");
+                                                            ^
+svn_trunk\src\jd\plugins\decrypter\EmuParadiseMe.java:54: error: cannot find symbol
+        ((jd.plugins.hoster.EmuParadiseMe) plugin).prepBrowser(this.br);
+                                                  ^
+  symbol:   method prepBrowser(Browser)
+  location: class EmuParadiseMe
+svn_trunk\src\jd\plugins\decrypter\EmuParadiseMe.java:55: error: cannot find symbol
+        ((jd.plugins.hoster.EmuParadiseMe) plugin).setCookies();
+                                                  ^
+  symbol:   method setCookies()
+  location: class EmuParadiseMe
+svn_trunk\src\jd\plugins\decrypter\EmuParadiseMe.java:59: error: method isOffline in class EmuParadiseMe cannot be applied to given types;
+        if (((jd.plugins.hoster.EmuParadiseMe) plugin).isOffline()) {
+                                                      ^
+  required: Browser
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\decrypter\EmuParadiseMe.java:64: error: cannot find symbol
+        final String[] links = br.getRegex(jd.plugins.hoster.EmuParadiseMe.TYPE_SEMICOLON_DOWNLOAD).getColumn(-1);
+                                                                          ^
+  symbol:   variable TYPE_SEMICOLON_DOWNLOAD
+  location: class EmuParadiseMe
+svn_trunk\src\jd\plugins\decrypter\EroScriptsCom.java:330: error: cannot find symbol
+            boolean useImages = getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.FETCH_IMAGES, true);
+                                                                                                    ^
+  symbol:   variable FETCH_IMAGES
+  location: class EroScriptsCom
+svn_trunk\src\jd\plugins\decrypter\EroScriptsCom.java:376: error: cannot find symbol
+        if (getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.FETCH_IMAGES, true)) {
+                                                                                ^
+  symbol:   variable FETCH_IMAGES
+  location: class EroScriptsCom
+svn_trunk\src\jd\plugins\decrypter\EroScriptsCom.java:388: error: cannot find symbol
+        if (getPluginConfig().getBooleanProperty(jd.plugins.hoster.EroScriptsCom.SMART_FILENAMES, true)) {
+                                                                                ^
+  symbol:   variable SMART_FILENAMES
+  location: class EroScriptsCom
+svn_trunk\src\jd\plugins\decrypter\FlimmitComCrawler.java:260: error: cannot find symbol
+        final ArrayList<Account> accounts = AccountController.getInstance().getAllAccounts(this.getHost());
+                                                                           ^
+  symbol:   method getAllAccounts(String)
+  location: class AccountController
+svn_trunk\src\jd\plugins\decrypter\HdencodeOrg.java:252: warning: [removal] setDaemon(boolean) in ThreadGroup has been deprecated and marked for removal
+                threadGroup.setDaemon(true);
+                           ^
+svn_trunk\src\jd\plugins\decrypter\MegaConz.java:212: error: cannot find symbol
+        String folderMasterKey = getFolderMasterKey(contenturl);
+                                 ^
+  symbol:   method getFolderMasterKey(String)
+  location: class MegaConz
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:120: error: cannot find symbol
+        boolean allow_HTTP = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HTTP_STREAM, true);
+                                                                                  ^
+  symbol:   variable HTTP_STREAM
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:121: error: cannot find symbol
+        boolean allow_HDS = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.HDS_STREAM, true);
+                                                                                 ^
+  symbol:   variable HDS_STREAM
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:161: error: cannot find symbol
+                final boolean allVideos = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true) == cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true);
+                                                                                               ^
+  symbol:   variable VIDEO_SEGMENTS
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:161: error: cannot find symbol
+                final boolean allVideos = cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true) == cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true);
+                                                                                                                                                                              ^
+  symbol:   variable VIDEO_GAPLESS
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:162: error: cannot find symbol
+                if (allVideos || cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_SEGMENTS, true)) {
+                                                                                      ^
+  symbol:   variable VIDEO_SEGMENTS
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:167: error: cannot find symbol
+                if (gapless_videoEntry != null && (allVideos || cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.VIDEO_GAPLESS, true))) {
+                                                                                                                     ^
+  symbol:   variable VIDEO_GAPLESS
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:316: error: cannot find symbol
+                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYLOW, true) || BEST) == false) {
+                                                                                      ^
+  symbol:   variable Q_VERYLOW
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:322: error: cannot find symbol
+                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_LOW, true) || BEST) == false) {
+                                                                                      ^
+  symbol:   variable Q_LOW
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:328: error: cannot find symbol
+                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_MEDIUM, true) || BEST) == false) {
+                                                                                      ^
+  symbol:   variable Q_MEDIUM
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:334: error: cannot find symbol
+                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_HIGH, true) || BEST) == false) {
+                                                                                      ^
+  symbol:   variable Q_HIGH
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:340: error: cannot find symbol
+                            if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYHIGH, true) || BEST) == false) {
+                                                                                      ^
+  symbol:   variable Q_VERYHIGH
+  location: class ORFMediathek
+svn_trunk\src\jd\plugins\decrypter\ORFMediathekDecrypter.java:350: error: cannot find symbol
+                                if ((cfg.getBooleanProperty(jd.plugins.hoster.ORFMediathek.Q_VERYHIGH, true) || BEST) == false) {
+                                                                                          ^
+  symbol:   variable Q_VERYHIGH
+  location: class ORFMediathek
+svn_trunk\src\org\jdownloader\plugins\components\youtube\YoutubeHelper.java:3459: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+    private void doFeedScan() throws Exception {
+                 ^
+svn_trunk\src\org\jdownloader\plugins\components\youtube\YoutubeHelper.java:3638: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+    public static final String YT_STREAMURL_DATA          = "YT_STREAMURL_DATA";
+                               ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\BrowserReference.java:225: warning: [removal] finalize() in Object has been deprecated and marked for removal
+    protected void finalize() throws Throwable {
+                   ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\BrowserReference.java:229: warning: [removal] finalize() in Object has been deprecated and marked for removal
+            super.finalize();
+                 ^
+svn_trunk\src\jd\plugins\hoster\AccioDebridCom.java:84: error: cannot find symbol
+            mhm.runCheck(account, link);
+               ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\AccioDebridCom.java:106: error: cannot find symbol
+        mhm.runCheck(account, link);
+           ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\AnonServices.java:241: error: cannot find symbol
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_crc32, HashInfo.TYPE.CRC32));
+                ^
+  symbol:   method addHashInfo(HashInfo)
+  location: variable link of type DownloadLink
+svn_trunk\src\jd\plugins\hoster\AnonServices.java:244: error: cannot find symbol
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_md5, HashInfo.TYPE.MD5));
+                ^
+  symbol:   method addHashInfo(HashInfo)
+  location: variable link of type DownloadLink
+svn_trunk\src\jd\plugins\hoster\AnonServices.java:247: error: cannot find symbol
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha1, HashInfo.TYPE.SHA1));
+                ^
+  symbol:   method addHashInfo(HashInfo)
+  location: variable link of type DownloadLink
+svn_trunk\src\jd\plugins\hoster\AnonServices.java:250: error: cannot find symbol
+            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha256, HashInfo.TYPE.SHA256));
+                ^
+  symbol:   method addHashInfo(HashInfo)
+  location: variable link of type DownloadLink
+svn_trunk\src\jd\plugins\hoster\ClipHunterCom.java:61: error: cannot find symbol
+    public static final String[][] qualities     = jd.plugins.decrypter.ClipHunterComDecrypt.qualities;
+                                                                                            ^
+  symbol:   variable qualities
+  location: class ClipHunterComDecrypt
+svn_trunk\src\jd\plugins\hoster\CloudvideoTv.java:117: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\CloudvideoTv.java:122: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
+        super.checkErrors(br, html, link, account, checkAll);
+             ^
+  required: Browser,String,DownloadLink,Account
+  found:    Browser,String,DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\DebridFileCom.java:97: error: cannot find symbol
+            mhm.runCheck(account, link);
+               ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\DebridFileCom.java:105: error: cannot find symbol
+        mhm.runCheck(account, link);
+           ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\DebridFileCom.java:184: error: incompatible types: String cannot be converted to long
+            ai.setTrafficMax("10 GB");
+                             ^
+svn_trunk\src\jd\plugins\hoster\DebridLinkFr2.java:566: error: cannot find symbol
+            mhm.runCheck(account, link);
+               ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\DebridLinkFr2.java:581: error: cannot find symbol
+        mhm.runCheck(account, link);
+           ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\DlFreeFr.java:266: error: cannot find symbol
+                link.setFinalFileName(Plugin.getFileNameFromHeader(con));
+                                            ^
+  symbol:   method getFileNameFromHeader(URLConnectionAdapter)
+  location: class Plugin
+svn_trunk\src\jd\plugins\hoster\EgofilesNet.java:118: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\EgofilesNet.java:124: error: cannot find symbol
+            return super.isOfflineWebsiteInfoPage(br, link);
+                        ^
+  symbol: method isOfflineWebsiteInfoPage(Browser,DownloadLink)
+svn_trunk\src\jd\plugins\hoster\EightTracksCom.java:470: error: non-static method getDirectlink(Plugin,DownloadLink,Account,Browser,Map<String,Object>) cannot be referenced from a static context
+            final String streamlink = jd.plugins.hoster.SoundcloudCom.getDirectlink(this, null, null, br2, (Map<String, Object>) ressourcelist.get(0));
+                                                                     ^
+svn_trunk\src\jd\plugins\hoster\File2btcCom.java:124: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+                    filetitle = this.correctOrApplyFileNameExtension(filetitle, ".mp4");
+                                                                     ^
+svn_trunk\src\jd\plugins\hoster\File2btcCom.java:276: error: incompatible types: String cannot be converted to long
+            ai.setUsedSpace(spaceUsed.trim());
+                                          ^
+svn_trunk\src\jd\plugins\hoster\FilelionsTo.java:149: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\FilelionsTo.java:151: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
+        super.checkErrors(br, html, link, account, checkAll);
+             ^
+  required: Browser,String,DownloadLink,Account
+  found:    Browser,String,DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\FilericeCom.java:80: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\FreeM3DownloadNet.java:320: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+                            link.setFinalFileName(this.correctOrApplyFileNameExtension(currentFilename, "." + fileExtension));
+                                                                                       ^
+svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:144: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:147: error: method scanInfo in class XFileSharingProBasic cannot be applied to given types;
+        super.scanInfo(fileInfo);
+             ^
+  required: String[]
+  found:    String[]
+  reason: scanInfo(String[]) has private access in XFileSharingProBasic
+svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:148: error: cannot find symbol
+        final String better_filename = new Regex(correctedBR, "<h2 class=\"the_title mb-2\">([^<>\"]+)</h2>").getMatch(0);
+                                                 ^
+  symbol:   variable correctedBR
+  location: class GounlimitedTo
+svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:168: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:170: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
+        super.checkErrors(br, html, link, account, checkAll);
+             ^
+  required: Browser,String,DownloadLink,Account
+  found:    Browser,String,DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:181: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:183: error: method requestFileInformationWebsite in class XFileSharingProBasic cannot be applied to given types;
+        final AvailableStatus status = super.requestFileInformationWebsite(link, account, downloadsStarted);
+                                            ^
+  required: DownloadLink,Account
+  found:    DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:185: error: cannot find symbol
+        final String dllink = this.getDllink(link, account, br, correctedBR);
+                                                                ^
+  symbol:   variable correctedBR
+  location: class GounlimitedTo
+svn_trunk\src\jd\plugins\hoster\HighstreamTv.java:143: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\HighstreamTv.java:145: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
+        super.checkErrors(br, html, link, account, checkAll);
+             ^
+  required: Browser,String,DownloadLink,Account
+  found:    Browser,String,DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\MegaConz.java:250: error: cannot find symbol
+        final String ret = jd.plugins.decrypter.MegaConz.getFolderMasterKey(link.getContainerUrl());
+                                                        ^
+  symbol:   method getFolderMasterKey(String)
+  location: class MegaConz
+svn_trunk\src\jd\plugins\hoster\Mp4playerSite.java:108: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+            link.setFinalFileName(this.correctOrApplyFileNameExtension(title, ".mp4"));
+                                                                       ^
+svn_trunk\src\jd\plugins\hoster\PimpRollHostedTube.java:217: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+            filename = this.correctOrApplyFileNameExtension(filename, ".mp4");
+                                                            ^
+svn_trunk\src\jd\plugins\hoster\QiwiGg.java:137: error: cannot find symbol
+            dllink = Plugin.getCorrectOrApplyFileNameExtension(dllink, Plugin.getFileNameExtensionFromString(link.getName()));
+                           ^
+  symbol:   method getCorrectOrApplyFileNameExtension(String,String)
+  location: class Plugin
+svn_trunk\src\jd\plugins\hoster\RacatyNet.java:114: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\RacatyNet.java:116: error: method scanInfo in class XFileSharingProBasic cannot be applied to given types;
+        super.scanInfo(fileInfo);
+             ^
+  required: String[]
+  found:    String[]
+  reason: scanInfo(String[]) has private access in XFileSharingProBasic
+svn_trunk\src\jd\plugins\hoster\RacatyNet.java:117: error: cannot find symbol
+        String filename = new Regex(correctedBR, "<title>([^<>\"]+) free download at Racaty\\.[A-Za-z0-9]+</title>").getMatch(0);
+                                    ^
+  symbol:   variable correctedBR
+  location: class RacatyNet
+svn_trunk\src\jd\plugins\hoster\RacatyNet.java:119: error: cannot find symbol
+            filename = new Regex(correctedBR, "<h5>Identity</h5><p>([^<>\"]+)</p>").getMatch(0);
+                                 ^
+  symbol:   variable correctedBR
+  location: class RacatyNet
+svn_trunk\src\jd\plugins\hoster\RacatyNet.java:121: error: cannot find symbol
+        String filesize = new Regex(correctedBR, "b>Size:</b> (\\d+(?:\\.\\d+)? .*?)\\s+").getMatch(0);
+                                    ^
+  symbol:   variable correctedBR
+  location: class RacatyNet
+svn_trunk\src\jd\plugins\hoster\RacatyNet.java:124: error: cannot find symbol
+            filesize = new Regex(correctedBR, ">Size\\s*:([^<>\"]+) / Uploaded:").getMatch(0);
+                                 ^
+  symbol:   variable correctedBR
+  location: class RacatyNet
+svn_trunk\src\jd\plugins\hoster\RarcloudsCom.java:119: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+            filename = this.correctOrApplyFileNameExtension(filename, "." + fileExtension);
+                                                            ^
+svn_trunk\src\jd\plugins\hoster\SmoozedCom.java:230: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\SmoozedCom.java:232: error: method createAskToUsePremiumDialog in class PluginForHost cannot be applied to given types;
+        final AskToUsePremiumDialog ret = super.createAskToUsePremiumDialog(domain);
+                                               ^
+  required: no arguments
+  found:    String
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\SmoozedCom.java:754: error: method setMultiHostSupport in class AccountInfo cannot be applied to given types;
+            ai.setMultiHostSupport(this, supportedHosts, pluginFinder);
+              ^
+  required: PluginForHost,List<String>
+  found:    SmoozedCom,ArrayList<String>,PluginFinder
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:150: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:152: error: method requestFileInformationWebsite in class XFileSharingProBasic cannot be applied to given types;
+        final AvailableStatus status = super.requestFileInformationWebsite(link, account, isDownload);
+                                            ^
+  required: DownloadLink,Account
+  found:    DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:153: error: method scanInfo in class XFileSharingProBasic cannot be applied to given types;
+        final String[] finfo = this.scanInfo(internal_getFileInfoArray());
+                                   ^
+  required: String,String[]
+  found:    String[]
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:153: error: incompatible types: String[] cannot be converted to String
+        final String[] finfo = this.scanInfo(internal_getFileInfoArray());
+                                                                      ^
+svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:181: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:183: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
+        super.checkErrors(br, html, link, account, checkAll);
+             ^
+  required: Browser,String,DownloadLink,Account
+  found:    Browser,String,DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\StreamhubTo.java:94: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\StreamhubTo.java:98: error: cannot find symbol
+        return super.requestFileInformationVideoEmbed(br, link, account, findFilesize);
+                    ^
+  symbol: method requestFileInformationVideoEmbed(Browser,DownloadLink,Account,boolean)
+svn_trunk\src\jd\plugins\hoster\StreamsbNet.java:120: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\StreamsbNet.java:124: error: method requestFileInformationWebsite in class XFileSharingProBasic cannot be applied to given types;
+        AvailableStatus result = super.requestFileInformationWebsite(link, account, isDownload);
+                                      ^
+  required: DownloadLink,Account
+  found:    DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\StreamsbNet.java:133: error: method requestFileInformationWebsite in class XFileSharingProBasic cannot be applied to given types;
+                result = super.requestFileInformationWebsite(link, account, isDownload);
+                              ^
+  required: DownloadLink,Account
+  found:    DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\StreamsbNet.java:172: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
+        super.checkErrors(br, html, link, account, checkAll);
+             ^
+  required: Browser,String,DownloadLink,Account
+  found:    Browser,String,DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\SuperdownComBr.java:114: error: cannot find symbol
+            mhm.runCheck(account, downloadLink);
+               ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\SuperdownComBr.java:192: error: cannot find symbol
+        mhm.runCheck(account, link);
+           ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\TransferChomikujPl.java:104: error: cannot find symbol
+            mhm.runCheck(account, link);
+               ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\TransferChomikujPl.java:111: error: cannot find symbol
+        mhm.runCheck(account, link);
+           ^
+  symbol:   method runCheck(Account,DownloadLink)
+  location: variable mhm of type MultiHosterManagement
+svn_trunk\src\jd\plugins\hoster\TransferChomikujPl.java:254: error: TransferChomikujPlAccountFactory is not abstract and does not override abstract method handleClipboardAutoFill() in AccountBuilderInterface
+    public static class TransferChomikujPlAccountFactory extends MigPanel implements AccountBuilderInterface {
+                  ^
+svn_trunk\src\jd\plugins\hoster\UploadbankCom.java:117: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\UploadbankCom.java:120: error: method scanInfo in class XFileSharingProBasic cannot be applied to given types;
+        super.scanInfo(fileInfo);
+             ^
+  required: String[]
+  found:    String[]
+  reason: scanInfo(String[]) has private access in XFileSharingProBasic
+svn_trunk\src\jd\plugins\hoster\UploadbankCom.java:122: error: cannot find symbol
+            fileInfo[0] = new Regex(correctedBR, "<b>Name\\s*:([^<>\"]+)</b>").getMatch(0);
+                                    ^
+  symbol:   variable correctedBR
+  location: class UploadbankCom
+svn_trunk\src\jd\plugins\hoster\UploadhubIo.java:118: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\UploadhubIo.java:120: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
+        super.checkErrors(br, correctedBR, link, account, checkAll);
+             ^
+  required: Browser,String,DownloadLink,Account
+  found:    Browser,String,DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:134: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:156: error: cannot find symbol
+            this.checkErrors(br, correctedBR, link, account, false);
+                                 ^
+  symbol:   variable correctedBR
+  location: class UplodNet
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:172: error: cannot find symbol
+            final String code = this.getCaptchaCodeBase64ImageString(image_b64, link);
+                                    ^
+  symbol: method getCaptchaCodeBase64ImageString(String,DownloadLink)
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:175: error: cannot find symbol
+            link.setProperty(PROPERTY_captcha_required, true);
+                             ^
+  symbol:   variable PROPERTY_captcha_required
+  location: class UplodNet
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:177: error: cannot find symbol
+            this.checkErrors(br, correctedBR, link, account, true);
+                                 ^
+  symbol:   variable correctedBR
+  location: class UplodNet
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:178: error: cannot find symbol
+            dllink = this.getDllink(link, account, br, correctedBR);
+                                                       ^
+  symbol:   variable correctedBR
+  location: class UplodNet
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:183: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:185: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
+        super.checkErrors(br, correctedBR, link, account, checkAll);
+             ^
+  required: Browser,String,DownloadLink,Account
+  found:    Browser,String,DownloadLink,Account,boolean
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:193: error: cannot find symbol
+                final boolean websiteDidAskForCaptcha = link.getBooleanProperty(PROPERTY_captcha_required, false);
+                                                                                ^
+  symbol:   variable PROPERTY_captcha_required
+  location: class UplodNet
+svn_trunk\src\jd\plugins\hoster\UseruploadNet.java:108: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\UseruploadNet.java:110: error: method scanInfo in class XFileSharingProBasic cannot be applied to given types;
+        super.scanInfo(fileInfo);
+             ^
+  required: String[]
+  found:    String[]
+  reason: scanInfo(String[]) has private access in XFileSharingProBasic
+svn_trunk\src\jd\plugins\hoster\WolfstreamTv.java:136: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\WolfstreamTv.java:138: error: method scanInfo in class XFileSharingProBasic cannot be applied to given types;
+        super.scanInfo(fileInfo);
+             ^
+  required: String[]
+  found:    String[]
+  reason: scanInfo(String[]) has private access in XFileSharingProBasic
+svn_trunk\src\jd\plugins\hoster\WolfstreamTv.java:139: error: cannot find symbol
+        final String betterFileTitle = new Regex(correctedBR, "CONTENT=\"Watch video ([^\"]+)\"").getMatch(0);
+                                                 ^
+  symbol:   variable correctedBR
+  location: class WolfstreamTv
+svn_trunk\src\jd\plugins\hoster\WolfstreamTv.java:145: error: cannot find symbol
+            fileInfo[1] = new Regex(correctedBR, "<span\\s+class\\s*=\\s*\"\\s*uploadate\\s*\"\\s*>\\s*Size\\s*:\\s*([0-9\\.]+\\s*[KMGTP]{0,1}B)\\s*").getMatch(0);
+                                    ^
+  symbol:   variable correctedBR
+  location: class WolfstreamTv
+svn_trunk\src\jd\plugins\hoster\WyslijNet.java:136: error: cannot find symbol
+            account.setProperty(PROPERTY_ACCOUNT_ALLOW_API_DOWNLOAD_ATTEMPT_IN_WEBSITE_MODE, false);
+                                ^
+  symbol:   variable PROPERTY_ACCOUNT_ALLOW_API_DOWNLOAD_ATTEMPT_IN_WEBSITE_MODE
+  location: class WyslijNet
+svn_trunk\src\jd\plugins\hoster\XingyaodiskCom.java:112: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+            filename = this.correctOrApplyFileNameExtension(filename, "." + fileExtension);
+                                                            ^
+svn_trunk\src\jd\plugins\hoster\YouWatchOrg.java:179: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\YouWatchOrg.java:182: error: method scanInfo in class XFileSharingProBasic cannot be applied to given types;
+        super.scanInfo(fileInfo);
+             ^
+  required: String[]
+  found:    String[]
+  reason: scanInfo(String[]) has private access in XFileSharingProBasic
+svn_trunk\src\org\jdownloader\captcha\api\CaptchaForwarder.java:72: error: <anonymous org.jdownloader.captcha.api.CaptchaForwarder$1$1$1> is not abstract and does not override abstract method getSiteUrl() in RecaptchaV2Challenge
+                        return new RecaptchaV2Challenge(lsiteKey, stoken, null, this.br, this.getSiteDomain()) {
+                                                                                                               ^
+svn_trunk\src\org\jdownloader\captcha\v2\AbstractDialogHandler.java:25: error: type argument ChallengeType is not within bounds of type-variable T
+public abstract class AbstractDialogHandler<DialogClass extends AbstractCaptchaDialog<ReturnCode>, ChallengeType extends Challenge<?>, ReturnCode> extends ChallengeDialogHandler<DialogClass, ChallengeType, ReturnCode> {
+                                                                                                                                                                                               ^
+  where ChallengeType,T,ResultType are type-variables:
+    ChallengeType extends Challenge<?> declared in class AbstractDialogHandler
+    T extends Challenge<ResultType> declared in class ChallengeDialogHandler
+    ResultType extends Object declared in class ChallengeDialogHandler
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:75: error: validateResponse(AbstractResponse<String>) in AreYouAHumanChallenge cannot override validateResponse(AbstractResponse<T>) in Challenge
+    public boolean validateResponse(AbstractResponse<String> response) {
+                   ^
+  return type boolean is not compatible with ValidationResult
+  where T is a type-variable:
+    T extends Object declared in class Challenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:74: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:76: error: bad operand types for binary operator '&&'
+        return super.validateResponse(response) && isCaptchaResponseValid();
+                                                ^
+  first type:  ValidationResult
+  second type: boolean
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:79: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:81: error: cannot find symbol
+        if (super.isCaptchaResponseValid() && getResult().getValue().matches("[\\w-]{30,}")) {
+                 ^
+  symbol: method isCaptchaResponseValid()
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\CaptchaHelperCrawlerPluginAreYouHuman.java:31: error: <anonymous org.jdownloader.captcha.v2.challenge.areyouahuman.CaptchaHelperCrawlerPluginAreYouHuman$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+        final AreYouAHumanChallenge c = new AreYouAHumanChallenge(apiKey, plugin) {
+                                                                                  ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\CaptchaHelperHostPluginAreYouHuman.java:33: error: <anonymous org.jdownloader.captcha.v2.challenge.areyouahuman.CaptchaHelperHostPluginAreYouHuman$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+        final AreYouAHumanChallenge challenge = new AreYouAHumanChallenge(apiKey, plugin) {
+                                                                                          ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\confidentcaptcha\CaptchaHelperCrawlerPluginConfidentCaptcha.java:33: error: <anonymous org.jdownloader.captcha.v2.challenge.confidentcaptcha.CaptchaHelperCrawlerPluginConfidentCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+        final ConfidentCaptchaChallenge c = new ConfidentCaptchaChallenge(plugin, sitekey) {
+                                                                                           ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\confidentcaptcha\CaptchaHelperHostPluginConfidentCaptcha.java:34: error: <anonymous org.jdownloader.captcha.v2.challenge.confidentcaptcha.CaptchaHelperHostPluginConfidentCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+        final ConfidentCaptchaChallenge challenge = new ConfidentCaptchaChallenge(plugin, sitekey) {
+                                                                                                   ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaCategoryChallenge.java:39: error: validateResponse(AbstractResponse<String>) in KeyCaptchaCategoryChallenge cannot override validateResponse(AbstractResponse<T>) in Challenge
+    public boolean validateResponse(AbstractResponse<String> response) {
+                   ^
+  return type boolean is not compatible with ValidationResult
+  where T is a type-variable:
+    T extends Object declared in class Challenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaCategoryChallenge.java:38: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaCategoryChallenge.java:40: error: cannot find symbol
+        if (response.getPriority() <= 0) {
+                    ^
+  symbol:   method getPriority()
+  location: variable response of type AbstractResponse<String>
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaDialogSolver.java:34: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaResponse.java:10: error: constructor CaptchaResponse in class CaptchaResponse cannot be applied to given types;
+        super(captchaChallenge, solver, captchaCode, priority);
+        ^
+  required: Challenge<String>,Object,String
+  found:    Challenge<String>,ChallengeSolver<CAP#1>,String,int
+  reason: actual and formal argument lists differ in length
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Object from capture of ?
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\jac\KeyCaptchaJACSolver.java:25: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\Recaptcha.java:159: error: cannot find symbol
+                org.jdownloader.captcha.v2.solver.service.BrowserSolverService.fillCookies(rcBr);
+                                                                              ^
+  symbol:   method fillCookies(Browser)
+  location: class BrowserSolverService
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\Recaptcha.java:161: error: cannot find symbol
+                    if (StringUtils.isNotEmpty(org.jdownloader.captcha.v2.solver.service.BrowserSolverService.getInstance().getConfig().getGoogleComCookieValueSID()) && StringUtils.isNotEmpty(org.jdownloader.captcha.v2.solver.service.BrowserSolverService.getInstance().getConfig().getGoogleComCookieValueHSID())) {
+                                                                                                                                       ^
+  symbol:   method getGoogleComCookieValueSID()
+  location: interface BrowserCaptchaSolverConfigV3
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\Recaptcha.java:161: error: cannot find symbol
+                    if (StringUtils.isNotEmpty(org.jdownloader.captcha.v2.solver.service.BrowserSolverService.getInstance().getConfig().getGoogleComCookieValueSID()) && StringUtils.isNotEmpty(org.jdownloader.captcha.v2.solver.service.BrowserSolverService.getInstance().getConfig().getGoogleComCookieValueHSID())) {
+                                                                                                                                                                                                                                                                                        ^
+  symbol:   method getGoogleComCookieValueHSID()
+  location: interface BrowserCaptchaSolverConfigV3
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\Recaptcha.java:226: error: cannot find symbol
+                plg.runCaptchaDDosProtection("recaptcha");
+                   ^
+  symbol:   method runCaptchaDDosProtection(String)
+  location: variable plg of type Plugin
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:60: error: cannot find symbol
+        if (!BrowserSolverService.getInstance().getConfig().isBrowserLoopEnabled()) {
+                                                           ^
+  symbol:   method isBrowserLoopEnabled()
+  location: interface BrowserCaptchaSolverConfigV3
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:63: error: cannot find symbol
+        if (!BrowserSolverService.getInstance().getConfig().isBrowserLoopDuringSilentModeEnabled() && JDGui.getInstance().isSilentModeActive()) {
+                                                           ^
+  symbol:   method isBrowserLoopDuringSilentModeEnabled()
+  location: interface BrowserCaptchaSolverConfigV3
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:80: error: <anonymous org.jdownloader.captcha.v2.challenge.recaptcha.v1.RecaptchaV1Handler$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+        final AbstractBrowserChallenge dummyChallenge = new AbstractBrowserChallenge("recaptcha", null) {
+                                                                                                        ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:141: error: cannot find symbol
+        if (!BrowserSolverService.getInstance().getConfig().isBrowserLoopUserConfirmed()) {
+                                                           ^
+  symbol:   method isBrowserLoopUserConfirmed()
+  location: interface BrowserCaptchaSolverConfigV3
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:146: error: cannot find symbol
+                            setName(_GUI.T.RecaptchaV1Handler_load_help_());
+                                          ^
+  symbol:   method RecaptchaV1Handler_load_help_()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:142: error: cannot find symbol
+            final ConfirmDialog d = new ConfirmDialog(UIOManager.LOGIC_COUNTDOWN, _GUI.T.RecaptchaV1Handler_load_help__title(), _GUI.T.RecaptchaV1Handler_load_help_msg(), new AbstractIcon(IconKey.ICON_OCR, 32), _GUI.T.RecaptchaV1Handler_ok(), _GUI.T.RecaptchaV1Handler_disable()) {
+                                                                                        ^
+  symbol:   method RecaptchaV1Handler_load_help__title()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:142: error: cannot find symbol
+            final ConfirmDialog d = new ConfirmDialog(UIOManager.LOGIC_COUNTDOWN, _GUI.T.RecaptchaV1Handler_load_help__title(), _GUI.T.RecaptchaV1Handler_load_help_msg(), new AbstractIcon(IconKey.ICON_OCR, 32), _GUI.T.RecaptchaV1Handler_ok(), _GUI.T.RecaptchaV1Handler_disable()) {
+                                                                                                                                      ^
+  symbol:   method RecaptchaV1Handler_load_help_msg()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:142: error: cannot find symbol
+            final ConfirmDialog d = new ConfirmDialog(UIOManager.LOGIC_COUNTDOWN, _GUI.T.RecaptchaV1Handler_load_help__title(), _GUI.T.RecaptchaV1Handler_load_help_msg(), new AbstractIcon(IconKey.ICON_OCR, 32), _GUI.T.RecaptchaV1Handler_ok(), _GUI.T.RecaptchaV1Handler_disable()) {
+                                                                                                                                                                                                                         ^
+  symbol:   method RecaptchaV1Handler_ok()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:142: error: cannot find symbol
+            final ConfirmDialog d = new ConfirmDialog(UIOManager.LOGIC_COUNTDOWN, _GUI.T.RecaptchaV1Handler_load_help__title(), _GUI.T.RecaptchaV1Handler_load_help_msg(), new AbstractIcon(IconKey.ICON_OCR, 32), _GUI.T.RecaptchaV1Handler_ok(), _GUI.T.RecaptchaV1Handler_disable()) {
+                                                                                                                                                                                                                                                         ^
+  symbol:   method RecaptchaV1Handler_disable()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:198: error: cannot find symbol
+                BrowserSolverService.getInstance().getConfig().setBrowserLoopUserConfirmed(true);
+                                                              ^
+  symbol:   method setBrowserLoopUserConfirmed(boolean)
+  location: interface BrowserCaptchaSolverConfigV3
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:201: error: cannot find symbol
+                    BrowserSolverService.getInstance().getConfig().setBrowserLoopUserConfirmed(true);
+                                                                  ^
+  symbol:   method setBrowserLoopUserConfirmed(boolean)
+  location: interface BrowserCaptchaSolverConfigV3
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:202: error: cannot find symbol
+                    BrowserSolverService.getInstance().getConfig().setBrowserLoopEnabled(false);
+                                                                  ^
+  symbol:   method setBrowserLoopEnabled(boolean)
+  location: interface BrowserCaptchaSolverConfigV3
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\sweetcaptcha\CaptchaHelperCrawlerPluginSweetCaptcha.java:40: error: <anonymous org.jdownloader.captcha.v2.challenge.sweetcaptcha.CaptchaHelperCrawlerPluginSweetCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+        SweetCaptchaChallenge c = new SweetCaptchaChallenge(sitekey, appkey, plugin) {
+                                                                                     ^
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\sweetcaptcha\CaptchaHelperHostPluginSweetCaptcha.java:41: error: <anonymous org.jdownloader.captcha.v2.challenge.sweetcaptcha.CaptchaHelperHostPluginSweetCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+        final SweetCaptchaChallenge challenge = new SweetCaptchaChallenge(sitekey, appkey, plugin) {
+                                                                                                   ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\CESChallengeSolver.java:53: error: constructor CESSolverJob in class CESSolverJob<T#2> cannot be applied to given types;
+        final CESSolverJob<T> cesJob = new CESSolverJob<T>(job);
+                                       ^
+  required: SolverJob<T#1>,ChallengeSolver<T#1>
+  found:    SolverJob<T#1>
+  reason: actual and formal argument lists differ in length
+  where T#1,T#2 are type-variables:
+    T#1 extends Object declared in class CESChallengeSolver
+    T#2 extends Object declared in class CESSolverJob
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComConfigPanel.java:43: error: cannot find symbol
+        addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                             ^
+  symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:26: error: AntiCaptchaComSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+public class AntiCaptchaComSolverService extends AbstractSolverService implements ServicePanelExtender {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:49: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:54: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:64: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:103: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:106: error: cannot find symbol
+        ret.put(JacSolverService.ID, 30000);
+                ^
+  symbol:   variable JacSolverService
+  location: class AntiCaptchaComSolverService
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:31: error: AntiCaptchaComSolver is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+public class AntiCaptchaComSolver extends AbstractAntiCaptchaComSolver<String> {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:110: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:168: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:213: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:301: error: setInvalid(AbstractResponse<?>) in AntiCaptchaComSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setInvalid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\AbstractBrowserSolver.java:59: error: incompatible types: List<CAPTCHA_TYPE> cannot be converted to Set<CAPTCHA_TYPE>
+        return types;
+               ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsResponse.java:14: error: constructor CaptchaResponse in class CaptchaResponse cannot be applied to given types;
+        super(challenge, solver, text, priority);
+        ^
+  required: Challenge<String>,Object,String
+  found:    Challenge<String>,CaptchaSolutionsSolver,String,int
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:35: error: CaptchaSolutionsSolver is not abstract and does not override abstract method getLogger() in CESChallengeSolver
+public class CaptchaSolutionsSolver extends CESChallengeSolver<String> implements GenericConfigEventListener<String> {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:65: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:112: error: incompatible types: CaptchaSolutionsSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:151: error: cannot find symbol
+            job.setAnswer(new CaptchaSolutionsResponse(challenge, this, null, answer.getValue(), answer.getPriority()));
+                                                                                                       ^
+  symbol:   method getPriority()
+  location: variable answer of type AbstractResponse<String>
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:41: error: CaptchaSolutionsSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+public class CaptchaSolutionsSolverService extends AbstractSolverService implements ServicePanelExtender {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:56: error: cannot find symbol
+        return _GUI.T.CaptchaSolver_Type_paid_online_ocr();
+                     ^
+  symbol:   method CaptchaSolver_Type_paid_online_ocr()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:61: error: cannot find symbol
+        return new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, size);
+                                       ^
+  symbol:   variable ICON_LOGO_CAPTCHASOLUTIONS
+  location: class IconKey
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:64: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:76: error: cannot find symbol
+                addHeader(getTitle(), new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, 32));
+                                                              ^
+  symbol:   variable ICON_LOGO_CAPTCHASOLUTIONS
+  location: class IconKey
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:77: error: cannot find symbol
+                addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                                     ^
+  symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:94: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_username()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:95: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_password()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:122: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:129: error: cannot find symbol
+        return _GUI.T.CaptchaSolutionsSolver_gettypeName_();
+                     ^
+  symbol:   method CaptchaSolutionsSolver_gettypeName_()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:132: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:169: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsTooltip.java:54: error: cannot find symbol
+        JLabel header = new JLabel("CaptchaSolutions.com Solver", new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, 18), JLabel.LEFT);
+                                                                                          ^
+  symbol:   variable ICON_LOGO_CAPTCHASOLUTIONS
+  location: class IconKey
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsTooltip.java:73: error: cannot find symbol
+                            JLabel header = new JLabel("CaptchaSolutions.com Solver", new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, 18), JLabel.LEFT);
+                                                                                                              ^
+  symbol:   variable ICON_LOGO_CAPTCHASOLUTIONS
+  location: class IconKey
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsTooltip.java:82: error: cannot find symbol
+                            JLabel header = new JLabel("CaptchaSolutions.com Solver", new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, 18), JLabel.LEFT);
+                                                                                                              ^
+  symbol:   variable ICON_LOGO_CAPTCHASOLUTIONS
+  location: class IconKey
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolver.java:85: error: incompatible types: CheapCaptchaSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolver.java:181: error: setInvalid(AbstractResponse<?>) in CheapCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setInvalid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:38: error: CheapCaptchaSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+public class CheapCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:55: error: cannot find symbol
+        return _GUI.T.CaptchaSolver_Type_paid_online();
+                     ^
+  symbol:   method CaptchaSolver_Type_paid_online()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:63: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:77: error: cannot find symbol
+                addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                                     ^
+  symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:98: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_username()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:99: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_password()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:130: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:140: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:179: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:102: error: no suitable method found for showBubble(DeathByCaptchaSolver,int)
+        job.showBubble(this, getBubbleTimeout(challenge));
+           ^
+    method CESSolverJob.showBubble() is not applicable
+      (actual and formal argument lists differ in length)
+    method CESSolverJob.showBubble(int) is not applicable
+      (actual and formal argument lists differ in length)
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:283: error: cannot find symbol
+            ret = CFG_CAPTCHA.CFG.getCaptchaExchangeChanceToSkipBubbleTimeout();
+                                 ^
+  symbol:   method getCaptchaExchangeChanceToSkipBubbleTimeout()
+  location: variable CFG of type CaptchaSettings
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:304: error: setUnused(AbstractResponse<?>) in DeathByCaptchaSolver cannot override setUnused(AbstractResponse<?>) in ChallengeSolver
+    public boolean setUnused(AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:309: error: setInvalid(AbstractResponse<?>) in DeathByCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setInvalid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:38: error: DeathByCaptchaSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+public class DeathByCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:54: error: cannot find symbol
+        return _GUI.T.CaptchaSolver_Type_paid_online();
+                     ^
+  symbol:   method CaptchaSolver_Type_paid_online()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:62: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:75: error: cannot find symbol
+                addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                                     ^
+  symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:93: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_username()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:94: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_password()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:120: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:130: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:167: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolver.java:94: error: incompatible types: EndCaptchaSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolver.java:169: error: setInvalid(AbstractResponse<?>) in EndCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setInvalid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:38: error: EndCaptchaSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+public class EndCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:63: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:77: error: cannot find symbol
+                addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                                     ^
+  symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:98: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_username()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:99: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_password()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:130: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:140: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:171: error: cannot find symbol
+                public ExtTooltip createTooltip(ServicePanel owner) {
+                       ^
+  symbol: class ExtTooltip
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:179: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzCaptchaSolver.java:87: error: incompatible types: ImageTyperzCaptchaSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzCaptchaSolver.java:149: error: incompatible types: ImageTyperzCaptchaSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzCaptchaSolver.java:229: error: incompatible types: ImageTyperzCaptchaSolver cannot be converted to int
+        job.showBubble(this);
+                       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzCaptchaSolver.java:301: error: setInvalid(AbstractResponse<?>) in ImageTyperzCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setInvalid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:37: error: ImageTyperzSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+public class ImageTyperzSolverService extends AbstractSolverService implements ServicePanelExtender {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:52: error: cannot find symbol
+        return _GUI.T.CaptchaSolver_Type_paid_online();
+                     ^
+  symbol:   method CaptchaSolver_Type_paid_online()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:60: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:73: error: cannot find symbol
+                addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                                     ^
+  symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:90: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_username()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:91: error: cannot find symbol
+                addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
+                              ^
+  symbol:   method captchabrotherhoodService_createPanel_password()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:117: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:127: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:164: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:108: error: cannot find symbol
+            ret = CFG_CAPTCHA.CFG.getCaptchaExchangeChanceToSkipBubbleTimeout();
+                                 ^
+  symbol:   method getCaptchaExchangeChanceToSkipBubbleTimeout()
+  location: variable CFG of type CaptchaSettings
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:182: error: setInvalid(AbstractResponse<?>) in AbstractCaptcha9kwSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setInvalid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:209: error: setUnused(AbstractResponse<?>) in AbstractCaptcha9kwSolver cannot override setUnused(AbstractResponse<?>) in ChallengeSolver
+    public boolean setUnused(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:245: error: setValid(AbstractResponse<?>) in AbstractCaptcha9kwSolver cannot override setValid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setValid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:316: error: no suitable method found for showBubble(AbstractCaptcha9kwSolver<T>,int)
+        solverJob.showBubble(this, getBubbleTimeout(captchaChallenge));
+                 ^
+    method CESSolverJob.showBubble() is not applicable
+      (actual and formal argument lists differ in length)
+    method CESSolverJob.showBubble(int) is not applicable
+      (actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends Object declared in class AbstractCaptcha9kwSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolver.java:20: error: Captcha9kwSolver is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+public class Captcha9kwSolver extends AbstractCaptcha9kwSolver<String> {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolver.java:43: error: cannot find symbol
+                return ChallengeVetoReason.ACCOUNT_NOT_ENOUGH_CREDITS;
+                                          ^
+  symbol:   variable ACCOUNT_NOT_ENOUGH_CREDITS
+  location: class ChallengeVetoReason
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverClick.java:17: error: Captcha9kwSolverClick is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+public class Captcha9kwSolverClick extends AbstractCaptcha9kwSolver<ClickedPoint> {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverMultiClick.java:23: error: Captcha9kwSolverMultiClick is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+public class Captcha9kwSolverMultiClick extends AbstractCaptcha9kwSolver<MultiClickedPoint> {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverPuzzle.java:20: error: Captcha9kwSolverPuzzle is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+public class Captcha9kwSolverPuzzle extends AbstractCaptcha9kwSolver<String> {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverPuzzle.java:34: error: cannot find symbol
+        NineKwSolverService.getInstance().setPuzzleSolver(this);
+                                         ^
+  symbol:   method setPuzzleSolver(Captcha9kwSolverPuzzle)
+  location: class NineKwSolverService
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverPuzzle.java:37: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:95: error: cannot find symbol
+        JLabel txt = addDescriptionPlain9kw(_GUI.T.AntiCaptchaConfigPanel_onShow_description_ces());
+                                                  ^
+  symbol:   method AntiCaptchaConfigPanel_onShow_description_ces()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:269: error: cannot find symbol
+        Tab2_9kw.add(new Header(_GUI.T.captcha_settings_black_whitelist_header(), NewTheme.I().getIcon(IconKey.ICON_LIST, 32)), "spanx,growx,pushx");
+                                      ^
+  symbol:   method captcha_settings_black_whitelist_header()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:270: error: cannot find symbol
+        JLabel txt_blackwhitelist3 = addDescriptionPlain9kw(_GUI.T.captcha_settings_black_whitelist_description());
+                                                                  ^
+  symbol:   method captcha_settings_black_whitelist_description()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:275: error: cannot find symbol
+            condition = addPair9kw(_GUI.T.captcha_settings_blacklist_enabled(), null, new jd.gui.swing.jdgui.views.settings.components.Checkbox(keyHandler), Tab2_9kw);
+                                         ^
+  symbol:   method captcha_settings_blacklist_enabled()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:277: error: cannot find symbol
+        blacklistnew = addPair9kw(_GUI.T.captcha_settings_blacklist(), null, new CaptchaRegexListTextPane(), Tab2_9kw);
+                                        ^
+  symbol:   method captcha_settings_blacklist()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:278: error: cannot find symbol
+        whitlistnew = addPair9kw(_GUI.T.captcha_settings_whitelist(), null, new CaptchaRegexListTextPane(), Tab2_9kw);
+                                       ^
+  symbol:   method captcha_settings_whitelist()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:677: error: cannot find symbol
+        return _GUI.T.NinekwService_getDescription_tt_();
+                     ^
+  symbol:   method NinekwService_getDescription_tt_()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:36: error: NineKwSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+public class NineKwSolverService extends AbstractSolverService implements ServicePanelExtender {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:148: error: cannot find symbol
+        return _GUI.T.Captcha9kwSolver_getName_();
+                     ^
+  symbol:   method Captcha9kwSolver_getName_()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:151: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:156: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:247: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:264: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:269: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:279: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaConfigPanel.java:35: error: cannot find symbol
+        addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                             ^
+  symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:27: error: TwoCaptchaSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+public class TwoCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
+       ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:50: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:55: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:65: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:105: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolver.java:190: error: incompatible types: TwoCaptchaSolver cannot be converted to int
+            job.showBubble(this);
+                           ^
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolver.java:271: error: setInvalid(AbstractResponse<?>) in TwoCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setInvalid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolver.java:276: error: setValid(AbstractResponse<?>) in TwoCaptchaSolver cannot override setValid(AbstractResponse<?>) in ChallengeSolver
+    public boolean setValid(final AbstractResponse<?> response) {
+                   ^
+  overridden method is final
+svn_trunk\src\org\jdownloader\extensions\eventscripter\sandboxobjects\BrowserSandBox.java:193: warning: [removal] finalize() in Object has been deprecated and marked for removal
+    protected void finalize() throws Throwable {
+                   ^
+svn_trunk\src\org\jdownloader\gui\GuiUtils.java:90: error: package com.apple.eawt does not exist
+                final com.apple.eawt.Application application = com.apple.eawt.Application.getApplication();
+                                    ^
+svn_trunk\src\org\jdownloader\gui\GuiUtils.java:90: error: package com.apple.eawt does not exist
+                final com.apple.eawt.Application application = com.apple.eawt.Application.getApplication();
+                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\ConvertCLRScriptAction.java:18: error: cannot find symbol
+        setName(_JDT.T.convert_CLR_Reconnect_to_jdownloader());
+                      ^
+  symbol:   method convert_CLR_Reconnect_to_jdownloader()
+  location: variable T of type JdownloaderTranslation
+svn_trunk\src\org\jdownloader\gui\toolbar\ConvertCLRScriptAction.java:25: error: cannot find symbol
+            String clr = Dialog.getInstance().showInputDialog(Dialog.STYLE_LARGE, _GUI.T.ConvertCLRAction_actionPerformed_title(), _GUI.T.ConvertCLRAction_actionPerformed_msg(), null, null, _GUI.T.lit_continue(), null);
+                                                                                        ^
+  symbol:   method ConvertCLRAction_actionPerformed_title()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\gui\toolbar\ConvertCLRScriptAction.java:25: error: cannot find symbol
+            String clr = Dialog.getInstance().showInputDialog(Dialog.STYLE_LARGE, _GUI.T.ConvertCLRAction_actionPerformed_title(), _GUI.T.ConvertCLRAction_actionPerformed_msg(), null, null, _GUI.T.lit_continue(), null);
+                                                                                                                                         ^
+  symbol:   method ConvertCLRAction_actionPerformed_msg()
+  location: variable T of type GuiTranslation
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogle9KWAction.java:21: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogle9KWAction.java:27: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogle9KWAction.java:33: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleAntiCaptchaAction.java:19: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleAntiCaptchaAction.java:25: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleAntiCaptchaAction.java:31: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleBrowserSolverAction.java:20: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleBrowserSolverAction.java:26: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleBrowserSolverAction.java:32: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleCheapCaptchaAction.java:22: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleCheapCaptchaAction.java:29: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleCheapCaptchaAction.java:36: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDBCAction.java:22: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDBCAction.java:29: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDBCAction.java:36: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:11: error: cannot find symbol
+        super(DialogSolverService.getInstance().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
+                                               ^
+  symbol:   method getConfig()
+  location: class DialogSolverService
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:20: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:26: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:32: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleEndCaptchaAction.java:22: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleEndCaptchaAction.java:29: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleEndCaptchaAction.java:36: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleImageTyperzAction.java:22: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleImageTyperzAction.java:29: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleImageTyperzAction.java:36: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:12: error: cannot find symbol
+        super(JACSolver.getInstance().getService().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
+                                                  ^
+  symbol:   method getConfig()
+  location: class JacSolverService
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:21: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:27: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:33: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:12: error: cannot find symbol
+        super(CaptchaAPISolver.getInstance().getService().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
+                                                         ^
+  symbol:   method getConfig()
+  location: interface SolverService
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:21: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:27: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:33: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleTwoCaptchaAction.java:19: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+                                                                                             ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleTwoCaptchaAction.java:25: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+                                                                                                           ^
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleTwoCaptchaAction.java:31: error: incompatible types: SolverType cannot be converted to String
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+                                                                                                          ^
+svn_utils\src\org\appwork\utils\swing\dialog\ExtFileSystemView.java:324: warning: [removal] AccessController in java.security has been deprecated and marked for removal
+        final File[] fileChooserComboBoxFolders = AccessController.doPrivileged(new PrivilegedAction<File[]>() {
+                                                  ^
+svn_trunk\src\org\jdownloader\nativ\NativeProcess.java:62: warning: [removal] AccessController in java.security has been deprecated and marked for removal
+        AccessController.doPrivileged(new PrivilegedAction<Object>() {
+        ^
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:103: error: method getSiteUrl in class AbstractBrowserChallenge cannot be applied to given types;
+                task.put("websiteURL", challenge.getSiteUrl());
+                                                ^
+  required: no arguments
+  found:    no arguments
+  reason: getSiteUrl() has protected access in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:115: error: method getSiteUrl in class AbstractBrowserChallenge cannot be applied to given types;
+                task.put("websiteURL", challenge.getSiteUrl());
+                                                ^
+  required: no arguments
+  found:    no arguments
+  reason: getSiteUrl() has protected access in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:120: error: method getSiteUrl in class AbstractBrowserChallenge cannot be applied to given types;
+                task.put("websiteURL", challenge.getSiteUrl());
+                                                ^
+  required: no arguments
+  found:    no arguments
+  reason: getSiteUrl() has protected access in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:192: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:197: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\plugins\controller\crawler\CrawlerPluginController.java:73: warning: [removal] finalize() in Object has been deprecated and marked for removal
+    protected void finalize() throws Throwable {
+                   ^
+svn_trunk\src\org\jdownloader\scripting\envjs\EnvJSBrowser.java:83: error: method getCookieString in class Request cannot be applied to given types;
+            return Request.getCookieString(br.getCookies(url), new URL(url));
+                          ^
+  required: no arguments
+  found:    Cookies,URL
+  reason: actual and formal argument lists differ in length
+svn_trunk\src\org\jdownloader\scripting\envjs\EnvJSBrowser.java:96: error: incompatible types: String cannot be converted to URL
+        Cookies cookies = Cookies.parseCookies(cookie, host, date);
+                                                       ^
+svn_trunk\ressourcen\code-ressourcen\image4j\ICODecoder.java:110: error: incompatible types: InputStream cannot be converted to CountingInputStream
+				is);
+				^
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+314 errors
+21 warnings

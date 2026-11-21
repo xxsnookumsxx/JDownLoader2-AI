@@ -9,7 +9,7 @@ import javax.swing.Icon;
 import org.appwork.storage.config.JsonConfig;
 import org.appwork.swing.components.tooltips.ExtTooltip;
 import org.appwork.utils.Application;
-import org.jdownloader.captcha.v2.solver.jac.JacSolverService;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 import org.jdownloader.captcha.v2.solver.service.AbstractSolverService;
 import org.jdownloader.captcha.v2.solver.solver9kw.NineKwSolverService;
 import org.jdownloader.gui.IconKey;
@@ -37,8 +37,8 @@ public class AntiCaptchaComSolverService extends AbstractSolverService implement
     }
 
     @Override
-    public String getType() {
-        return _GUI.T.AntiCaptchaCom_getName_();
+    public SolverType getType() {
+        return SolverType.EXTERNAL;
     }
 
     @Override

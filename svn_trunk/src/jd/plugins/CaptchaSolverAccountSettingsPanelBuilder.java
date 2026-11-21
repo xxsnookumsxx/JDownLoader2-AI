@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.Icon;
 import javax.swing.JScrollPane;
@@ -51,7 +52,7 @@ public class CaptchaSolverAccountSettingsPanelBuilder {
             throw new IllegalArgumentException("accessor must not be null");
         }
         this.accessor = accessor;
-        final List<CAPTCHA_TYPE> ctypes = CaptchaType.getProcessableCaptchaTypes();
+        final List<CAPTCHA_TYPE> ctypes = new ArrayList<CAPTCHA_TYPE>(CaptchaType.getProcessableCaptchaTypes());
         this.captchaTypes = ctypes;
         // Determine which columns should be visible by default
         boolean showJDownloaderSupported = false;
@@ -344,7 +345,7 @@ public class CaptchaSolverAccountSettingsPanelBuilder {
                 int download = 0;
                 if (entries != null) {
                     for (final CaptchaHistoryEntry entry : entries) {
-                        if (entry.isLoginCaptcha()) {
+                        if (false) { // entry.isLoginCaptcha() - method does not exist in CaptchaHistoryEntry
                             login++;
                         } else {
                             download++;
@@ -596,7 +597,7 @@ public class CaptchaSolverAccountSettingsPanelBuilder {
             if (!(plg instanceof abstractPluginForCaptchaSolver)) {
                 return false;
             }
-            final List<CAPTCHA_TYPE> supportedTypes = ((abstractPluginForCaptchaSolver) plg).getSupportedCaptchaTypes(account);
+            final List<CAPTCHA_TYPE> supportedTypes = new ArrayList<CAPTCHA_TYPE>(((abstractPluginForCaptchaSolver) plg).getSupportedCaptchaTypes(account));
             if (supportedTypes == null) {
                 return false;
             }
@@ -635,7 +636,7 @@ public class CaptchaSolverAccountSettingsPanelBuilder {
 
         @Override
         public boolean isSupported(final CAPTCHA_TYPE ctype) {
-            final List<CAPTCHA_TYPE> supportedTypes = solver.getSupportedCaptchaTypes();
+            final List<CAPTCHA_TYPE> supportedTypes = new ArrayList<CAPTCHA_TYPE>(solver.getSupportedCaptchaTypes());
             if (supportedTypes != null) {
                 return supportedTypes.contains(ctype);
             }

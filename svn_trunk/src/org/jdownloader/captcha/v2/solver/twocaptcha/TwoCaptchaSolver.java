@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.Set;
 
 import jd.http.Browser;
 import jd.http.requests.PostRequest;
@@ -37,6 +38,7 @@ import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.NewTheme;
 import org.jdownloader.logging.LogController;
 import org.jdownloader.settings.staticreferences.CFG_TWO_CAPTCHA;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class TwoCaptchaSolver extends CESChallengeSolver<String> {
     private static final TwoCaptchaSolver     INSTANCE                  = new TwoCaptchaSolver();
@@ -476,5 +478,10 @@ public class TwoCaptchaSolver extends CESChallengeSolver<String> {
             ret.setError(e.getMessage());
         }
         return ret;
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return null;
     }
 }

@@ -4,6 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.Set;
 
 import org.appwork.storage.config.JsonConfig;
 import org.appwork.utils.StringUtils;
@@ -25,6 +26,7 @@ import jd.http.Browser;
 import jd.http.URLConnectionAdapter;
 import jd.http.requests.FormData;
 import jd.http.requests.PostFormDataRequest;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class ImageTyperzCaptchaSolver extends CESChallengeSolver<String> {
     private final ImageTyperzConfigInterface      config;
@@ -367,5 +369,10 @@ public class ImageTyperzCaptchaSolver extends CESChallengeSolver<String> {
             }
         }
         return ret;
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return null;
     }
 }

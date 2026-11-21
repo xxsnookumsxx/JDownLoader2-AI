@@ -18,6 +18,7 @@ import org.jdownloader.captcha.v2.solver.CESSolverJob;
 import org.jdownloader.captcha.v2.solver.jac.SolverException;
 
 import jd.http.Browser;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class Captcha9kwSolverMultiClick extends AbstractCaptcha9kwSolver<MultiClickedPoint> {
     private static final Captcha9kwSolverMultiClick INSTANCE        = new Captcha9kwSolverMultiClick();

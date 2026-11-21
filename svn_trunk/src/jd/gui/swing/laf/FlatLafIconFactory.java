@@ -7,6 +7,7 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
+import java.util.List;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -22,9 +23,9 @@ public class FlatLafIconFactory extends DefaultIconFactory {
             super(urlToIcon);
         }
 
-        public void paintIcon(final Component c, final Graphics g, final int x, final int y, Icon parent) {
+        public void paintIcon(final Component c, final Graphics g, final int x, final int y, List<Icon> parents) {
             if (this.delegate instanceof ScalableIcon) {
-                paintDelegate(c, g, x, y);
+                paintDelegate(c, g, x, y, parents);
                 return;
             }
             // brauchen wir das noch?
@@ -51,15 +52,6 @@ public class FlatLafIconFactory extends DefaultIconFactory {
     }
 
     public FlatLafIconFactory() {
-    }
-
-    @Override
-    public Icon urlToNonImageIcon(final URL url, final int w, final int h) {
-        Icon mayBeNull = super.urlToNonImageIcon(url, w, h);
-        if (mayBeNull == null) {
-            return null;
-        }
-        return new InterpolatingIcon(mayBeNull);
     }
 
     @Override

@@ -11,6 +11,7 @@ import org.appwork.utils.formatter.TimeFormatter;
 import org.appwork.utils.Time;
 import org.jdownloader.captcha.v2.solverjob.SolverJob;
 import org.jdownloader.captcha.v2.solverjob.SolverJob.SolverOutcome;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 import jd.controlling.captcha.SkipException;
 import jd.controlling.captcha.SkipRequest;

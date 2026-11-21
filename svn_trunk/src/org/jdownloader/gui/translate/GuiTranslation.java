@@ -7,6 +7,7 @@ import org.appwork.txtresource.DescriptionForTranslationEntry;
 import org.appwork.txtresource.TranslateInterface;
 import org.jdownloader.plugins.components.youtube.Projection;
 import org.jdownloader.plugins.components.youtube.variants.VariantGroup;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 @Defaults(lngs = { "en" })
 public interface GuiTranslation extends TranslateInterface {

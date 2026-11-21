@@ -35,6 +35,9 @@ package org.appwork.utils.images;
 
 import java.awt.Component;
 import java.awt.Graphics;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 import javax.swing.Icon;
 
@@ -61,6 +64,14 @@ public class ProxyIcon implements MultiResIcon, IconPipe {
 
     public void setIconWidth(int iconWidth) {
         this.iconWidth = iconWidth;
+    }
+
+    /**
+     * @see org.appwork.utils.images.IconPipe#paintIcon(java.awt.Component, java.awt.Graphics, int, int, java.util.List)
+     */
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y, List<Icon> parents) {
+        paintIcon(c, g, x, y, getIconWidth(), getIconHeight());
     }
 
     /**
@@ -98,5 +109,13 @@ public class ProxyIcon implements MultiResIcon, IconPipe {
     @Override
     public Icon getDelegate() {
         return base;
+    }
+
+    /**
+     * @see org.appwork.utils.images.IconPipe#getModifications()
+     */
+    @Override
+    public Set<ModificationType> getModifications() {
+        return Collections.emptySet();
     }
 }

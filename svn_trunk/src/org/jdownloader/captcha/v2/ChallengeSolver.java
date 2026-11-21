@@ -27,6 +27,7 @@ import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.AbstractIcon;
 import org.jdownloader.images.NewTheme;
 import org.jdownloader.settings.staticreferences.CFG_CAPTCHA;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 import jd.controlling.captcha.SkipException;
 import jd.controlling.captcha.SkipRequest;

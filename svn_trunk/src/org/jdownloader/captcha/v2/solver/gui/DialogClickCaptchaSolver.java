@@ -2,6 +2,7 @@ package org.jdownloader.captcha.v2.solver.gui;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.appwork.storage.config.JsonConfig;
 import org.jdownloader.captcha.v2.Challenge;
@@ -35,8 +36,8 @@ public class DialogClickCaptchaSolver extends AbstractDialogSolver<ClickedPoint>
     }
 
     @Override
-    public List<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
-        final List<CAPTCHA_TYPE> types = new ArrayList<CAPTCHA_TYPE>();
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        final Set<CAPTCHA_TYPE> types = new java.util.HashSet<CAPTCHA_TYPE>();
         types.add(CAPTCHA_TYPE.IMAGE_SINGLE_CLICK_CAPTCHA);
         return types;
     }

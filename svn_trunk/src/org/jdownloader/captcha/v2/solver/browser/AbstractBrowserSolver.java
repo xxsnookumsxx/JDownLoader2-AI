@@ -2,6 +2,7 @@ package org.jdownloader.captcha.v2.solver.browser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.jdownloader.captcha.v2.AbstractResponse;
 import org.jdownloader.captcha.v2.Challenge;
@@ -48,7 +49,7 @@ public abstract class AbstractBrowserSolver extends ChallengeSolver<String> {
     }
 
     @Override
-    public List<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
         final List<CAPTCHA_TYPE> types = new ArrayList<CAPTCHA_TYPE>();
         types.add(CAPTCHA_TYPE.RECAPTCHA_V3);
         types.add(CAPTCHA_TYPE.RECAPTCHA_V2);

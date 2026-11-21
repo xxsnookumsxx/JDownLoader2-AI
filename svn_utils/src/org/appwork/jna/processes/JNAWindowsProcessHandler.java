@@ -109,9 +109,19 @@ public class JNAWindowsProcessHandler implements ProcessHandler {
         return ret;
     }
 
-    /**
-     * Extracts the offset in minutes from the extra information (e.g., +060).
-     */
+    @Override
+    public boolean isProcessesAlive(final ProcessInfo... infos) {
+        if (infos == null || infos.length == 0) {
+            return false;
+        }
+        for (final ProcessInfo info : infos) {
+            if (info != null && info.isAlive()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static int extractOffsetInMinutes(String timestamp) {
         int extraIndex = timestamp.lastIndexOf('+'); // Find the position of '+'
         if (extraIndex == -1) {

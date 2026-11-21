@@ -37,9 +37,13 @@ package org.appwork.utils.images;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.Icon;
+
+import org.appwork.utils.images.ModificationType;
 
 /**
  * @author thomas
@@ -67,6 +71,14 @@ public abstract class AbstractIconPipe implements IconPipe, CachableIcon {
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
         this.paintIcon(c, g, x, y, null);
+    }
+
+    /**
+     * @see org.appwork.utils.images.IconPipe#getModifications()
+     */
+    @Override
+    public Set<ModificationType> getModifications() {
+        return Collections.emptySet();
     }
 
     /**

@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
 
@@ -36,6 +37,7 @@ import jd.http.URLConnectionAdapter;
 import jd.http.requests.FormData;
 import jd.http.requests.PostFormDataRequest;
 import jd.nutils.encoding.Encoding;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class CheapCaptchaSolver extends CESChallengeSolver<String> {
     private CheapCaptchaConfigInterface     config;
@@ -228,5 +230,10 @@ public class CheapCaptchaSolver extends CESChallengeSolver<String> {
             ret.setError(e.getMessage());
         }
         return ret;
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return null;
     }
 }

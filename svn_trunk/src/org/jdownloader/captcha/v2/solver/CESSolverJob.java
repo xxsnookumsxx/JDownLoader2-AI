@@ -16,6 +16,7 @@ import org.jdownloader.gui.notify.captcha.CESBubbleSupport;
 import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.NewTheme;
 import org.jdownloader.settings.staticreferences.CFG_CAPTCHA;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 public class CESSolverJob<T> {
     private final SolverJob<T>       job;

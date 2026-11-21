@@ -2,6 +2,8 @@ package org.jdownloader.api.jdanywhere.api.storable;
 
 import org.appwork.storage.Storable;
 
+
+
 public class CaptchaJob implements Storable {
 
     private long   captchaID;

@@ -32,6 +32,7 @@ import org.jdownloader.images.AbstractIcon;
 import org.jdownloader.images.NewTheme;
 import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_IMAGE_TYPERZ;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 public class ImageTyperzSolverService extends AbstractSolverService implements ServicePanelExtender {
     private ImageTyperzConfigInterface config;
@@ -47,7 +48,7 @@ public class ImageTyperzSolverService extends AbstractSolverService implements S
     }
 
     @Override
-    public String getType() {
+    public SolverType getType() {
         return _GUI.T.CaptchaSolver_Type_paid_online();
     }
 

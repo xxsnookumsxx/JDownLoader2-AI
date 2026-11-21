@@ -25,6 +25,7 @@ import org.jdownloader.captcha.v2.ChallengeSolver;
 import org.jdownloader.captcha.v2.JobRunnable;
 import org.jdownloader.captcha.v2.ValidationResult;
 import org.jdownloader.gui.translate._GUI;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 import jd.controlling.captcha.CaptchaSettings;
 import jd.controlling.captcha.SkipRequest;

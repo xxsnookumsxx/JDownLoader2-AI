@@ -31,6 +31,7 @@ import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.AbstractIcon;
 import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_9KWCAPTCHA;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 public class NineKwSolverService extends AbstractSolverService implements ServicePanelExtender {
     private static final NineKwSolverService INSTANCE = new NineKwSolverService();
@@ -143,7 +144,7 @@ public class NineKwSolverService extends AbstractSolverService implements Servic
     }
 
     @Override
-    public String getType() {
+    public SolverType getType() {
         return _GUI.T.Captcha9kwSolver_getName_();
     }
 

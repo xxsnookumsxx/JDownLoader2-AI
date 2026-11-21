@@ -33,6 +33,7 @@ import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.NewTheme;
 import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_DBC;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 public class DeathByCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
     private DeathByCaptchaSettings config;
@@ -49,7 +50,7 @@ public class DeathByCaptchaSolverService extends AbstractSolverService implement
     }
 
     @Override
-    public String getType() {
+    public SolverType getType() {
         return _GUI.T.CaptchaSolver_Type_paid_online();
     }
 

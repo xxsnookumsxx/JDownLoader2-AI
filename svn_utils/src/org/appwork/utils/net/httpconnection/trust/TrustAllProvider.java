@@ -48,7 +48,7 @@ public class TrustAllProvider implements TrustProviderInterface {
      * TrustAllProvider accepts all hostnames without verification.
      */
     @Override
-    public void verifyHostname(final SSLSession session, final String host, final Object context) throws IllegalSSLHostnameException {
+    public void verifyHostname(TrustResult trustResult, final SSLSession session, final String host, final Object context) throws IllegalSSLHostnameException {
         // Accept all hostnames - no verification
     }
 

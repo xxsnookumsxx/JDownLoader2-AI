@@ -17,6 +17,7 @@ import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.AbstractIcon;
 import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_TWO_CAPTCHA;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 import jd.gui.swing.jdgui.components.premiumbar.ServiceCollection;
 import jd.gui.swing.jdgui.components.premiumbar.ServicePanel;
@@ -37,8 +38,8 @@ public class TwoCaptchaSolverService extends AbstractSolverService implements Se
     }
 
     @Override
-    public String getType() {
-        return _GUI.T.TwoCaptcha_getName_();
+    public SolverType getType() {
+        return SolverType.EXTERNAL;
     }
 
     @Override

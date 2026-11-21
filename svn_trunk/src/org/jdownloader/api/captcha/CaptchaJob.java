@@ -2,6 +2,8 @@ package org.jdownloader.api.captcha;
 
 import org.appwork.storage.Storable;
 
+
+
 public class CaptchaJob implements Storable {
     private long   captchaID = -1;
     private String hosterID;

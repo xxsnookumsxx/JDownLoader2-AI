@@ -11,6 +11,7 @@ import org.jdownloader.captcha.v2.challenge.clickcaptcha.ClickedPoint;
 import org.jdownloader.captcha.v2.challenge.stringcaptcha.ImageCaptchaChallenge;
 
 import jd.plugins.Plugin;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 /**
  * Click captcha: the user/solver has to click on one or more positions of an image. A "single click captcha" is simply an instance with

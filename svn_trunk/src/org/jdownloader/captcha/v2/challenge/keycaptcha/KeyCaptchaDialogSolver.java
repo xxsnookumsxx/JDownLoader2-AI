@@ -20,6 +20,10 @@ import org.jdownloader.captcha.v2.solverjob.ResponseList;
 import org.jdownloader.captcha.v2.solverjob.SolverJob;
 import org.jdownloader.settings.staticreferences.CFG_SILENTMODE;
 
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
+
+import java.util.Set;
+
 public class KeyCaptchaDialogSolver extends ChallengeSolver<String> {
     private static final KeyCaptchaDialogSolver INSTANCE = new KeyCaptchaDialogSolver();
 
@@ -146,5 +150,10 @@ public class KeyCaptchaDialogSolver extends ChallengeSolver<String> {
                 handler = null;
             }
         }
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return null;
     }
 }

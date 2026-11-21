@@ -22,7 +22,7 @@ import org.appwork.utils.swing.windowmanager.WindowManager;
 import org.appwork.utils.swing.windowmanager.WindowManager.FrameState;
 import org.jdownloader.DomainInfo;
 
-public abstract class AbstractDialogHandler<DialogClass extends AbstractCaptchaDialog<ReturnCode>, ChallengeType extends Challenge<?>, ReturnCode> extends ChallengeDialogHandler<ChallengeType> {
+public abstract class AbstractDialogHandler<DialogClass extends AbstractCaptchaDialog<ReturnCode>, ChallengeType extends Challenge<?>, ReturnCode> extends ChallengeDialogHandler<DialogClass, ChallengeType, ReturnCode> {
     protected DialogClass dialog;
 
     public DialogClass getDialog() {

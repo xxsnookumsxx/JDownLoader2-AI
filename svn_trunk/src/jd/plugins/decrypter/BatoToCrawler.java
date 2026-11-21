@@ -136,7 +136,12 @@ public class BatoToCrawler extends PluginForDecrypt {
                     final String urlEncoded = imageArray.get(1).toString();
                     final String url = Encoding.htmlOnlyDecode(urlEncoded);
                     final DownloadLink image = this.createDownloadlink(DirectHTTP.createURLForThisPlugin(url));
-                    final String filenameFromURL = Plugin.getFileNameFromURL(url);
+                    final String filenameFromURL;
+                    try {
+                        filenameFromURL = Plugin.getFileNameFromURL(new java.net.URL(url));
+                    } catch (java.net.MalformedURLException e) {
+                        filenameFromURL = null;
+                    }
                     if (filenameFromURL != null) {
                         image.setFinalFileName(StringUtils.formatByPadLength(padLength, position) + "_" + filenameFromURL);
                     }

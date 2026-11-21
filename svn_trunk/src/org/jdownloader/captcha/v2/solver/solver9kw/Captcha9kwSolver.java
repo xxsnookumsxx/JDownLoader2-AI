@@ -15,6 +15,7 @@ import org.jdownloader.captcha.v2.challenge.stringcaptcha.BasicCaptchaChallenge;
 import org.jdownloader.captcha.v2.challenge.stringcaptcha.ImageCaptchaChallenge;
 import org.jdownloader.captcha.v2.solver.CESSolverJob;
 import org.jdownloader.captcha.v2.solver.jac.SolverException;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class Captcha9kwSolver extends AbstractCaptcha9kwSolver<String> {
     private static final Captcha9kwSolver INSTANCE = new Captcha9kwSolver();

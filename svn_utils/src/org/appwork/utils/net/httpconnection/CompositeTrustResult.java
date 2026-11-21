@@ -62,7 +62,7 @@ public class CompositeTrustResult extends TrustResult {
      * @see org.appwork.utils.net.httpconnection.TrustResult#exception(java.lang.Exception)
      */
     @Override
-    public void exception(Exception e) {
+    public TrustResult exception(Exception e) {
         if (success != null) {
             success.exception(e);
             ArrayList<TrustResult> newFails = new ArrayList<TrustResult>();
@@ -73,6 +73,7 @@ public class CompositeTrustResult extends TrustResult {
         } else {
             super.exception(e);
         }
+        return this;
     }
 
     /**

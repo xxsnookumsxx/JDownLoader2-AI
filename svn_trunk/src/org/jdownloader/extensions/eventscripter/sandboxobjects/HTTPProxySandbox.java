@@ -5,6 +5,8 @@ import jd.controlling.proxy.PacProxySelectorImpl;
 import jd.controlling.proxy.ProxyController;
 import jd.controlling.proxy.SingleBasicProxySelectorImpl;
 
+
+
 public class HTTPProxySandbox {
     private final AbstractProxySelectorImpl proxy;
 

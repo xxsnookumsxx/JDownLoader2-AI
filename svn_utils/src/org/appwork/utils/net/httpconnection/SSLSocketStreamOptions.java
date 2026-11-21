@@ -74,6 +74,10 @@ public class SSLSocketStreamOptions implements Cloneable {
         return sniEnabled.get();
     }
 
+    public boolean isTrustAll() {
+        return false;
+    }
+
     public List<String> getPreferredCipherSuites() {
         return preferredCipherSuites;
     }

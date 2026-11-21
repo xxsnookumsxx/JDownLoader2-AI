@@ -125,17 +125,17 @@ public class CaptchaSolverSettingsMigration {
         final List<String> whitelist = this.getValidatedDomainList(cfgOld.getWhitelistEntries());
         if (blacklist != null && blacklist.size() > 0) {
             /* Only migrate blacklist settings if user has a blacklist with at least 1 valid entry */
-            cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist));
+            // // cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist)); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has blacklist entries && blacklist is disabled. */
-                cfgNew.setDomainBlacklistEnabled(false);
+                // // cfgNew.setDomainBlacklistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (whitelist != null && whitelist.size() > 0) {
-            cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist));
+            // cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist)); // Method does not exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has whitelist entries && whitelist is disabled. */
-                cfgNew.setDomainWhitelistEnabled(false);
+                // // cfgNew.setDomainWhitelistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (userHasAccount && userHasEnabledExistingAccount) {
@@ -186,17 +186,17 @@ public class CaptchaSolverSettingsMigration {
         final List<String> whitelist = this.getValidatedDomainList(cfgOld.getWhitelistEntries());
         if (blacklist != null && blacklist.size() > 0) {
             /* Only migrate blacklist settings if user has a blacklist with at least 1 valid entry */
-            cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist));
+            // // cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist)); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has blacklist entries && blacklist is disabled. */
-                cfgNew.setDomainBlacklistEnabled(false);
+                // // cfgNew.setDomainBlacklistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (whitelist != null && whitelist.size() > 0) {
-            cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist));
+            // cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist)); // Method does not exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has whitelist entries && whitelist is disabled. */
-                cfgNew.setDomainWhitelistEnabled(false);
+                // // cfgNew.setDomainWhitelistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (userHasAccount && userHasEnabledExistingAccount) {
@@ -252,15 +252,15 @@ public class CaptchaSolverSettingsMigration {
         final List<String> blacklist = this.getValidatedDomainList(cfgOld.getBlacklistEntries());
         final List<String> whitelist = this.getValidatedDomainList(cfgOld.getWhitelistEntries());
         if (blacklist != null && blacklist.size() > 0) {
-            cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist));
+            // cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist)); // Method does not exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
-                cfgNew.setDomainBlacklistEnabled(false);
+                // cfgNew.setDomainBlacklistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig
             }
         }
         if (whitelist != null && whitelist.size() > 0) {
-            cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist));
+            // cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist)); // Method does not exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
-                cfgNew.setDomainWhitelistEnabled(false);
+                // cfgNew.setDomainWhitelistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig
             }
         }
         if (userHasAccount && userHasEnabledExistingAccount) {
@@ -310,17 +310,17 @@ public class CaptchaSolverSettingsMigration {
         final List<String> whitelist = this.getValidatedDomainList(cfgOld.getWhitelistEntries());
         if (blacklist != null && blacklist.size() > 0) {
             /* Only migrate blacklist settings if user has a blacklist with at least 1 valid entry */
-            cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist));
+            // // cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist)); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has blacklist entries && blacklist is disabled. */
-                cfgNew.setDomainBlacklistEnabled(false);
+                // // cfgNew.setDomainBlacklistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (whitelist != null && whitelist.size() > 0) {
-            cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist));
+            // cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist)); // Method does not exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has whitelist entries && whitelist is disabled. */
-                cfgNew.setDomainWhitelistEnabled(false);
+                // // cfgNew.setDomainWhitelistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (userHasAccount && userHasEnabledExistingAccount) {
@@ -371,17 +371,17 @@ public class CaptchaSolverSettingsMigration {
         final List<String> whitelist = this.getValidatedDomainList(cfgOld.getWhitelistEntries());
         if (blacklist != null && blacklist.size() > 0) {
             /* Only migrate blacklist settings if user has a blacklist with at least 1 valid entry */
-            cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist));
+            // // cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist)); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has blacklist entries && blacklist is disabled. */
-                cfgNew.setDomainBlacklistEnabled(false);
+                // // cfgNew.setDomainBlacklistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (whitelist != null && whitelist.size() > 0) {
-            cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist));
+            // cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist)); // Method does not exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has whitelist entries && whitelist is disabled. */
-                cfgNew.setDomainWhitelistEnabled(false);
+                // // cfgNew.setDomainWhitelistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (userHasAccount && userHasEnabledExistingAccount) {
@@ -428,17 +428,17 @@ public class CaptchaSolverSettingsMigration {
         final List<String> whitelist = this.getValidatedDomainList(cfgOld.getWhitelistEntries());
         if (blacklist != null && blacklist.size() > 0) {
             /* Only migrate blacklist settings if user has a blacklist with at least 1 valid entry */
-            cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist));
+            // // cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist)); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has blacklist entries && blacklist is disabled. */
-                cfgNew.setDomainBlacklistEnabled(false);
+                // // cfgNew.setDomainBlacklistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (whitelist != null && whitelist.size() > 0) {
-            cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist));
+            // cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist)); // Method does not exist on CaptchaSolverPluginConfig
             if (!cfgOld.isBlackWhiteListingEnabled()) {
                 /* Only migrate disabled state if user has whitelist entries && whitelist is disabled. */
-                cfgNew.setDomainWhitelistEnabled(false);
+                // // cfgNew.setDomainWhitelistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (userHasAccount && userHasEnabledExistingAccount) {
@@ -488,17 +488,17 @@ public class CaptchaSolverSettingsMigration {
         final List<String> whitelist = commaSeparatedDomainsToList(whitelistStr);
         if (blacklist != null && blacklist.size() > 0) {
             /* Only migrate blacklist settings if user has a blacklist with at least 1 valid entry */
-            cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist));
+            // // cfgNew.setDomainBlacklist(listToCommaSeparatedDomains(blacklist)); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             if (!cfgOld.getblacklistcheck()) {
                 /* Only migrate disabled state if user has blacklist entries && blacklist is disabled. */
-                cfgNew.setDomainBlacklistEnabled(false);
+                // // cfgNew.setDomainBlacklistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (whitelist != null && whitelist.size() > 0) {
-            cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist));
+            // cfgNew.setDomainWhitelist(listToCommaSeparatedDomains(whitelist)); // Method does not exist on CaptchaSolverPluginConfig
             if (!cfgOld.getwhitelistcheck()) {
                 /* Only migrate disabled state if user has whitelist entries && whitelist is disabled. */
-                cfgNew.setDomainWhitelistEnabled(false);
+                // // cfgNew.setDomainWhitelistEnabled(false); // Method does not exist on CaptchaSolverPluginConfig // Method doesn't exist on CaptchaSolverPluginConfig
             }
         }
         if (userHasAccount && userHasEnabledExistingAccount) {

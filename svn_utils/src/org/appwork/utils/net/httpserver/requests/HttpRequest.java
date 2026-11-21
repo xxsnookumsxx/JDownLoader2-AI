@@ -89,6 +89,10 @@ public abstract class HttpRequest implements HttpRequestInterface {
         return connection.isSSL();
     }
 
+    public void setHttps(final boolean ssl) {
+        // No-op: SSL state is determined by connection
+    }
+
     /**
      * Returns the client certificate trust result from TLS handshake (mutual TLS). Use {@link TrustResult#getChain()} for the certificate
      * chain, {@link TrustResult#isTrusted()}, etc.

@@ -34,6 +34,7 @@
 package org.appwork.utils.net.httpclient;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -43,7 +44,6 @@ import org.appwork.utils.IO;
 import org.appwork.utils.StringUtils;
 import org.appwork.utils.net.CountingInputStream;
 import org.appwork.utils.net.httpclient.HttpClient.RequestContext;
-import org.appwork.utils.net.httpclient.HttpClient.ToStringByteArrayOutputStream;
 import org.appwork.utils.net.httpconnection.HTTPConnection;
 
 /**
@@ -52,9 +52,9 @@ import org.appwork.utils.net.httpconnection.HTTPConnection;
  *
  */
 public class Response {
-    private HTTPConnection                connection;
-    private ToStringByteArrayOutputStream bytes;
-    private RequestContext                context;
+    private HTTPConnection      connection;
+    private ByteArrayOutputStream bytes;
+    private RequestContext      context;
 
     /**
      * @see java.lang.Object#toString()
@@ -73,7 +73,7 @@ public class Response {
      * @param os
      * @param context
      */
-    public Response(HTTPConnection httpConnection, ToStringByteArrayOutputStream os, RequestContext context) {
+    public Response(HTTPConnection httpConnection, ByteArrayOutputStream os, RequestContext context) {
         this.connection = httpConnection;
         this.bytes = os;
         this.context = context;

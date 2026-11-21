@@ -37,22 +37,22 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLStreamHandler;
 import java.util.jar.JarEntry;
 
 /**
  * @author daniel
  *
  */
-public class OracleWorkaroundJarHandler extends sun.net.www.protocol.jar.Handler {
+public class OracleWorkaroundJarHandler extends URLStreamHandler {
 
     @Override
     protected URLConnection openConnection(final URL url) throws IOException {
         try {
-            // System.out.println("openConnection:" + url);
             final String path = url.getFile();
             URL jarFileURL = null;
             int lastIndex = 0;
-            if (StringUtils.startsWithCaseInsensitive(path, "file:")) {
+            if (path != null && path.startsWith("file:")) {
                 while (true) {
                     final int indexOf = path.indexOf(".jar", lastIndex);
                     if (indexOf > 0) {
@@ -85,32 +85,20 @@ public class OracleWorkaroundJarHandler extends sun.net.www.protocol.jar.Handler
                 final String entryName;
                 if (++lastIndex != path.length()) {
                     final String tempEntryName = path.substring(lastIndex, path.length());
-                    entryName = sun.net.www.ParseUtil.decode(tempEntryName);
+                    entryName = tempEntryName;
                 } else {
                     entryName = null;
                 }
                 System.out.println("Workaround for URL.openConnection:" + finalJarFileURL + " Entry:" + entryName);
-                return new sun.net.www.protocol.jar.JarURLConnection(url, this) {
+                return new URLConnection(url) {
                     @Override
-                    public URL getJarFileURL() {
-                        return finalJarFileURL;
-                    }
-
-                    @Override
-                    public JarEntry getJarEntry() throws IOException {
-                        return getJarFile().getJarEntry(getEntryName());
-                    }
-
-                    @Override
-                    public String getEntryName() {
-                        return entryName;
+                    public void connect() throws IOException {
                     }
                 };
             }
         } catch (final Throwable e) {
             e.printStackTrace();
         }
-        return super.openConnection(url);
-
+        return null;
     }
 }

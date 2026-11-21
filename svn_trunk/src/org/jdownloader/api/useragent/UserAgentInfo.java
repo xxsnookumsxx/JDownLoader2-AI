@@ -2,6 +2,8 @@ package org.jdownloader.api.useragent;
 
 import org.appwork.storage.Storable;
 
+
+
 public class UserAgentInfo implements Storable {
     public UserAgentInfo(/* Storable */) {
     }

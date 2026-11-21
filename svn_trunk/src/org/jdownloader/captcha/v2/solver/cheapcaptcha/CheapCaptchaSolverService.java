@@ -33,6 +33,7 @@ import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.AbstractIcon;
 import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_CHEAP_CAPTCHA;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 public class CheapCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
     private CheapCaptchaConfigInterface config;
@@ -50,7 +51,7 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
     }
 
     @Override
-    public String getType() {
+    public SolverType getType() {
         return _GUI.T.CaptchaSolver_Type_paid_online();
     }
 

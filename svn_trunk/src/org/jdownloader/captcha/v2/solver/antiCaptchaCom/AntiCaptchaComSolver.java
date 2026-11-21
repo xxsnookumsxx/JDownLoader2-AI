@@ -26,6 +26,7 @@ import org.jdownloader.gui.IconKey;
 import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.NewTheme;
 import org.jdownloader.settings.staticreferences.CFG_ANTICAPTCHA_COM;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class AntiCaptchaComSolver extends AbstractAntiCaptchaComSolver<String> {
     private static final AntiCaptchaComSolver INSTANCE = new AntiCaptchaComSolver();

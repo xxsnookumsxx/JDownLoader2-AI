@@ -17,7 +17,7 @@ import jd.gui.swing.jdgui.views.settings.components.TextInput;
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.AbstractCaptchaSolverConfigPanel;
 
 import org.appwork.storage.config.JsonConfig;
-import org.appwork.swing.components.tooltips.ExtTooltip;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 import org.appwork.utils.Application;
 import org.appwork.utils.os.CrossSystem;
 import org.jdownloader.actions.AppAction;
@@ -51,8 +51,8 @@ public class EndCaptchaSolverService extends AbstractSolverService implements Se
     }
 
     @Override
-    public String getType() {
-        return _GUI.T.CaptchaSolver_Type_paid_online();
+    public SolverType getType() {
+        return SolverType.EXTERNAL;
     }
 
     @Override

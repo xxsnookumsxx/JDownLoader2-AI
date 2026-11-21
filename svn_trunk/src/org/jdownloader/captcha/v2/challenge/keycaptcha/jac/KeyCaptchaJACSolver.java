@@ -1,6 +1,7 @@
 package org.jdownloader.captcha.v2.challenge.keycaptcha.jac;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import jd.controlling.captcha.SkipException;
 import jd.controlling.captcha.SkipRequest;
@@ -12,6 +13,7 @@ import org.jdownloader.captcha.v2.challenge.keycaptcha.KeyCaptchaResponse;
 import org.jdownloader.captcha.v2.solver.jac.JACSolver;
 import org.jdownloader.captcha.v2.solver.jac.SolverException;
 import org.jdownloader.captcha.v2.solverjob.SolverJob;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class KeyCaptchaJACSolver extends ChallengeSolver<String> {
     private static final KeyCaptchaJACSolver INSTANCE = new KeyCaptchaJACSolver();
@@ -59,5 +61,10 @@ public class KeyCaptchaJACSolver extends ChallengeSolver<String> {
             solverJob.getLogger().log(e);
             challenge.sendStatsError(this, e);
         }
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return null;
     }
 }

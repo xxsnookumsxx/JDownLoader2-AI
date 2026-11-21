@@ -41,6 +41,7 @@ import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.NewTheme;
 import org.jdownloader.settings.staticreferences.CFG_CAPTCHA;
 import org.jdownloader.updatev2.gui.LAFOptions;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.TimingTableModel.TimingChangeListener;
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.TimingTableModel.TimingRow;
