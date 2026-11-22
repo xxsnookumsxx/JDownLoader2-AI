@@ -132,7 +132,7 @@ public class MexashareCom extends XFileSharingProBasic {
     @Override
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         /* 2019-08-28: Special */
-        final String preciseWaittime = new Regex((String) null, "(you can download this file after\\s*:\\s*</a><br>\\s*<br><br>\\s*<a.*?)</a>").getMatch(0);
+        final String preciseWaittime = new Regex(correctedBR, "(you can download this file after\\s*:\\s*</a><br>\\s*<br><br>\\s*<a.*?)</a>").getMatch(0);
         if (preciseWaittime != null) {
             /* Reconnect waittime with given (exact) waittime usually either up to the minute or up to the second. */
             final String tmphrs = new Regex(preciseWaittime, "\\s*(\\d+)\\s*hours?").getMatch(0);
@@ -169,7 +169,7 @@ public class MexashareCom extends XFileSharingProBasic {
             } else {
                 throw new PluginException(LinkStatus.ERROR_IP_BLOCKED, null, waittime);
             }
-        } else if (new Regex((String) null, ">\\s*You have consumed your daily download volume").patternFind()) {
+        } else if (new Regex(correctedBR, ">\\s*You have consumed your daily download volume").patternFind()) {
             /* 2020-04-24 - almost certainly this is an account-only error */
             if (account != null) {
                 throw new AccountUnavailableException("You have consumed your daily download volume", 30 * 60 * 1000l);

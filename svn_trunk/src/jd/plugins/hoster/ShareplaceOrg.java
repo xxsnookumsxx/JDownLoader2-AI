@@ -164,14 +164,14 @@ public class ShareplaceOrg extends YetiShareCore {
         } else if (!this.br.getURL().contains(fid)) {
             /* E.g. redirect to mainpage or errorpage. */
             throw new PluginException(LinkStatus.ERROR_FILE_NOT_FOUND);
-        } else if (new Regex((String) null, "(?i)Your requested file is not found").patternFind()) {
+        } else if (new Regex(correctedBR, "(?i)Your requested file is not found").patternFind()) {
             throw new PluginException(LinkStatus.ERROR_FILE_NOT_FOUND);
         }
         final String iframe = br.getRegex("<frame name=\"main\" src=\"(.*?)\">").getMatch(0);
         if (iframe != null) {
             getPage(iframe);
         }
-        String filename = new Regex((String) null, "Filename:\\s*</font></b>(.*?)<b>\\s*<br>").getMatch(0);
+        String filename = new Regex(correctedBR, "Filename:\\s*</font></b>(.*?)<b>\\s*<br>").getMatch(0);
         if (StringUtils.isEmpty(filename)) {
             filename = br.getRegex("<title>(.*?)</title>").getMatch(0);
         }
@@ -336,7 +336,7 @@ public class ShareplaceOrg extends YetiShareCore {
         regexStuff.add("(display: ?none;\">.*?</div>)");
         regexStuff.add("(visibility:hidden>.*?<)");
         for (String aRegex : regexStuff) {
-            String results[] = new Regex((String) null, aRegex).getColumn(0);
+            String results[] = new Regex(correctedBR, aRegex).getColumn(0);
             if (results != null) {
                 for (String result : results) {
                     correctedBR = correctedBR.replace(result, "");

@@ -186,7 +186,7 @@ public class SpeedColumn extends ExtTextColumn<AbstractNode> {
     }
 
     public boolean onSingleClick(final MouseEvent e, final AbstractNode obj) {
-        if (isSpeedWarning(obj)) {
+        if (isSpeedWarning(obj) && CFG_GUI.CFG.isPremiumAlertSpeedColumnEnabled()) {
             try {
                 Dialog.getInstance().showDialog(new PremiumInfoDialog((((DownloadLink) obj).getDomainInfo()), _GUI.T.SpeedColumn_onSingleClick_object_(((DownloadLink) obj).getHost()), "SpeedColumn") {
                     protected String getDescription(DomainInfo info2) {

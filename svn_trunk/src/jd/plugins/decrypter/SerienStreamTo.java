@@ -56,7 +56,6 @@ import jd.plugins.FilePackage;
 import jd.plugins.LinkStatus;
 import jd.plugins.PluginException;
 import jd.plugins.PluginForDecrypt;
-import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 @DecrypterPlugin(revision = "$Revision: 53706 $", interfaceVersion = 3, names = {}, urls = {})
 public class SerienStreamTo extends PluginForDecrypt {

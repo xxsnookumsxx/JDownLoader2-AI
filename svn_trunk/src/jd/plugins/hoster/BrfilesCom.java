@@ -154,7 +154,7 @@ public class BrfilesCom extends YetiShareCore {
     }
 
     @Override
-public String[] scanInfo(final DownloadLink link, final String[] fileInfo) {
+    public String[] scanInfo(final DownloadLink link, final String[] fileInfo) {
         /* 2020-03-10: Special */
         fileInfo[0] = this.br.getRegex("<title>([^<>\"]+) - BRFiles</title>").getMatch(0);
         return super.scanInfo(link, fileInfo);

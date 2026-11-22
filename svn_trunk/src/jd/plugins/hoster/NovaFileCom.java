@@ -204,7 +204,7 @@ public class NovaFileCom extends XFileSharingProBasicSpecialFilejoker {
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         /* 2019-08-21: Special */
         super.checkErrors(br, correctedBR, link, account);
-        if (new Regex((String) null, "You have reached the daily download limit").matches()) {
+        if (new Regex(correctedBR, "You have reached the daily download limit").matches()) {
             /* It does not tell us how long we have to wait */
             if (account != null) {
                 throw new AccountUnavailableException("You have reached the daily download limit", FREE_RECONNECTWAIT_DEFAULT);
@@ -212,7 +212,7 @@ public class NovaFileCom extends XFileSharingProBasicSpecialFilejoker {
                 this.setDownloadStarted(link, false);
                 throw new PluginException(LinkStatus.ERROR_IP_BLOCKED, "You have reached the daily download limit", FREE_RECONNECTWAIT_DEFAULT);
             }
-        } else if (new Regex((String) null, "We have detected an unusual activity from multiple IPs using your account|Your account has been temporarily suspended|Please check your email and follow the link that has been sent to you to reactivate").matches()) {
+        } else if (new Regex(correctedBR, "We have detected an unusual activity from multiple IPs using your account|Your account has been temporarily suspended|Please check your email and follow the link that has been sent to you to reactivate").matches()) {
             /* 2020-05-19: E.g. accountsharing / usage of VPN */
             throw new AccountUnavailableException("Your account has been temporarily suspended", 10 * 60 * 1000l);
         }

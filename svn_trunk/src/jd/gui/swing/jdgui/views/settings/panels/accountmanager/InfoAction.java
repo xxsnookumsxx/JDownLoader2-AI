@@ -7,7 +7,6 @@ import javax.swing.AbstractAction;
 import jd.controlling.AccountController;
 import jd.plugins.Account;
 import jd.plugins.PluginForHost;
-import jd.plugins.infogenerator.PluginInfoGenerator;
 import jd.utils.JDUtilities;
 
 import org.jdownloader.gui.IconKey;

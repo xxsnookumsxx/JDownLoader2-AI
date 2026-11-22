@@ -681,38 +681,6 @@ public abstract class AbstractCaptchaDialog<T> extends AbstractDialog<T> {
         };
         ret.setOpaque(false);
         captchaToolbar = createCaptchaToolbar();
-        ExtButton premium = new ExtButton(new AppAction() {
-            /**
-             *
-             */
-            private static final long serialVersionUID = -3551320196255605774L;
-            {
-                setName(_GUI.T.CaptchaDialog_getDefaultButtonPanel_premium());
-            }
-
-            public void actionPerformed(ActionEvent e) {
-                if (CFG_CAPTCHA.CFG.isCancelDialogCountdownOnHateCaptchaClick()) {
-                    cancel();
-                }
-                PremiumInfoDialog d = new PremiumInfoDialog(hosterInfo, _GUI.T.PremiumInfoDialog_PremiumInfoDialog_(hosterInfo.getTld()), "CaptchaDialog");
-                try {
-                    Dialog.getInstance().showDialog(d);
-                } catch (DialogClosedException e1) {
-                    e1.printStackTrace();
-                } catch (DialogCanceledException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        });
-        premium.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        premium.setRolloverEffectEnabled(true);
-        // premium.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0,
-        // premium.getForeground()));
-        LazyHostPlugin plg = HostPluginController.getInstance().get(hosterInfo.getTld());
-        if (plg != null && plg.isPremium() && CFG_GUI.CFG.isHateCaptchasTextInCaptchaDialogVisible()) {
-            ret.add(premium);
-        }
-        SwingUtils.setOpaque(premium, false);
         return ret;
     }
 

@@ -17,7 +17,6 @@ import org.jdownloader.captcha.v2.challenge.recaptcha.v2.RecaptchaV2Challenge;
 import org.jdownloader.captcha.v2.challenge.stringcaptcha.ImageCaptchaChallenge;
 import org.jdownloader.gui.IconKey;
 import org.jdownloader.images.NewTheme;
-import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class CaptchaType {
     public enum CAPTCHA_TYPE {

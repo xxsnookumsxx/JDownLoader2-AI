@@ -9,6 +9,7 @@ import org.appwork.utils.ReflectionUtils;
 import org.appwork.utils.os.CrossSystem;
 
 public enum LookAndFeelType {
+    AMOLED_DARK(null, "org.jdownloader.gui.laf.amoled.AmoledDarkLookAndFeel", JVMVersion.JAVA_1_8),
     FLATLAF_LIGHT("flatlaf-themes", "com.formdev.flatlaf.FlatLightLaf", JVMVersion.JAVA_1_8),
     FLATLAF_MAC_LIGHT("flatlaf-themes", "com.formdev.flatlaf.themes.FlatMacLightLaf", JVMVersion.JAVA_1_8),
     FLATLAF_DARK("flatlaf-themes", "com.formdev.flatlaf.FlatDarkLaf", JVMVersion.JAVA_1_8),

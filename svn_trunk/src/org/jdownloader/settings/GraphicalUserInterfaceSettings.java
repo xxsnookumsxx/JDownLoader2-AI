@@ -301,17 +301,17 @@ public interface GraphicalUserInterfaceSettings extends ConfigInterface {
     public boolean isPasswordProtectionEnabled();
 
     @AboutConfig
-    @DefaultBooleanValue(true)
+    @DefaultBooleanValue(false)
     @DescriptionForConfigEntry("If true, ETAColumn will show Premium Alerts in Free Download mode if JD thinks Premium would be better currently.")
     boolean isPremiumAlertETAColumnEnabled();
 
     @AboutConfig
-    @DefaultBooleanValue(true)
+    @DefaultBooleanValue(false)
     @DescriptionForConfigEntry("If true, SpeedColumn will show Premium Alerts in Free Download mode if JD thinks Premium would be better currently.")
     boolean isPremiumAlertSpeedColumnEnabled();
 
     @AboutConfig
-    @DefaultBooleanValue(true)
+    @DefaultBooleanValue(false)
     @DescriptionForConfigEntry("If true, TaskColumn will show Premium Alerts in Free Download mode if JD thinks Premium would be better currently.")
     boolean isPremiumAlertTaskColumnEnabled();
 
@@ -932,10 +932,12 @@ public interface GraphicalUserInterfaceSettings extends ConfigInterface {
             if (Application.isHeadless()) {
                 return LookAndFeelType.JAVA_SYSTEM;
             } else {
-                if (Application.getRessourceURL("cfg/synthetica-license.key") != null && LookAndFeelType.DEFAULT.isAvailable()) {
+                if (LookAndFeelType.AMOLED_DARK.isAvailable()) {
+                    return LookAndFeelType.AMOLED_DARK;
+                } else if (Application.getRessourceURL("cfg/synthetica-license.key") != null && LookAndFeelType.DEFAULT.isAvailable()) {
                     return LookAndFeelType.DEFAULT;
-                } else if (LookAndFeelType.FLATLAF_LIGHT.isAvailable()) {
-                    return LookAndFeelType.FLATLAF_LIGHT;
+                } else if (LookAndFeelType.FLATLAF_DARK.isAvailable()) {
+                    return LookAndFeelType.FLATLAF_DARK;
                 } else {
                     return LookAndFeelType.JAVA_SYSTEM;
                 }
@@ -1235,7 +1237,7 @@ public interface GraphicalUserInterfaceSettings extends ConfigInterface {
     void setHelpDialogsEnabled(boolean b);
 
     @AboutConfig
-    @DefaultBooleanValue(true)
+    @DefaultBooleanValue(false)
     boolean isHateCaptchasTextInCaptchaDialogVisible();
 
     void setHateCaptchasTextInCaptchaDialogVisible(boolean b);
@@ -1252,13 +1254,13 @@ public interface GraphicalUserInterfaceSettings extends ConfigInterface {
     //
     // void setOSRSurveyEnabled(boolean b);
     @AboutConfig
-    @DefaultBooleanValue(true)
+    @DefaultBooleanValue(false)
     boolean isSpecialDealsEnabled();
 
     void setSpecialDealsEnabled(boolean b);
 
     @AboutConfig
-    @DefaultBooleanValue(true)
+    @DefaultBooleanValue(false)
     boolean isBannerEnabled();
 
     void setBannerEnabled(boolean b);
@@ -1458,7 +1460,7 @@ public interface GraphicalUserInterfaceSettings extends ConfigInterface {
     void setPremiumExpireWarningMapV2(Map<String, Long> value);
 
     @AboutConfig
-    @DefaultBooleanValue(true)
+    @DefaultBooleanValue(false)
     boolean isPremiumExpireWarningEnabled();
 
     void setPremiumExpireWarningEnabled(boolean b);
@@ -1638,7 +1640,7 @@ public interface GraphicalUserInterfaceSettings extends ConfigInterface {
     }
 
     @AboutConfig
-    @DefaultEnumValue("AUTO_VISIBLE")
+    @DefaultEnumValue("CUSTOM_HIDDEN")
     @ConfigEntryKeywords({ "donat", "contribut" })
     DonateButtonState getDonateButtonState();
 

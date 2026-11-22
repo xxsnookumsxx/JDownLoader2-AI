@@ -177,16 +177,16 @@ public class FilefoxCc extends XFileSharingProBasic {
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         /* 2019-06-06: Special */
         super.checkErrors(br, correctedBR, link, account);
-        if (new Regex((String) null, "You have reached the daily download limit").matches()) {
+        if (new Regex(correctedBR, "You have reached the daily download limit").matches()) {
             if (account != null) {
                 throw new AccountUnavailableException("You have reached the daily download limit", 1 * 60 * 60 * 1000l);
             } else {
                 throw new PluginException(LinkStatus.ERROR_IP_BLOCKED, "You have reached the daily download limit", 1 * 60 * 60 * 1000l);
             }
-        } else if (new Regex((String) null, "class\\s*=\\s*(\"|')paid-only(\"|')").matches()) {
+        } else if (new Regex(correctedBR, "class\\s*=\\s*(\"|')paid-only(\"|')").matches()) {
             logger.info("Only downloadable via premium");
             throw new AccountRequiredException();
-        } else if (new Regex((String) null, "You have reached your download limit per").matches()) {
+        } else if (new Regex(correctedBR, "You have reached your download limit per").matches()) {
             /* 2018-02-09: Special: Account trafficlimit reached */
             /*
              * E.g.
@@ -194,7 +194,7 @@ public class FilefoxCc extends XFileSharingProBasic {
              */
             logger.info("Premium trafficlimit reached");
             throw new PluginException(LinkStatus.ERROR_PREMIUM, PluginException.VALUE_ID_PREMIUM_TEMP_DISABLE);
-        } else if (new Regex((String) null, "You\\'ve tried to download from \\d+ different IPs").matches()) {
+        } else if (new Regex(correctedBR, "You\\'ve tried to download from \\d+ different IPs").matches()) {
             /* 2018-02-09: Special: Accountsharing block message */
             /*
              * E.g. "<p class="
@@ -203,7 +203,7 @@ public class FilefoxCc extends XFileSharingProBasic {
             logger.info("Premium account temporarily blocked because of too many IPs");
             throw new PluginException(LinkStatus.ERROR_PREMIUM, PluginException.VALUE_ID_PREMIUM_TEMP_DISABLE);
         }
-        final String reconnectWait = new Regex((String) null, "Wait\\s*[^<>\"]+\\s*or\\s*<a href\\s*=\\s*(\"|')[^\"']*?\\1\\s*id\\s*=\\s*(\"|')tariff-scroll\\2\\s*>\\s*buy Premium\\s*</a>\\s*and download now").getMatch(-1);
+        final String reconnectWait = new Regex(correctedBR, "Wait\\s*[^<>\"]+\\s*or\\s*<a href\\s*=\\s*(\"|')[^\"']*?\\1\\s*id\\s*=\\s*(\"|')tariff-scroll\\2\\s*>\\s*buy Premium\\s*</a>\\s*and download now").getMatch(-1);
         if (reconnectWait != null) {
             /* adjust this regex to catch the wait time string for COOKIE_HOST */
             String tmphrs = new Regex(reconnectWait, "(?i)\\s+(\\d+)\\s+hours?").getMatch(0);
@@ -242,7 +242,7 @@ public class FilefoxCc extends XFileSharingProBasic {
                     throw new PluginException(LinkStatus.ERROR_IP_BLOCKED, null, waittime);
                 }
             }
-        } else if (new Regex((String) null, ">\\s*Premium Account Required for VPS/VPN/Proxy|>\\s*Free users are not allowed to download using VPS|>\\s*Upgrade to Premium to keep usage of your VPN").matches()) {
+        } else if (new Regex(correctedBR, ">\\s*Premium Account Required for VPS/VPN/Proxy|>\\s*Free users are not allowed to download using VPS|>\\s*Upgrade to Premium to keep usage of your VPN").matches()) {
             /* 2019-12-16 */
             throw new PluginException(LinkStatus.ERROR_HOSTER_TEMPORARILY_UNAVAILABLE, "Free users are not allowed to download using VPS/VPN/Proxy/Dedicated Servers", 30 * 60 * 60 * 1000l);
         }

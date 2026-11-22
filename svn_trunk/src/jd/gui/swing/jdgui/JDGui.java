@@ -1182,20 +1182,6 @@ public class JDGui implements UpdaterListener, OwnerFinder {
                 }.getReturnValue();
             }
         });
-        SecondLevelLaunch.INIT_COMPLETE.executeWhenReached(new Runnable() {
-            @Override
-            public void run() {
-                final Sponsor sp = SponsorUtils.getSponsor();
-                if (sp != null) {
-                    new EDTRunner() {
-                        @Override
-                        protected void runInEDT() {
-                            MainTabbedPane.getInstance().setTopRightPainter(sp);
-                        }
-                    };
-                }
-            }
-        });
         FileCreationManager.getInstance().mkdir(Application.getResource("/tmp/update/self/JDU"));
         new Thread() {
             public void run() {

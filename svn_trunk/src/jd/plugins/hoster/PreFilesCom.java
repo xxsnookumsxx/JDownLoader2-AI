@@ -134,16 +134,16 @@ public class PreFilesCom extends XFileSharingProBasic {
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         /* 2019-07-03: Special */
         super.checkErrors(br, correctedBR, link, account);
-        final String wait = new Regex((String) null, ">\\s*Your subsequent download will be started in([^<>]+)").getMatch(0);
+        final String wait = new Regex(correctedBR, ">\\s*Your subsequent download will be started in([^<>]+)").getMatch(0);
         if (wait != null) {
             /* adjust this regex to catch the wait time string for COOKIE_HOST */
             String tmphrs = new Regex(wait, "\\s+(\\d+)\\s+hours?").getMatch(0);
             if (tmphrs == null) {
-                tmphrs = new Regex((String) null, "You have to wait.*?\\s+(\\d+)\\s+hours?").getMatch(0);
+                tmphrs = new Regex(correctedBR, "You have to wait.*?\\s+(\\d+)\\s+hours?").getMatch(0);
             }
             String tmpmin = new Regex(wait, "\\s+(\\d+)\\s+minutes?").getMatch(0);
             if (tmpmin == null) {
-                tmpmin = new Regex((String) null, "You have to wait.*?\\s+(\\d+)\\s+minutes?").getMatch(0);
+                tmpmin = new Regex(correctedBR, "You have to wait.*?\\s+(\\d+)\\s+minutes?").getMatch(0);
             }
             String tmpsec = new Regex(wait, "\\s+(\\d+)\\s+seconds?").getMatch(0);
             String tmpdays = new Regex(wait, "\\s+(\\d+)\\s+days?").getMatch(0);

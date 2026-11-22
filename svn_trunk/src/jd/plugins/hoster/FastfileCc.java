@@ -189,7 +189,7 @@ public class FastfileCc extends XFileSharingProBasic {
     }
 
     @Override
-public String[] scanInfo(final String html, final String[] fileInfo) {
+    public String[] scanInfo(String html, final String[] fileInfo) {
         final String strippedHtml = html.replaceAll("(?s)(<div\\s*class\\s*=\\s*\"UserHead\".*?</div>)", "");
         return super.scanInfo(strippedHtml, fileInfo);
     }

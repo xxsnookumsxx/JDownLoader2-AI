@@ -12,7 +12,6 @@ import org.appwork.storage.config.annotations.SpinnerValidator;
 import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.CaptchaSolverLimitRule;
 import org.jdownloader.plugins.config.Order;
-import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
 /**
  * Base config for captcha solver plugins. In addition to the generic {@link CaptchaSolverConfigV3} settings it carries the settings which

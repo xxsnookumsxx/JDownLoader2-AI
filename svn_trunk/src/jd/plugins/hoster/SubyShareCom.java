@@ -177,26 +177,26 @@ public class SubyShareCom extends XFileSharingProBasic {
         /* 2019-07-08: Special */
         final String msg_vpn_blocked = "Dedicated servers/VPS/RDP/VPN/Tor/Proxies/Socks blocked by subyshare";
         final long time_vpn_blocked = 5 * 60 * 1000l;
-        if (new Regex((String) null, "(?i)Sorry\\s*,\\s*we do not support downloading from Dedicated servers|Please download from your PC without using any above services|If this is our mistake\\s*,\\s*please contact").patternFind()) {
+        if (new Regex(correctedBR, "(?i)Sorry\\s*,\\s*we do not support downloading from Dedicated servers|Please download from your PC without using any above services|If this is our mistake\\s*,\\s*please contact").patternFind()) {
             if (account != null) {
                 throw new AccountUnavailableException(msg_vpn_blocked, time_vpn_blocked);
             } else {
                 throw new PluginException(LinkStatus.ERROR_HOSTER_TEMPORARILY_UNAVAILABLE, msg_vpn_blocked, time_vpn_blocked);
             }
-        } else if (new Regex((String) null, "(?i)>\\s*The owner of this file blocked you to download it").patternFind()) {
+        } else if (new Regex(correctedBR, "(?i)>\\s*The owner of this file blocked you to download it").patternFind()) {
             /*
              * 2020-07-17: This may sometimes happen in premium mode - user is then supposed to contact the uploader to ask for permission
              * to download the file (WTF?!)
              */
             throw new PluginException(LinkStatus.ERROR_TEMPORARILY_UNAVAILABLE, "The owner of this file blocked you to download it");
-        } else if (new Regex((String) null, "(?i)>\\s*You do no have enough traffic to download this file").patternFind()) {
+        } else if (new Regex(correctedBR, "(?i)>\\s*You do no have enough traffic to download this file").patternFind()) {
             /* 2023-01-25 */
             if (account != null) {
                 throw new AccountUnavailableException("Traffic limit reached", 5 * 60 * 1000);
             } else {
                 throw new PluginException(LinkStatus.ERROR_TEMPORARILY_UNAVAILABLE, "Traffic limit reached", 5 * 60 * 1000);
             }
-        } else if (new Regex((String) null, ">\\s*You have reached downloads limit today for free type").patternFind()) {
+        } else if (new Regex(correctedBR, ">\\s*You have reached downloads limit today for free type").patternFind()) {
             /* 2025-10-08 */
             final long serverTime = br.getCurrentServerTime(-1);
             final long timeout;

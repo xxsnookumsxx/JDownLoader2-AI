@@ -41,7 +41,6 @@ import jd.plugins.HostPlugin;
 import jd.plugins.LinkStatus;
 import jd.plugins.PluginException;
 import jd.plugins.PluginForHost;
-import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 @HostPlugin(revision = "$Revision: 49692 $", interfaceVersion = 3, names = { "flyfiles.net" }, urls = { "https?://(?:www\\.)?flyfiles\\.net/([a-z0-9]{10})" })
 public class FlyFilesNet extends PluginForHost {

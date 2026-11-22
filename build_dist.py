@@ -94,7 +94,7 @@ def build_dist() -> None:
         (ROOT / "svn_utils/libs", {"miglayout.jar", "miglayout-core.jar"}),
         (ROOT / "svn_browser/libs", set()),
     ]:
-        for p, rel in collect_files(src_dir, lambda r: not r.endswith(".info") and Path(r).name not in skip):
+        for p, rel in collect_files(src_dir, lambda r: not r.endswith(".info") and not r.endswith("-sources.jar") and Path(r).name not in skip):
             dst = libs_dir / rel
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(p, dst)
@@ -154,7 +154,6 @@ def build_dist() -> None:
 
     print("3. Building Core.jar...")
     core_excludes = (
-        "jd/controlling/reconnect/plugins/",
         "jd/captcha/",
         "org/appwork/",
         "org/jdownloader/gui/laf/",
@@ -168,7 +167,6 @@ def build_dist() -> None:
         "jd/http/",
         "jd/plugins/hoster/",
         "jd/plugins/decrypter/",
-        "org/jdownloader/extensions/",
         "jd/utils/dev/",
         "tests/",
     )
@@ -182,11 +180,18 @@ def build_dist() -> None:
             return False
         if r.startswith("org/jdownloader/extensions/") and r.count("/") >= 4:
             return False
+        if r.startswith("jd/controlling/reconnect/plugins/") and r.count("/") >= 5:
+            return False
         return not any(r.startswith(ex) for ex in core_excludes)
 
     core_entries = (
         collect_files(CLS, core_cls_filter)
-        + collect_files(ROOT / "svn_trunk/src", lambda r: r.endswith((".js", ".html", ".css")) or r.startswith("org/jdownloader/captcha/v2/solver/browser/html/"))
+        + collect_files(
+            ROOT / "svn_trunk/src",
+            lambda r: r.endswith((".js", ".html", ".css"))
+            or r.startswith("org/jdownloader/captcha/v2/solver/browser/html/")
+            or (r.startswith("org/jdownloader/captcha/v2/challenge/recaptcha/v2/example/") and r.endswith(".jpg")),
+        )
         + collect_files(ROOT / "svn_trunk/ressourcen", lambda r: r.endswith(".properties") and "/" not in r)
     )
     make_jar(DIST / "Core.jar", core_entries, ["Manifest-Version: 1.0", "Created-By: AppWork GmbH and JDownloader Community"])
@@ -274,7 +279,11 @@ def build_dist() -> None:
     rustc_args = [
         rustc,
         str(ROOT / "launcher/jdownloader2.rs"),
+        "--edition",
+        "2024",
         "-O",
+        "-C",
+        "strip=symbols",
         "--crate-type",
         "bin",
         "-o",
@@ -290,6 +299,9 @@ def build_dist() -> None:
     subprocess.run(rustc_args, cwd=str(ROOT), check=True)
     if res_file.exists():
         res_file.unlink()
+    pdb_file = DIST / "JDownloader2.pdb"
+    if pdb_file.exists():
+        pdb_file.unlink()
 
     print(f"Done! Windows build ready at: {DIST / 'JDownloader2.exe'}")
 

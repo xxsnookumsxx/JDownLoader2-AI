@@ -122,7 +122,7 @@ public class FileddCom extends XFileSharingProBasic {
     @Override
     protected void checkErrors(Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         /* 2020-08-25: Special */
-        if (new Regex((String) null, ">\\s*Free Members can download files no bigger than").matches()) {
+        if (new Regex(correctedBR, ">\\s*Free Members can download files no bigger than").matches()) {
             throw new AccountRequiredException();
         }
         super.checkErrors(br, correctedBR, link, account);

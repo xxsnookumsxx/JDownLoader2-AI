@@ -206,7 +206,7 @@ public class TakefileLink extends XFileSharingProBasic {
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         super.checkErrors(br, correctedBR, link, account);
         /* 2021-01-11: Some files are "paid files": The user has to pay a fee for that single file to be able to download it. */
-        if (new Regex((String) null, "class=\"price\"").patternFind()) {
+        if (new Regex(correctedBR, "class=\"price\"").patternFind()) {
             throw new AccountRequiredException();
         }
     }

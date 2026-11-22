@@ -75,11 +75,11 @@ public class LAFOptions {
             }
         }
         if (ext == null) {
-            if (DebugMode.TRUE_IN_IDE_ELSE_FALSE) {
+            if (laf != null && laf.startsWith("com.formdev.flatlaf")) {
+                ext = new DefaultFlatLAFExtension(laf);
+            } else if (DebugMode.TRUE_IN_IDE_ELSE_FALSE) {
                 if (laf != null && (laf.startsWith("de.javasoft.plaf.synthetica") || laf.startsWith("org.jdownloader.gui.laf.jddefault.JDDefaultLookAndFeel"))) {
                     ext = new DefaultLookAndFeelExtension(laf);
-                } else if (laf != null && laf.startsWith("com.formdev.flatlaf")) {
-                    ext = new DefaultFlatLAFExtension(laf);
                 } else {
                     ext = new DefaultEmptyLookAndFeelExtension(laf);
                 }

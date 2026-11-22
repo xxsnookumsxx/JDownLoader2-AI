@@ -1,13 +1,11 @@
 package jd.plugins.components.gopro;
 
 import java.util.Date;
+
 import org.appwork.storage.SimpleTypeRef;
 import org.appwork.storage.StorableValidatorIgnoresMissingSetter;
 import org.appwork.storage.TypeRef;
 import org.appwork.storage.flexijson.mapper.interfacestorage.FlexiStorableInterface;
-
-
-
 
 @StorableValidatorIgnoresMissingSetter
 public interface Media extends FlexiStorableInterface {

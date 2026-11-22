@@ -3,8 +3,6 @@ package org.jdownloader.plugins.components.realDebridCom.api.json;
 import org.appwork.storage.Storable;
 import org.appwork.storage.TypeRef;
 
-
-
 public class UserResponse implements Storable {
     public static final TypeRef<UserResponse> TYPE = new TypeRef<UserResponse>(UserResponse.class) {
                                                    };
