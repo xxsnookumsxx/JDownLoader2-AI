@@ -133,9 +133,7 @@ public class WolfstreamTv extends XFileSharingProBasic {
         return true;
     }
 
-    @Override
     public String[] scanInfo(final String[] fileInfo) {
-        super.scanInfo(fileInfo);
         final String betterFileTitle = new Regex((String) null, "CONTENT=\"Watch video ([^\"]+)\"").getMatch(0);
         if (betterFileTitle != null) {
             fileInfo[0] = betterFileTitle;

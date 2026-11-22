@@ -51,20 +51,13 @@ public class AntiCaptchaComSolverService extends AbstractSolverService implement
 
     @Override
     public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
-        return solver.getSupportedCaptchaTypes();
-    }
-
-    @Override
-    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
         return solver == null ? java.util.Collections.emptySet() : solver.getSupportedCaptchaTypes();
     }
 
-    @Override
     public AbstractCaptchaSolverConfigPanel getConfigPanel() {
         return new AntiCaptchaComConfigPanel(this);
     }
 
-    @Override
     public boolean hasConfigPanel() {
         return true;
     }
@@ -74,7 +67,6 @@ public class AntiCaptchaComSolverService extends AbstractSolverService implement
         return "anti-captcha.com";
     }
 
-    @Override
     public AntiCaptchaComConfigInterface getConfig() {
         return config;
     }

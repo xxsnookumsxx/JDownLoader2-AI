@@ -59,6 +59,10 @@ public class ImageTyperzSolverService extends AbstractSolverService implements S
     }
 
     @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return java.util.Collections.emptySet();
+    }
+
     public AbstractCaptchaSolverConfigPanel getConfigPanel() {
         AbstractCaptchaSolverConfigPanel ret = new AbstractCaptchaSolverConfigPanel() {
             private TextInput     username;

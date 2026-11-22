@@ -147,10 +147,9 @@ public class StreamhideCom extends XFileSharingProBasic {
     private final String PROPERTY_HAS_LOOKED_FOR_ADDITIONAL_FILENAME_SOURCE = "has_looked_for_additional_filename_source";
     private final String PROPERTY_STREAM_FILENAME                           = "stream_filename";
 
-    @Override
-    public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account, final boolean isDownload) throws Exception {
-        final AvailableStatus status = super.requestFileInformationWebsite(link, account, isDownload);
-        final String[] finfo = this.scanInfo(internal_getFileInfoArray());
+    public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account) throws Exception {
+        final AvailableStatus status = super.requestFileInformationWebsite(link, account);
+        final String[] finfo = this.scanInfo(getCorrectBR(br), internal_getFileInfoArray());
         final String storedStreamFilename = link.getStringProperty(PROPERTY_STREAM_FILENAME);
         if (storedStreamFilename != null) {
             this.setFilename(storedStreamFilename, link, br);
@@ -178,8 +177,7 @@ public class StreamhideCom extends XFileSharingProBasic {
         return status;
     }
 
-    @Override
-    protected void checkErrors(final Browser br, final String html, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
+    protected void checkErrors(final Browser br, final String html, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         super.checkErrors(br, html, link, account);
         if (br.containsHTML(">\\s*Video temporarily not available")) {
             throw new PluginException(LinkStatus.ERROR_TEMPORARILY_UNAVAILABLE, "Video temporarily not available");

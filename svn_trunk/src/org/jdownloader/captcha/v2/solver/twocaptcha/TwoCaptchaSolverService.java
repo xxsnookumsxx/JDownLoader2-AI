@@ -3,6 +3,7 @@ package org.jdownloader.captcha.v2.solver.twocaptcha;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.swing.Icon;
 
@@ -24,6 +25,7 @@ import jd.gui.swing.jdgui.components.premiumbar.ServiceCollection;
 import jd.gui.swing.jdgui.components.premiumbar.ServicePanel;
 import jd.gui.swing.jdgui.components.premiumbar.ServicePanelExtender;
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.AbstractCaptchaSolverConfigPanel;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class TwoCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
     private TwoCaptchaConfigInterface config;
@@ -49,11 +51,14 @@ public class TwoCaptchaSolverService extends AbstractSolverService implements Se
     }
 
     @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return java.util.Collections.emptySet();
+    }
+
     public AbstractCaptchaSolverConfigPanel getConfigPanel() {
         return new TwoCaptchaConfigPanel(this);
     }
 
-    @Override
     public boolean hasConfigPanel() {
         return true;
     }
@@ -63,7 +68,6 @@ public class TwoCaptchaSolverService extends AbstractSolverService implements Se
         return "2captcha.com / rucaptcha.com";
     }
 
-    @Override
     public ChallengeSolverConfig getConfig() {
         return config;
     }

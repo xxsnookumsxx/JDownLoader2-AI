@@ -65,6 +65,10 @@ public class EndCaptchaSolverService extends AbstractSolverService implements Se
     }
 
     @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return java.util.Collections.emptySet();
+    }
+
     public AbstractCaptchaSolverConfigPanel getConfigPanel() {
         AbstractCaptchaSolverConfigPanel ret = new AbstractCaptchaSolverConfigPanel() {
             private TextInput     username;
@@ -131,7 +135,6 @@ public class EndCaptchaSolverService extends AbstractSolverService implements Se
         return ret;
     }
 
-    @Override
     public boolean hasConfigPanel() {
         return true;
     }
@@ -141,7 +144,6 @@ public class EndCaptchaSolverService extends AbstractSolverService implements Se
         return _GUI.T.EndCaptchaSolver_gettypeName_();
     }
 
-    @Override
     public ChallengeSolverConfig getConfig() {
         return config;
     }

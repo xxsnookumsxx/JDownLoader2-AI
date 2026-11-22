@@ -68,7 +68,6 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
         return solver == null ? java.util.Collections.emptySet() : solver.getSupportedCaptchaTypes();
     }
 
-    @Override
     public AbstractCaptchaSolverConfigPanel getConfigPanel() {
         AbstractCaptchaSolverConfigPanel ret = new AbstractCaptchaSolverConfigPanel() {
             private TextInput     username;
@@ -135,7 +134,6 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
         return ret;
     }
 
-    @Override
     public boolean hasConfigPanel() {
         return true;
     }
@@ -145,7 +143,6 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
         return _GUI.T.CheapCaptchaSolver_gettypeName_();
     }
 
-    @Override
     public ChallengeSolverConfig getConfig() {
         return config;
     }

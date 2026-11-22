@@ -1,4 +1,4 @@
-package jd.gui.swing.jdgui.views.settings.panels.anticaptcha;
+﻿ackage jd.gui.swing.jdgui.views.settings.panels.anticaptcha;
 
 import java.awt.CardLayout;
 import java.awt.Cursor;
@@ -302,7 +302,7 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
 
     /** Fixed order of the manual solvers: dialog in JDownloader, dialog in the browser, MyJDownloader. -1 for all other solvers. */
     private static int getManualRank(final SolverService service) {
-        switch (String.valueOf(service.getType())) {
+        switch (service.getType()) {
         case JD_LOCAL_DIALOG:
             return 0;
         case JD_LOCAL_BROWSER:
@@ -318,14 +318,14 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
     private static boolean isPreferred(final SolverService service, final Method method) {
         switch (method) {
         case PAID:
-            switch (String.valueOf(service.getType())) {
+            switch (service.getType()) {
             case EXTERNAL:
                 return true;
             default:
                 return false;
             }
         case MANUAL:
-            return String.valueOf(service.getType()).requiresHuman();
+            return service.getType().requiresHuman();
         case BOTH:
         default:
             return true;
@@ -435,7 +435,7 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
         for (final SolverService service : ChallengeResponseController.getInstance().getOrderedServices()) {
             if (!service.getConfigV3().isEnabled()) {
                 /* Three groups, each with its own warning and fix. */
-                switch (String.valueOf(service.getType())) {
+                switch (service.getType()) {
                 case EXTERNAL:
                     disabledExternal.add(service);
                     break;
@@ -1229,7 +1229,7 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
             if (supported == null) {
                 continue;
             }
-            if (String.valueOf(service.getType()).requiresHuman()) {
+            if (service.getType().requiresHuman()) {
                 manualTypes.addAll(supported);
             } else {
                 automaticTypes.addAll(supported);
@@ -1271,7 +1271,7 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
         anySolverSolvesAll = false;
         for (final SolverService service : ChallengeResponseController.getInstance().getOrderedServices()) {
             final int solved = CaptchaWizardSolverTable.getSolvedCount(service, requiredTypes);
-            if (String.valueOf(service.getType()).requiresHuman() && service.getSupportedCaptchaTypes() != null) {
+            if (service.getType().requiresHuman() && service.getSupportedCaptchaTypes() != null) {
                 manuallySolvable.addAll(service.getSupportedCaptchaTypes());
             }
             if (solved == 0) {
@@ -1307,7 +1307,7 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
             if (!service.isUsable()) {
                 continue;
             }
-            if (String.valueOf(service.getType()).requiresHuman()) {
+            if (service.getType().requiresHuman()) {
                 usableManualTypes.addAll(service.getSupportedCaptchaTypes());
             } else {
                 usableAutomaticTypes.addAll(service.getSupportedCaptchaTypes());
@@ -1382,13 +1382,13 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
         final Set<CAPTCHA_TYPE> usablePaidTypes = new LinkedHashSet<CAPTCHA_TYPE>();
         boolean manualEnabled = false;
         for (final SolverService service : ChallengeResponseController.getInstance().getOrderedServices()) {
-            if (String.valueOf(service.getType()).requiresHuman()) {
+            if (service.getType().requiresHuman()) {
                 final boolean enabled = service.getConfigV3().isEnabled();
                 manualEnabled |= enabled;
-                log.append("\r\n - manual solver ").append(service.getID()).append(" (").append(String.valueOf(service.getType())).append("): enabled=").append(enabled).append(", usable=").append(service.isUsable());
+                log.append("\r\n - manual solver ").append(service.getID()).append(" (").append(service.getType()).append("): enabled=").append(enabled).append(", usable=").append(service.isUsable());
                 continue;
             }
-            switch (String.valueOf(service.getType())) {
+            switch (service.getType()) {
             case EXTERNAL:
                 final boolean usable = service.isUsable();
                 final Set<CAPTCHA_TYPE> supported = service.getSupportedCaptchaTypes();
@@ -1398,7 +1398,7 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
                 }
                 break;
             default:
-                log.append("\r\n - other solver ").append(service.getID()).append(" (").append(String.valueOf(service.getType())).append("): ignored");
+                log.append("\r\n - other solver ").append(service.getID()).append(" (").append(service.getType()).append("): ignored");
                 break;
             }
         }
@@ -1420,7 +1420,7 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
     /** Disables all solvers where a human has to solve the captcha (dialog, browser, MyJDownloader). */
     private void disableManualSolvers() {
         for (final SolverService service : ChallengeResponseController.getInstance().getOrderedServices()) {
-            if (String.valueOf(service.getType()).requiresHuman()) {
+            if (service.getType().requiresHuman()) {
                 service.getConfigV3().setEnabled(false);
             }
         }
@@ -1501,3 +1501,5 @@ public class CaptchaWizardDialog extends AbstractDialog<Integer> {
         return null;
     }
 }
+
+

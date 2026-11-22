@@ -114,7 +114,7 @@ public class AntiCaptchaComSolver extends AbstractAntiCaptchaComSolver<String> {
      */
     private void handleImageCaptcha(CESSolverJob<String> job) throws InterruptedException {
         final Challenge<String> challenge = job.getChallenge();
-        job.showBubble(this);
+        job.showBubble();
         checkInterruption();
         try {
             job.getChallenge().sendStatsSolving(this);
@@ -172,7 +172,7 @@ public class AntiCaptchaComSolver extends AbstractAntiCaptchaComSolver<String> {
      */
     private void handleTurnstileCaptcha(CESSolverJob<String> job) throws InterruptedException {
         final CloudflareTurnstileChallenge challenge = (CloudflareTurnstileChallenge) job.getChallenge();
-        job.showBubble(this);
+        job.showBubble();
         checkInterruption();
         try {
             job.getChallenge().sendStatsSolving(this);
@@ -217,7 +217,7 @@ public class AntiCaptchaComSolver extends AbstractAntiCaptchaComSolver<String> {
 
     private void handleRecaptchaV2(CESSolverJob<String> job) throws InterruptedException {
         RecaptchaV2Challenge challenge = (RecaptchaV2Challenge) job.getChallenge();
-        job.showBubble(this);
+        job.showBubble();
         checkInterruption();
         try {
             job.getChallenge().sendStatsSolving(this);

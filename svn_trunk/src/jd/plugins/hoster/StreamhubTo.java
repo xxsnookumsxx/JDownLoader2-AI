@@ -90,15 +90,6 @@ public class StreamhubTo extends XFileSharingProBasic {
             return 1;
         }
     }
-
-    @Override
-    protected String requestFileInformationVideoEmbed(final Browser br, final DownloadLink link, final Account account, final boolean findFilesize) throws Exception {
-        /* Small hack: Remove referer or we will get response "Video embed restricted for this domain". */
-        br.setCurrentURL("");
-        return super.requestFileInformationVideoEmbed(br, link, account, findFilesize);
-    }
-
-    @Override
     public int getMaxSimultaneousFreeAnonymousDownloads() {
         return -1;
     }

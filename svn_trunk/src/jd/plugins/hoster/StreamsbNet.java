@@ -117,11 +117,10 @@ public class StreamsbNet extends XFileSharingProBasic {
         return false;
     }
 
-    @Override
-    public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account, final boolean isDownload) throws Exception {
+    public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account) throws Exception {
         /* Beware! This is full of nasty workarounds! */
         final String contentURL = this.getContentURL(link);
-        AvailableStatus result = super.requestFileInformationWebsite(link, account, isDownload);
+        AvailableStatus result = super.requestFileInformationWebsite(link, account);
         String specialFilenameResult = null;
         final Boolean isOfficiallyDownloadable = (Boolean) link.getProperty(IS_OFFICIALLY_DOWNLOADABLE);
         if (contentURL.matches("https?://[^/]+/c/[a-z0-9]{12}.*") && Boolean.FALSE.equals(isOfficiallyDownloadable)) {

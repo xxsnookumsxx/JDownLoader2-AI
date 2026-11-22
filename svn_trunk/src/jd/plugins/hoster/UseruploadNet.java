@@ -105,9 +105,7 @@ public class UseruploadNet extends XFileSharingProBasic {
         return false;
     }
 
-    @Override
     public String[] scanInfo(final String[] fileInfo) {
-        super.scanInfo(fileInfo);
         if (StringUtils.isEmpty(fileInfo[0])) {
             fileInfo[0] = br.getRegex("class=\"zmdi zmdi-file visible-xs\"></i>([^<>\"]+)<").getMatch(0);
         }

@@ -181,7 +181,7 @@ public class DebridFileCom extends PluginForHost {
         } else {
             /* Free or plugin failure */
             account.setType(AccountType.FREE);
-            ai.setTrafficMax("10 GB");
+            ai.setTrafficMax(0);
         }
         account.setMaxSimultanDownloads(maxdownloads);
         if (trafficleftStr == null) {

@@ -50,7 +50,7 @@ public abstract class AbstractBrowserSolver extends ChallengeSolver<String> {
 
     @Override
     public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
-        final List<CAPTCHA_TYPE> types = new ArrayList<CAPTCHA_TYPE>();
+        final Set<CAPTCHA_TYPE> types = new java.util.HashSet<CAPTCHA_TYPE>();
         types.add(CAPTCHA_TYPE.RECAPTCHA_V3);
         types.add(CAPTCHA_TYPE.RECAPTCHA_V2);
         types.add(CAPTCHA_TYPE.RECAPTCHA_V2_ENTERPRISE);

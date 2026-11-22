@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.swing.Icon;
 
@@ -14,6 +15,7 @@ import jd.gui.swing.jdgui.components.premiumbar.ServicePanelExtender;
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.AbstractCaptchaSolverConfigPanel;
 import jd.http.Browser;
 import jd.nutils.encoding.Encoding;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 import org.appwork.storage.config.JsonConfig;
 import org.appwork.storage.config.ValidationException;
@@ -264,11 +266,14 @@ public class NineKwSolverService extends AbstractSolverService implements Servic
     }
 
     @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return java.util.Collections.emptySet();
+    }
+
     public AbstractCaptchaSolverConfigPanel getConfigPanel() {
         return new NineKwConfigPanel(this);
     }
 
-    @Override
     public boolean hasConfigPanel() {
         return true;
     }
@@ -278,7 +283,6 @@ public class NineKwSolverService extends AbstractSolverService implements Servic
         return _GUI.T.Captcha9kwSolver_gettypeName_();
     }
 
-    @Override
     public Captcha9kwSettings getConfig() {
         return config;
     }

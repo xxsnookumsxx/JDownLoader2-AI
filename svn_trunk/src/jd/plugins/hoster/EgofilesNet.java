@@ -125,9 +125,7 @@ public class EgofilesNet extends YetiShareCore {
         }
     }
 
-    @Override
-    public String[] scanInfo(final DownloadLink link, final String[] fileInfo) {
-        super.scanInfo(link, fileInfo);
+    public String[] scanInfo(final String[] fileInfo) {
         /* 2023-03-27 */
         final String betterFilesize = br.getRegex(">\\s*Filesize\\s*</p>\\s*<h5 class=\"text-white\">([^<]+)").getMatch(0);
         if (betterFilesize != null) {

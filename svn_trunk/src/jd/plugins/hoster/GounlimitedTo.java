@@ -141,10 +141,9 @@ public class GounlimitedTo extends XFileSharingProBasic {
         return true;
     }
 
-    @Override
     public String[] scanInfo(final String[] fileInfo) {
         /* 2020-02-04: Prefer filename from other place as it sometimes contains more details than what template plugin would grab. */
-        super.scanInfo(fileInfo);
+        scanInfo(getCorrectBR(br), fileInfo);
         final String better_filename = new Regex((String) null, "<h2 class=\"the_title mb-2\">([^<>\"]+)</h2>").getMatch(0);
         if (better_filename != null) {
             logger.info("Found better_filename");
@@ -166,7 +165,7 @@ public class GounlimitedTo extends XFileSharingProBasic {
     }
 
     @Override
-    protected void checkErrors(final Browser br, final String html, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
+    protected void checkErrors(final Browser br, final String html, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         super.checkErrors(br, html, link, account);
         if (br.containsHTML("No such file=")) {
             /* 2024-05-27: Special offline: Broken download of original file [looks like offline] */
@@ -179,8 +178,8 @@ public class GounlimitedTo extends XFileSharingProBasic {
      * "404 this video was removed" animation on play button click.
      */
     @Override
-    public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account, final boolean downloadsStarted) throws Exception {
-        final AvailableStatus status = super.requestFileInformationWebsite(link, account, downloadsStarted);
+    public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account) throws Exception {
+        final AvailableStatus status = super.requestFileInformationWebsite(link, account);
         logger.info("File appears to be online --> Let's deep-check");
         final String dllink = this.getDllink(link, account, br, (String) null);
         if (!StringUtils.isEmpty(dllink)) {
@@ -222,9 +221,7 @@ public class GounlimitedTo extends XFileSharingProBasic {
             } catch (final Exception e) {
                 /* Failure */
                 logger.log(e);
-                if (downloadsStarted) {
-                    throw e;
-                }
+                throw e;
             } finally {
                 if (con != null) {
                     try {
@@ -245,7 +242,7 @@ public class GounlimitedTo extends XFileSharingProBasic {
     protected String getDllinkViaOfficialVideoDownload(final Browser br, final DownloadLink link, final Account account, final boolean returnFilesize) throws Exception {
         String result = super.getDllinkViaOfficialVideoDownload(br, link, account, returnFilesize);
         if (result == null) {
-            this.checkErrors(br, br.getRequest().getHtmlCode(), link, account, false);
+            this.checkErrors(br, br.getRequest().getHtmlCode(), link, account);
         }
         return result;
     }
