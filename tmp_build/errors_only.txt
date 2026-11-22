@@ -1,76 +1,123 @@
-﻿svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:1: error: illegal character: '\ufeff'
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:1: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:3: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:4: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:5: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:6: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:7: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:8: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:9: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:10: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:11: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:12: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:13: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:14: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:15: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:16: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:17: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:18: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:19: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:20: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:21: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:22: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:23: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:24: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:25: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:27: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:28: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:29: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:30: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:31: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:32: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:33: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:34: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:35: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:36: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:37: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:38: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:39: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:40: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:41: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:42: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:43: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:45: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:46: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:47: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:48: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:49: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:50: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:51: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:52: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:53: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:54: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:55: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:56: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:57: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:58: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:59: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:60: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:61: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:62: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:63: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:64: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:65: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:66: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:67: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:68: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:69: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:70: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:72: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:73: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:74: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:75: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:76: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:77: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:78: error: class, interface, annotation type, enum, record, method or field expected
-svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:79: error: class, interface, annotation type, enum, record, method or field expected
+﻿svn_trunk\src\jd\plugins\hoster\QiwiGg.java:137: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\SmoozedCom.java:754: error: method setMultiHostSupport in class AccountInfo cannot be applied to given types;
+svn_trunk\src\jd\plugins\hoster\StreamsbNet.java:132: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\TransferChomikujPl.java:254: error: TransferChomikujPlAccountFactory is not abstract and does not override abstract method handleClipboardAutoFill() in AccountBuilderInterface
+svn_trunk\src\jd\plugins\hoster\UploadhubIo.java:118: error: method does not override or implement a method from a supertype
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:172: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:185: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\api\CaptchaForwarder.java:72: error: <anonymous org.jdownloader.captcha.api.CaptchaForwarder$1$1$1> is not abstract and does not override abstract method getSiteUrl() in RecaptchaV2Challenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:75: error: validateResponse(AbstractResponse<String>) in AreYouAHumanChallenge cannot override validateResponse(AbstractResponse<T>) in Challenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:74: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:76: error: bad operand types for binary operator '&&'
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:79: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\AreYouAHumanChallenge.java:81: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\CaptchaHelperCrawlerPluginAreYouHuman.java:31: error: <anonymous org.jdownloader.captcha.v2.challenge.areyouahuman.CaptchaHelperCrawlerPluginAreYouHuman$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\areyouahuman\CaptchaHelperHostPluginAreYouHuman.java:33: error: <anonymous org.jdownloader.captcha.v2.challenge.areyouahuman.CaptchaHelperHostPluginAreYouHuman$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\confidentcaptcha\CaptchaHelperCrawlerPluginConfidentCaptcha.java:33: error: <anonymous org.jdownloader.captcha.v2.challenge.confidentcaptcha.CaptchaHelperCrawlerPluginConfidentCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\confidentcaptcha\CaptchaHelperHostPluginConfidentCaptcha.java:34: error: <anonymous org.jdownloader.captcha.v2.challenge.confidentcaptcha.CaptchaHelperHostPluginConfidentCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaCategoryChallenge.java:39: error: validateResponse(AbstractResponse<String>) in KeyCaptchaCategoryChallenge cannot override validateResponse(AbstractResponse<T>) in Challenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaCategoryChallenge.java:38: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaCategoryChallenge.java:40: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaDialogSolver.java:34: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\KeyCaptchaResponse.java:10: error: constructor CaptchaResponse in class CaptchaResponse cannot be applied to given types;
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\keycaptcha\jac\KeyCaptchaJACSolver.java:25: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\Recaptcha.java:159: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\Recaptcha.java:161: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\Recaptcha.java:161: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\Recaptcha.java:226: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:60: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:63: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:80: error: <anonymous org.jdownloader.captcha.v2.challenge.recaptcha.v1.RecaptchaV1Handler$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:141: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:146: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:142: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:142: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:142: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:142: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:198: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:201: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\recaptcha\v1\RecaptchaV1Handler.java:202: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\sweetcaptcha\CaptchaHelperCrawlerPluginSweetCaptcha.java:40: error: <anonymous org.jdownloader.captcha.v2.challenge.sweetcaptcha.CaptchaHelperCrawlerPluginSweetCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\captcha\v2\challenge\sweetcaptcha\CaptchaHelperHostPluginSweetCaptcha.java:41: error: <anonymous org.jdownloader.captcha.v2.challenge.sweetcaptcha.CaptchaHelperHostPluginSweetCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComConfigPanel.java:43: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsResponse.java:14: error: constructor CaptchaResponse in class CaptchaResponse cannot be applied to given types;
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:35: error: CaptchaSolutionsSolver is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:70: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:156: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:59: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:64: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:72: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:84: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:85: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:102: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:103: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:130: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:137: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:140: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:182: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsTooltip.java:54: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsTooltip.java:73: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsTooltip.java:82: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:84: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:105: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:106: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:189: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:86: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:86: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:86: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:70: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:83: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:101: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:102: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:128: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:138: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:180: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:85: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:106: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:107: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:182: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:190: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:81: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:98: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:99: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:125: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:135: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:177: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:108: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:209: error: setUnused(AbstractResponse<?>) in AbstractCaptcha9kwSolver cannot override setUnused(AbstractResponse<?>) in ChallengeSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:245: error: setValid(AbstractResponse<?>) in AbstractCaptcha9kwSolver cannot override setValid(AbstractResponse<?>) in ChallengeSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:316: error: no suitable method found for showBubble(AbstractCaptcha9kwSolver<T>,int)
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolver.java:20: error: Captcha9kwSolver is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolver.java:43: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverClick.java:17: error: Captcha9kwSolverClick is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverMultiClick.java:23: error: Captcha9kwSolverMultiClick is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverPuzzle.java:20: error: Captcha9kwSolverPuzzle is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverPuzzle.java:34: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\Captcha9kwSolverPuzzle.java:37: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:95: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:269: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:270: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:275: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:277: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:278: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java:677: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:152: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:155: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:160: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:251: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaConfigPanel.java:35: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:115: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\gui\toolbar\ConvertCLRScriptAction.java:18: error: cannot find symbol
+svn_trunk\src\org\jdownloader\gui\toolbar\ConvertCLRScriptAction.java:25: error: cannot find symbol
+svn_trunk\src\org\jdownloader\gui\toolbar\ConvertCLRScriptAction.java:25: error: cannot find symbol
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:11: error: cannot find symbol
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:12: error: cannot find symbol
+svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:12: error: cannot find symbol
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:103: error: method getSiteUrl in class AbstractBrowserChallenge cannot be applied to given types;
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:115: error: method getSiteUrl in class AbstractBrowserChallenge cannot be applied to given types;
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:120: error: method getSiteUrl in class AbstractBrowserChallenge cannot be applied to given types;
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:192: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\plugins\components\captchasolver\abstractPluginForCaptchaSolverTwoCaptcha.java:197: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\scripting\envjs\EnvJSBrowser.java:83: error: method getCookieString in class Request cannot be applied to given types;
+svn_trunk\src\org\jdownloader\scripting\envjs\EnvJSBrowser.java:96: error: incompatible types: String cannot be converted to URL
+svn_trunk\ressourcen\code-ressourcen\image4j\ICODecoder.java:110: error: incompatible types: InputStream cannot be converted to CountingInputStream
