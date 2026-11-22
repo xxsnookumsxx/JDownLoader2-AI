@@ -21,6 +21,7 @@ import org.appwork.swing.components.tooltips.ExtTooltip;
 import org.appwork.utils.Application;
 import org.appwork.utils.os.CrossSystem;
 import org.jdownloader.actions.AppAction;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 import org.jdownloader.captcha.v2.solver.dbc.DeathByCaptchaSolverService;
 import org.jdownloader.captcha.v2.solver.imagetyperz.ImageTyperzSolverService;
@@ -34,6 +35,8 @@ import org.jdownloader.images.AbstractIcon;
 import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_CHEAP_CAPTCHA;
 import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
+import java.util.Set;
 
 public class CheapCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
     private CheapCaptchaConfigInterface config;
@@ -52,12 +55,17 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
 
     @Override
     public SolverType getType() {
-        return _GUI.T.CaptchaSolver_Type_paid_online();
+        return SolverType.EXTERNAL;
     }
 
     @Override
     public Icon getIcon(int size) {
         return new AbstractIcon("logo/cheapCaptcha", size);
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return solver == null ? java.util.Collections.emptySet() : solver.getSupportedCaptchaTypes();
     }
 
     @Override
@@ -139,6 +147,11 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
 
     @Override
     public ChallengeSolverConfig getConfig() {
+        return config;
+    }
+
+    @Override
+    public CaptchaSolverConfigV3 getConfigV3() {
         return config;
     }
 

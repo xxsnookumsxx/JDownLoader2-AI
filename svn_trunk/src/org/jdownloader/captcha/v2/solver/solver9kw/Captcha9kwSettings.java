@@ -10,9 +10,10 @@ import org.appwork.storage.config.annotations.DefaultStringValue;
 import org.appwork.storage.config.annotations.DescriptionForConfigEntry;
 import org.appwork.storage.config.annotations.RequiresRestart;
 import org.appwork.storage.config.annotations.SpinnerValidator;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 
-public interface Captcha9kwSettings extends ChallengeSolverConfig {
+public interface Captcha9kwSettings extends ChallengeSolverConfig, CaptchaSolverConfigV3 {
     @AboutConfig
     @DefaultStringValue("")
     @DescriptionForConfigEntry("Your (User) ApiKey from 9kw.eu")
@@ -261,3 +262,5 @@ public interface Captcha9kwSettings extends ChallengeSolverConfig {
     @DefaultBooleanValue(false)
     boolean isEnabled();
 }
+
+

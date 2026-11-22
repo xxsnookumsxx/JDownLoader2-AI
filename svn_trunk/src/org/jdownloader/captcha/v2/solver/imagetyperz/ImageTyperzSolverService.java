@@ -21,6 +21,7 @@ import org.appwork.swing.components.tooltips.ExtTooltip;
 import org.appwork.utils.Application;
 import org.appwork.utils.os.CrossSystem;
 import org.jdownloader.actions.AppAction;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 import org.jdownloader.captcha.v2.solver.jac.JacSolverService;
 import org.jdownloader.captcha.v2.solver.service.AbstractSolverService;
@@ -126,6 +127,11 @@ public class ImageTyperzSolverService extends AbstractSolverService implements S
 
     @Override
     public ChallengeSolverConfig getConfig() {
+        return config;
+    }
+
+    @Override
+    public CaptchaSolverConfigV3 getConfigV3() {
         return config;
     }
 

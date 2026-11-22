@@ -6,9 +6,10 @@ import org.appwork.storage.config.annotations.DefaultIntValue;
 import org.appwork.storage.config.annotations.DescriptionForConfigEntry;
 import org.appwork.storage.config.annotations.RequiresRestart;
 import org.appwork.storage.config.annotations.SpinnerValidator;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 
-public interface TwoCaptchaConfigInterface extends ChallengeSolverConfig {
+public interface TwoCaptchaConfigInterface extends ChallengeSolverConfig, CaptchaSolverConfigV3 {
     @AboutConfig
     @DescriptionForConfigEntry("Your 2captcha.com apiKey (https://2captcha.com/setting)")
     String getApiKey();
@@ -35,3 +36,5 @@ public interface TwoCaptchaConfigInterface extends ChallengeSolverConfig {
     @DefaultBooleanValue(false)
     boolean isEnabled();
 }
+
+

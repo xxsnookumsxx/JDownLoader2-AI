@@ -22,6 +22,7 @@ import org.appwork.utils.Application;
 import org.appwork.utils.os.CrossSystem;
 import org.jdownloader.DomainInfo;
 import org.jdownloader.actions.AppAction;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 import org.jdownloader.captcha.v2.solver.imagetyperz.ImageTyperzSolverService;
 import org.jdownloader.captcha.v2.solver.jac.JacSolverService;
@@ -34,6 +35,8 @@ import org.jdownloader.images.NewTheme;
 import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_DBC;
 import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
+import java.util.Set;
 
 public class DeathByCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
     private DeathByCaptchaSettings config;
@@ -51,12 +54,17 @@ public class DeathByCaptchaSolverService extends AbstractSolverService implement
 
     @Override
     public SolverType getType() {
-        return _GUI.T.CaptchaSolver_Type_paid_online();
+        return SolverType.EXTERNAL;
     }
 
     @Override
     public Icon getIcon(int size) {
         return NewTheme.I().getIcon(IconKey.ICON_LOGO_DBC, size);
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return solver == null ? java.util.Collections.emptySet() : solver.getSupportedCaptchaTypes();
     }
 
     @Override
@@ -129,6 +137,11 @@ public class DeathByCaptchaSolverService extends AbstractSolverService implement
 
     @Override
     public ChallengeSolverConfig getConfig() {
+        return config;
+    }
+
+    @Override
+    public CaptchaSolverConfigV3 getConfigV3() {
         return config;
     }
 

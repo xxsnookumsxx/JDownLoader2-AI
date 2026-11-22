@@ -1,8 +1,10 @@
 package org.jdownloader.captcha.v2.solver.antiCaptchaCom;
 
 import java.net.URL;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import jd.http.Browser;
 
@@ -48,6 +50,11 @@ public class AntiCaptchaComSolver extends AbstractAntiCaptchaComSolver<String> {
     private AntiCaptchaComSolver() {
         super();
         getService().setSolver(this);
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.RECAPTCHA_V2);
     }
 
     @Override
@@ -298,7 +305,7 @@ public class AntiCaptchaComSolver extends AbstractAntiCaptchaComSolver<String> {
     }
 
     @Override
-    public boolean setInvalid(final AbstractResponse<?> response) {
+    protected boolean onInvalid(final AbstractResponse<?> response) {
         return false;
     }
 

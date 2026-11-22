@@ -6,9 +6,10 @@ import org.appwork.storage.config.annotations.DefaultIntValue;
 import org.appwork.storage.config.annotations.DescriptionForConfigEntry;
 import org.appwork.storage.config.annotations.RequiresRestart;
 import org.appwork.storage.config.annotations.SpinnerValidator;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 
-public interface ImageTyperzConfigInterface extends ChallengeSolverConfig {
+public interface ImageTyperzConfigInterface extends ChallengeSolverConfig, CaptchaSolverConfigV3 {
     @AboutConfig
     @DescriptionForConfigEntry("Your ImageTyperz.com Username")
     String getUserName();
@@ -41,3 +42,5 @@ public interface ImageTyperzConfigInterface extends ChallengeSolverConfig {
     @DefaultBooleanValue(false)
     boolean isEnabled();
 }
+
+

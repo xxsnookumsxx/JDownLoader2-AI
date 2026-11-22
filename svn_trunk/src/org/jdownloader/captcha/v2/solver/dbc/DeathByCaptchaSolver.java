@@ -82,6 +82,11 @@ public class DeathByCaptchaSolver extends CESChallengeSolver<String> {
     }
 
     @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.RECAPTCHA_V2, CAPTCHA_TYPE.HCAPTCHA, CAPTCHA_TYPE.CUT_CAPTCHA, CAPTCHA_TYPE.TURNSTILE);
+    }
+
+    @Override
     public ChallengeVetoReason getChallengeVetoReason(Challenge<?> c) {
         if (c instanceof BasicCaptchaChallenge) {
             return super.getChallengeVetoReason(c);
@@ -99,7 +104,7 @@ public class DeathByCaptchaSolver extends CESChallengeSolver<String> {
     @Override
     protected void solveCES(final CESSolverJob<String> job) throws InterruptedException, SolverException {
         final Challenge<?> challenge = job.getChallenge();
-        job.showBubble(this, getBubbleTimeout(challenge));
+        job.showBubble();
         checkInterruption();
         try {
             challenge.sendStatsSolving(this);
@@ -276,15 +281,6 @@ public class DeathByCaptchaSolver extends CESChallengeSolver<String> {
         throw new WTFException();
     }
 
-    private int getBubbleTimeout(final Challenge<?> challenge) {
-        final HashMap<String, Integer> map = config.getBubbleTimeoutByHostMap();
-        Integer ret = map.get(challenge.getHost().toLowerCase(Locale.ENGLISH));
-        if (ret == null || ret < 0) {
-            ret = CFG_CAPTCHA.CFG.getCaptchaExchangeChanceToSkipBubbleTimeout();
-        }
-        return ret;
-    }
-
     @Override
     protected boolean validateLogins() {
         if (!CFG_DBC.ENABLED.isEnabled()) {
@@ -301,12 +297,12 @@ public class DeathByCaptchaSolver extends CESChallengeSolver<String> {
     }
 
     @Override
-    public boolean setUnused(AbstractResponse<?> response) {
+    protected boolean onUnused(final AbstractResponse<?> response) {
         return false;
     }
 
     @Override
-    public boolean setInvalid(final AbstractResponse<?> response) {
+    protected boolean onInvalid(final AbstractResponse<?> response) {
         if (!config.isFeedBackSendingEnabled()) {
             return false;
         } else if (!(response instanceof DeathByCaptchaResponse)) {
@@ -402,10 +398,5 @@ public class DeathByCaptchaSolver extends CESChallengeSolver<String> {
         br.getHeaders().put("Accept", "application/json");
         br.getHeaders().put("User-Agent", "JDownloader");
         return br;
-    }
-
-    @Override
-    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
-        return null;
     }
 }

@@ -9,6 +9,7 @@ import javax.swing.Icon;
 import org.appwork.storage.config.JsonConfig;
 import org.appwork.swing.components.tooltips.ExtTooltip;
 import org.appwork.utils.Application;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 import org.jdownloader.captcha.v2.solver.jac.JacSolverService;
 import org.jdownloader.captcha.v2.solver.service.AbstractSolverService;
@@ -64,6 +65,11 @@ public class TwoCaptchaSolverService extends AbstractSolverService implements Se
 
     @Override
     public ChallengeSolverConfig getConfig() {
+        return config;
+    }
+
+    @Override
+    public CaptchaSolverConfigV3 getConfigV3() {
         return config;
     }
 

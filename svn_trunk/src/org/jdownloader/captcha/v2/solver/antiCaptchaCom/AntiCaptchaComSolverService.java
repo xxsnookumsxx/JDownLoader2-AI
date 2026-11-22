@@ -3,12 +3,14 @@ package org.jdownloader.captcha.v2.solver.antiCaptchaCom;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.swing.Icon;
 
 import org.appwork.storage.config.JsonConfig;
 import org.appwork.swing.components.tooltips.ExtTooltip;
 import org.appwork.utils.Application;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 import org.jdownloader.captcha.v2.solver.service.AbstractSolverService;
 import org.jdownloader.captcha.v2.solver.solver9kw.NineKwSolverService;
@@ -22,6 +24,7 @@ import jd.gui.swing.jdgui.components.premiumbar.ServiceCollection;
 import jd.gui.swing.jdgui.components.premiumbar.ServicePanel;
 import jd.gui.swing.jdgui.components.premiumbar.ServicePanelExtender;
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.AbstractCaptchaSolverConfigPanel;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 public class AntiCaptchaComSolverService extends AbstractSolverService implements ServicePanelExtender {
     private AntiCaptchaComConfigInterface config;
@@ -47,6 +50,16 @@ public class AntiCaptchaComSolverService extends AbstractSolverService implement
     }
 
     @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return solver.getSupportedCaptchaTypes();
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return solver == null ? java.util.Collections.emptySet() : solver.getSupportedCaptchaTypes();
+    }
+
+    @Override
     public AbstractCaptchaSolverConfigPanel getConfigPanel() {
         return new AntiCaptchaComConfigPanel(this);
     }
@@ -63,6 +76,11 @@ public class AntiCaptchaComSolverService extends AbstractSolverService implement
 
     @Override
     public AntiCaptchaComConfigInterface getConfig() {
+        return config;
+    }
+
+    @Override
+    public CaptchaSolverConfigV3 getConfigV3() {
         return config;
     }
 

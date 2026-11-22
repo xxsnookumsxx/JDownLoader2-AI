@@ -21,6 +21,7 @@ import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 import org.appwork.utils.Application;
 import org.appwork.utils.os.CrossSystem;
 import org.jdownloader.actions.AppAction;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 import org.jdownloader.captcha.v2.solver.cheapcaptcha.CheapCaptchaSolverService;
 import org.jdownloader.captcha.v2.solver.dbc.DeathByCaptchaSolverService;
@@ -34,6 +35,9 @@ import org.jdownloader.gui.translate._GUI;
 import org.jdownloader.images.AbstractIcon;
 import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_END_CAPTCHA;
+import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
+import java.util.Set;
 
 public class EndCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
     private EndCaptchaConfigInterface config;
@@ -139,6 +143,11 @@ public class EndCaptchaSolverService extends AbstractSolverService implements Se
 
     @Override
     public ChallengeSolverConfig getConfig() {
+        return config;
+    }
+
+    @Override
+    public CaptchaSolverConfigV3 getConfigV3() {
         return config;
     }
 

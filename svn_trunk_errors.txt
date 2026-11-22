@@ -1,3 +1,6 @@
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:58: error: method getSupportedCaptchaTypes() is already defined in class AntiCaptchaComSolverService
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+                             ^
 svn_trunk\src\org\jdownloader\net\BCSSLSocketStreamFactory.java:589: warning: [removal] getPeerCertificateChain() in SSLSession has been deprecated and marked for removal
         public javax.security.cert.X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
                                                      ^
@@ -478,42 +481,32 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComCon
                              ^
   symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:26: error: AntiCaptchaComSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
-public class AntiCaptchaComSolverService extends AbstractSolverService implements ServicePanelExtender {
-       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:49: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:62: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:54: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:67: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:64: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:77: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:103: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:121: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:106: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolverService.java:124: error: cannot find symbol
         ret.put(JacSolverService.ID, 30000);
                 ^
   symbol:   variable JacSolverService
   location: class AntiCaptchaComSolverService
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:31: error: AntiCaptchaComSolver is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
-public class AntiCaptchaComSolver extends AbstractAntiCaptchaComSolver<String> {
-       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:110: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:117: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
         job.showBubble(this);
                        ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:168: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:175: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
         job.showBubble(this);
                        ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:213: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
+svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:220: error: incompatible types: AntiCaptchaComSolver cannot be converted to int
         job.showBubble(this);
                        ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComSolver.java:301: error: setInvalid(AbstractResponse<?>) in AntiCaptchaComSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
-    public boolean setInvalid(final AbstractResponse<?> response) {
-                   ^
-  overridden method is final
 svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\AbstractBrowserSolver.java:59: error: incompatible types: List<CAPTCHA_TYPE> cannot be converted to Set<CAPTCHA_TYPE>
         return types;
                ^
@@ -537,54 +530,51 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolution
                                                                                                        ^
   symbol:   method getPriority()
   location: variable answer of type AbstractResponse<String>
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:41: error: CaptchaSolutionsSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
-public class CaptchaSolutionsSolverService extends AbstractSolverService implements ServicePanelExtender {
-       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:56: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:59: error: cannot find symbol
         return _GUI.T.CaptchaSolver_Type_paid_online_ocr();
                      ^
   symbol:   method CaptchaSolver_Type_paid_online_ocr()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:61: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:64: error: cannot find symbol
         return new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, size);
                                        ^
   symbol:   variable ICON_LOGO_CAPTCHASOLUTIONS
   location: class IconKey
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:64: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:72: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:76: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:84: error: cannot find symbol
                 addHeader(getTitle(), new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, 32));
                                                               ^
   symbol:   variable ICON_LOGO_CAPTCHASOLUTIONS
   location: class IconKey
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:77: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:85: error: cannot find symbol
                 addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
                                      ^
   symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:94: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:102: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_username()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:95: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:103: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_password()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:122: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:130: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:129: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:137: error: cannot find symbol
         return _GUI.T.CaptchaSolutionsSolver_gettypeName_();
                      ^
   symbol:   method CaptchaSolutionsSolver_gettypeName_()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:132: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:140: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:169: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:182: error: method does not override or implement a method from a supertype
     @Override
     ^
 svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsTooltip.java:54: error: cannot find symbol
@@ -602,190 +592,142 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolution
                                                                                                               ^
   symbol:   variable ICON_LOGO_CAPTCHASOLUTIONS
   location: class IconKey
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolver.java:85: error: incompatible types: CheapCaptchaSolver cannot be converted to int
-        job.showBubble(this);
-                       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolver.java:181: error: setInvalid(AbstractResponse<?>) in CheapCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
-    public boolean setInvalid(final AbstractResponse<?> response) {
-                   ^
-  overridden method is final
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:38: error: CheapCaptchaSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
-public class CheapCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
-       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:55: error: cannot find symbol
-        return _GUI.T.CaptchaSolver_Type_paid_online();
-                     ^
-  symbol:   method CaptchaSolver_Type_paid_online()
-  location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:63: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:71: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:77: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:85: error: cannot find symbol
                 addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
                                      ^
   symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:98: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:106: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_username()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:99: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:107: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_password()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:130: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:138: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:140: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:148: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:179: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\cheapcaptcha\CheapCaptchaSolverService.java:192: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:102: error: no suitable method found for showBubble(DeathByCaptchaSolver,int)
-        job.showBubble(this, getBubbleTimeout(challenge));
-           ^
-    method CESSolverJob.showBubble() is not applicable
-      (actual and formal argument lists differ in length)
-    method CESSolverJob.showBubble(int) is not applicable
-      (actual and formal argument lists differ in length)
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:283: error: cannot find symbol
-            ret = CFG_CAPTCHA.CFG.getCaptchaExchangeChanceToSkipBubbleTimeout();
-                                 ^
-  symbol:   method getCaptchaExchangeChanceToSkipBubbleTimeout()
-  location: variable CFG of type CaptchaSettings
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:304: error: setUnused(AbstractResponse<?>) in DeathByCaptchaSolver cannot override setUnused(AbstractResponse<?>) in ChallengeSolver
-    public boolean setUnused(AbstractResponse<?> response) {
-                   ^
-  overridden method is final
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:309: error: setInvalid(AbstractResponse<?>) in DeathByCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
-    public boolean setInvalid(final AbstractResponse<?> response) {
-                   ^
-  overridden method is final
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:38: error: DeathByCaptchaSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
-public class DeathByCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
-       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:54: error: cannot find symbol
-        return _GUI.T.CaptchaSolver_Type_paid_online();
-                     ^
-  symbol:   method CaptchaSolver_Type_paid_online()
-  location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:62: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:86: error: cannot find symbol
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.RECAPTCHA_V2, CAPTCHA_TYPE.HCAPTCHA, CAPTCHA_TYPE.CUT_CAPTCHA, CAPTCHA_TYPE.TURNSTILE);
+                                                                                                            ^
+  symbol:   variable CUT_CAPTCHA
+  location: class CAPTCHA_TYPE
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:86: error: cannot find symbol
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.RECAPTCHA_V2, CAPTCHA_TYPE.HCAPTCHA, CAPTCHA_TYPE.CUT_CAPTCHA, CAPTCHA_TYPE.TURNSTILE);
+                                                                                                                                      ^
+  symbol:   variable TURNSTILE
+  location: class CAPTCHA_TYPE
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolver.java:86: error: cannot find symbol
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.RECAPTCHA_V2, CAPTCHA_TYPE.HCAPTCHA, CAPTCHA_TYPE.CUT_CAPTCHA, CAPTCHA_TYPE.TURNSTILE);
+               ^
+  symbol:   variable EnumSet
+  location: class DeathByCaptchaSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:70: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:75: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:83: error: cannot find symbol
                 addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
                                      ^
   symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:93: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:101: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_username()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:94: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:102: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_password()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:120: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:128: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:130: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:138: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:167: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\dbc\DeathByCaptchaSolverService.java:180: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolver.java:94: error: incompatible types: EndCaptchaSolver cannot be converted to int
-        job.showBubble(this);
-                       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolver.java:169: error: setInvalid(AbstractResponse<?>) in EndCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
-    public boolean setInvalid(final AbstractResponse<?> response) {
-                   ^
-  overridden method is final
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:38: error: EndCaptchaSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:42: error: EndCaptchaSolverService is not abstract and does not override abstract method getSupportedCaptchaTypes() in SolverService
 public class EndCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
        ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:63: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:67: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:77: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:81: error: cannot find symbol
                 addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
                                      ^
   symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:98: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:102: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_username()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:99: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:103: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_password()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:130: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:134: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:140: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:144: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:171: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:180: error: cannot find symbol
                 public ExtTooltip createTooltip(ServicePanel owner) {
                        ^
   symbol: class ExtTooltip
-svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:179: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\endcaptcha\EndCaptchaSolverService.java:188: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzCaptchaSolver.java:87: error: incompatible types: ImageTyperzCaptchaSolver cannot be converted to int
-        job.showBubble(this);
-                       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzCaptchaSolver.java:149: error: incompatible types: ImageTyperzCaptchaSolver cannot be converted to int
-        job.showBubble(this);
-                       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzCaptchaSolver.java:229: error: incompatible types: ImageTyperzCaptchaSolver cannot be converted to int
-        job.showBubble(this);
-                       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzCaptchaSolver.java:301: error: setInvalid(AbstractResponse<?>) in ImageTyperzCaptchaSolver cannot override setInvalid(AbstractResponse<?>) in ChallengeSolver
-    public boolean setInvalid(final AbstractResponse<?> response) {
-                   ^
-  overridden method is final
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:37: error: ImageTyperzSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:38: error: ImageTyperzSolverService is not abstract and does not override abstract method getSupportedCaptchaTypes() in SolverService
 public class ImageTyperzSolverService extends AbstractSolverService implements ServicePanelExtender {
        ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:52: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:53: error: cannot find symbol
         return _GUI.T.CaptchaSolver_Type_paid_online();
                      ^
   symbol:   method CaptchaSolver_Type_paid_online()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:60: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:61: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:73: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:74: error: cannot find symbol
                 addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
                                      ^
   symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:90: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:91: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_username()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:91: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:92: error: cannot find symbol
                 addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
                               ^
   symbol:   method captchabrotherhoodService_createPanel_password()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:117: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:118: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:127: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:128: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:164: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\imagetyperz\ImageTyperzSolverService.java:170: error: method does not override or implement a method from a supertype
     @Override
     ^
 svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\AbstractCaptcha9kwSolver.java:108: error: cannot find symbol
@@ -874,30 +816,30 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwConfigPanel.java
                      ^
   symbol:   method NinekwService_getDescription_tt_()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:36: error: NineKwSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:38: error: NineKwSolverService is not abstract and does not override abstract method getSupportedCaptchaTypes() in SolverService
 public class NineKwSolverService extends AbstractSolverService implements ServicePanelExtender {
        ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:148: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:150: error: cannot find symbol
         return _GUI.T.Captcha9kwSolver_getName_();
                      ^
   symbol:   method Captcha9kwSolver_getName_()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:151: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:153: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:156: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:158: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:247: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:249: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:264: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:266: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:269: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:271: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:279: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\solver9kw\NineKwSolverService.java:281: error: method does not override or implement a method from a supertype
     @Override
     ^
 svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaConfigPanel.java:35: error: cannot find symbol
@@ -905,19 +847,19 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaConfigPanel
                              ^
   symbol:   method AntiCaptchaConfigPanel_onShow_description_paid_service()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:27: error: TwoCaptchaSolverService is not abstract and does not override abstract method getConfigV3() in SolverService
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:28: error: TwoCaptchaSolverService is not abstract and does not override abstract method getSupportedCaptchaTypes() in SolverService
 public class TwoCaptchaSolverService extends AbstractSolverService implements ServicePanelExtender {
        ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:50: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:51: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:55: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:56: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:65: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:66: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:105: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolverService.java:111: error: method does not override or implement a method from a supertype
     @Override
     ^
 svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolver.java:190: error: incompatible types: TwoCaptchaSolver cannot be converted to int
@@ -1011,5 +953,5 @@ Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-230 errors
+214 errors
 20 warnings

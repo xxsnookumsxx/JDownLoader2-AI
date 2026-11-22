@@ -7,9 +7,10 @@ import org.appwork.storage.config.annotations.DefaultStringValue;
 import org.appwork.storage.config.annotations.DescriptionForConfigEntry;
 import org.appwork.storage.config.annotations.RequiresRestart;
 import org.appwork.storage.config.annotations.SpinnerValidator;
+import org.jdownloader.captcha.v2.CaptchaSolverConfigV3;
 import org.jdownloader.captcha.v2.ChallengeSolverConfig;
 
-public interface AntiCaptchaComConfigInterface extends ChallengeSolverConfig {
+public interface AntiCaptchaComConfigInterface extends ChallengeSolverConfig, CaptchaSolverConfigV3 {
     @AboutConfig
     @DescriptionForConfigEntry("Your anti-captcha.com apiKey (https://anti-captcha.com/clients/reports/dashboard)")
     String getApiKey();

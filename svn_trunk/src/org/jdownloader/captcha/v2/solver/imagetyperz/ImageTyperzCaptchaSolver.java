@@ -5,6 +5,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.Set;
+import java.util.EnumSet;
 
 import org.appwork.storage.config.JsonConfig;
 import org.appwork.utils.StringUtils;
@@ -84,7 +85,7 @@ public class ImageTyperzCaptchaSolver extends CESChallengeSolver<String> {
 
     // https://www.imagetyperz.com/Forms/api/api.html#-hcaptcha
     protected void handleHCaptcha(CESSolverJob<String> job) throws InterruptedException, SolverException {
-        job.showBubble(this);
+        job.showBubble();
         checkInterruption();
         job.getChallenge().sendStatsSolving(this);
         URLConnectionAdapter conn = null;
@@ -146,7 +147,7 @@ public class ImageTyperzCaptchaSolver extends CESChallengeSolver<String> {
 
     // https://www.imagetyperz.com/Forms/api/api.html#-recaptcha
     protected void handleRecaptchaV2(CESSolverJob<String> job) throws InterruptedException, SolverException {
-        job.showBubble(this);
+        job.showBubble();
         checkInterruption();
         job.getChallenge().sendStatsSolving(this);
         URLConnectionAdapter conn = null;
@@ -226,7 +227,7 @@ public class ImageTyperzCaptchaSolver extends CESChallengeSolver<String> {
     }
 
     protected void solveBasicCaptchaChallenge(CESSolverJob<String> job, BasicCaptchaChallenge challenge) throws InterruptedException, SolverException {
-        job.showBubble(this);
+        job.showBubble();
         checkInterruption();
         job.getChallenge().sendStatsSolving(this);
         URLConnectionAdapter conn = null;
@@ -298,7 +299,7 @@ public class ImageTyperzCaptchaSolver extends CESChallengeSolver<String> {
     }
 
     @Override
-    public boolean setInvalid(final AbstractResponse<?> response) {
+    protected boolean onInvalid(final AbstractResponse<?> response) {
         if (config.isFeedBackSendingEnabled() && response instanceof ImageTyperzResponse) {
             threadPool.execute(new Runnable() {
                 @Override
@@ -373,6 +374,7 @@ public class ImageTyperzCaptchaSolver extends CESChallengeSolver<String> {
 
     @Override
     public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
-        return null;
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.HCAPTCHA, CAPTCHA_TYPE.RECAPTCHA_V2);
     }
 }
+

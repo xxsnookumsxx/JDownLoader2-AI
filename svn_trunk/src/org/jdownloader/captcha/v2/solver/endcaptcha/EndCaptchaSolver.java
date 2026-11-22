@@ -5,6 +5,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.Set;
+import java.util.EnumSet;
 
 import org.appwork.storage.config.JsonConfig;
 import org.appwork.utils.StringUtils;
@@ -91,7 +92,7 @@ public class EndCaptchaSolver extends CESChallengeSolver<String> {
     }
 
     protected void solveBasicCaptchaChallenge(CESSolverJob<String> job, BasicCaptchaChallenge challenge) throws InterruptedException, SolverException {
-        job.showBubble(this);
+        job.showBubble();
         checkInterruption();
         job.getChallenge().sendStatsSolving(this);
         URLConnectionAdapter conn = null;
@@ -166,7 +167,7 @@ public class EndCaptchaSolver extends CESChallengeSolver<String> {
     }
 
     @Override
-    public boolean setInvalid(final AbstractResponse<?> response) {
+    protected boolean onInvalid(final AbstractResponse<?> response) {
         if (config.isFeedBackSendingEnabled() && response instanceof EndCaptchaResponse) {
             threadPool.execute(new Runnable() {
                 @Override
@@ -237,6 +238,6 @@ public class EndCaptchaSolver extends CESChallengeSolver<String> {
 
     @Override
     public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
-        return null;
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE);
     }
 }
