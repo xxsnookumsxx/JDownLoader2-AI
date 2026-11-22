@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "bugbench": {
+      "command": "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.10002-hotspot\\bin\\java.exe",
+      "args": [
+        "-jar",
+        "c:\\Users\\Admin\\.vscode-oss\\extensions\\bugbench.bugbench-2026.3.0-universal\\server\\bugbench-mcp.jar",
+        "--stdio",
+        "--allowed-root",
+        "d:\\AI-Clients\\Agents-Only\\JDownLoader2-AI"
+      ]
+    }
+  }
+}
