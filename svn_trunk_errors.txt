@@ -28,9 +28,88 @@ svn_trunk\src\jd\plugins\DownloadLink.java:488: warning: [dep-ann] deprecated it
 svn_trunk\src\jd\gui\swing\jdgui\views\settings\components\Spinner.java:122: warning: [dep-ann] deprecated item is not annotated with @Deprecated
     public void setValue(Object value) {
                 ^
+svn_trunk\src\org\jdownloader\captcha\v2\ChallengeResponseController.java:806: error: incomparable types: String and SolverType
+                final boolean external = String.valueOf(service.getType()) == SolverType.EXTERNAL;
+                                                                           ^
+svn_trunk\src\org\jdownloader\captcha\v2\ChallengeResponseController.java:810: error: cannot find symbol
+                if (silentMode && String.valueOf(service.getType()).requiresUserOnThisComputer()) {
+                                                                   ^
+  symbol:   method requiresUserOnThisComputer()
+  location: class String
+svn_trunk\src\org\jdownloader\captcha\v2\ChallengeResponseController.java:1211: error: incomparable types: String and SolverType
+                        if (String.valueOf(service.getType()) == SolverType.EXTERNAL) {
+                                                              ^
+svn_trunk\src\org\jdownloader\captcha\v2\ChallengeResponseController.java:1444: error: incomparable types: String and SolverType
+            if (String.valueOf(service.getType()) != SolverType.EXTERNAL || !service.isUsable()) {
+                                                  ^
 svn_trunk\src\jd\SecondLevelLaunch.java:1047: warning: [removal] AccessController in java.security has been deprecated and marked for removal
                 final File[] baseFolders = AccessController.doPrivileged(new PrivilegedAction<File[]>() {
                                            ^
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:306: error: cannot find symbol
+        case JD_LOCAL_DIALOG:
+             ^
+  symbol:   variable JD_LOCAL_DIALOG
+  location: class CaptchaWizardDialog
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:308: error: cannot find symbol
+        case JD_LOCAL_BROWSER:
+             ^
+  symbol:   variable JD_LOCAL_BROWSER
+  location: class CaptchaWizardDialog
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:310: error: cannot find symbol
+        case JD_REMOTE_MYJD:
+             ^
+  symbol:   variable JD_REMOTE_MYJD
+  location: class CaptchaWizardDialog
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:322: error: cannot find symbol
+            case EXTERNAL:
+                 ^
+  symbol:   variable EXTERNAL
+  location: class CaptchaWizardDialog
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:328: error: cannot find symbol
+            return String.valueOf(service.getType()).requiresHuman();
+                                                    ^
+  symbol:   method requiresHuman()
+  location: class String
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:439: error: cannot find symbol
+                case EXTERNAL:
+                     ^
+  symbol:   variable EXTERNAL
+  location: class CaptchaWizardDialog
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:442: error: cannot find symbol
+                case JD_LOCAL:
+                     ^
+  symbol:   variable JD_LOCAL
+  location: class CaptchaWizardDialog
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:1232: error: cannot find symbol
+            if (String.valueOf(service.getType()).requiresHuman()) {
+                                                 ^
+  symbol:   method requiresHuman()
+  location: class String
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:1274: error: cannot find symbol
+            if (String.valueOf(service.getType()).requiresHuman() && service.getSupportedCaptchaTypes() != null) {
+                                                 ^
+  symbol:   method requiresHuman()
+  location: class String
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:1310: error: cannot find symbol
+            if (String.valueOf(service.getType()).requiresHuman()) {
+                                                 ^
+  symbol:   method requiresHuman()
+  location: class String
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:1385: error: cannot find symbol
+            if (String.valueOf(service.getType()).requiresHuman()) {
+                                                 ^
+  symbol:   method requiresHuman()
+  location: class String
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:1392: error: cannot find symbol
+            case EXTERNAL:
+                 ^
+  symbol:   variable EXTERNAL
+  location: class CaptchaWizardDialog
+svn_trunk\src\jd\gui\swing\jdgui\views\settings\panels\anticaptcha\CaptchaWizardDialog.java:1423: error: cannot find symbol
+            if (String.valueOf(service.getType()).requiresHuman()) {
+                                                 ^
+  symbol:   method requiresHuman()
+  location: class String
 svn_trunk\src\jd\nutils\Formatter.java:90: warning: [dep-ann] deprecated item is not annotated with @Deprecated
     public static String fillString(String binaryString, String pre, String post, int length) {
                          ^
@@ -49,94 +128,25 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\BrowserReference.java:22
 svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\BrowserReference.java:229: warning: [removal] finalize() in Object has been deprecated and marked for removal
             super.finalize();
                  ^
-svn_trunk\src\jd\plugins\hoster\AnonServices.java:241: error: cannot find symbol
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_crc32, HashInfo.TYPE.valueOf("CRC32")));
-                ^
-  symbol:   method addHashInfo(HashInfo)
-  location: variable link of type DownloadLink
-svn_trunk\src\jd\plugins\hoster\AnonServices.java:244: error: cannot find symbol
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_md5, HashInfo.TYPE.valueOf("MD5")));
-                ^
-  symbol:   method addHashInfo(HashInfo)
-  location: variable link of type DownloadLink
-svn_trunk\src\jd\plugins\hoster\AnonServices.java:247: error: cannot find symbol
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha1, HashInfo.TYPE.valueOf("SHA1")));
-                ^
-  symbol:   method addHashInfo(HashInfo)
-  location: variable link of type DownloadLink
-svn_trunk\src\jd\plugins\hoster\AnonServices.java:250: error: cannot find symbol
-            link.addHashInfo(HashInfo.newInstanceSafe(hash_sha256, HashInfo.TYPE.valueOf("SHA256")));
-                ^
-  symbol:   method addHashInfo(HashInfo)
-  location: variable link of type DownloadLink
-svn_trunk\src\jd\plugins\hoster\ClipHunterCom.java:61: error: cannot find symbol
-    public static final String[][] qualities     = jd.plugins.decrypter.ClipHunterComDecrypt.qualities;
-                                                                                            ^
-  symbol:   variable qualities
-  location: class ClipHunterComDecrypt
 svn_trunk\src\jd\plugins\hoster\CloudvideoTv.java:117: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\CloudvideoTv.java:122: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
-        super.checkErrors(br, html, link, account, checkAll);
-             ^
-  required: Browser,String,DownloadLink,Account
-  found:    Browser,String,DownloadLink,Account,boolean
-  reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\hoster\DebridFileCom.java:97: error: cannot find symbol
-            mhm.runCheck(account, link);
-               ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
-svn_trunk\src\jd\plugins\hoster\DebridFileCom.java:105: error: cannot find symbol
-        mhm.runCheck(account, link);
-           ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
 svn_trunk\src\jd\plugins\hoster\DebridFileCom.java:184: error: incompatible types: String cannot be converted to long
             ai.setTrafficMax("10 GB");
                              ^
-svn_trunk\src\jd\plugins\hoster\DebridLinkFr2.java:566: error: cannot find symbol
-            mhm.runCheck(account, link);
-               ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
-svn_trunk\src\jd\plugins\hoster\DebridLinkFr2.java:581: error: cannot find symbol
-        mhm.runCheck(account, link);
-           ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
-svn_trunk\src\jd\plugins\hoster\DlFreeFr.java:266: error: cannot find symbol
-                link.setFinalFileName(Plugin.getFileNameFromHeader(con));
-                                            ^
-  symbol:   method getFileNameFromHeader(URLConnectionAdapter)
-  location: class Plugin
 svn_trunk\src\jd\plugins\hoster\EgofilesNet.java:118: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\EgofilesNet.java:124: error: cannot find symbol
-            return super.isOfflineWebsiteInfoPage(br, link);
-                        ^
-  symbol: method isOfflineWebsiteInfoPage(Browser,DownloadLink)
-svn_trunk\src\jd\plugins\hoster\File2btcCom.java:124: error: incompatible types: String cannot be converted to FILENAME_SOURCE
-                    filetitle = this.correctOrApplyFileNameExtension(filetitle, ".mp4");
-                                                                     ^
-svn_trunk\src\jd\plugins\hoster\File2btcCom.java:276: error: incompatible types: String cannot be converted to long
+svn_trunk\src\jd\plugins\hoster\File2btcCom.java:277: error: incompatible types: String cannot be converted to long
             ai.setUsedSpace(spaceUsed.trim());
                                           ^
 svn_trunk\src\jd\plugins\hoster\FilelionsTo.java:149: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\FilelionsTo.java:151: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
-        super.checkErrors(br, html, link, account, checkAll);
-             ^
-  required: Browser,String,DownloadLink,Account
-  found:    Browser,String,DownloadLink,Account,boolean
-  reason: actual and formal argument lists differ in length
 svn_trunk\src\jd\plugins\hoster\FilericeCom.java:80: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\FreeM3DownloadNet.java:320: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+svn_trunk\src\jd\plugins\hoster\FreeM3DownloadNet.java:321: error: incompatible types: String cannot be converted to FILENAME_SOURCE
                             link.setFinalFileName(this.correctOrApplyFileNameExtension(currentFilename, "." + fileExtension));
                                                                                        ^
 svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:144: error: method does not override or implement a method from a supertype
@@ -148,20 +158,9 @@ svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:147: error: method scanInfo i
   required: String[]
   found:    String[]
   reason: scanInfo(String[]) has private access in XFileSharingProBasic
-svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:148: error: cannot find symbol
-        final String better_filename = new Regex(correctedBR, "<h2 class=\"the_title mb-2\">([^<>\"]+)</h2>").getMatch(0);
-                                                 ^
-  symbol:   variable correctedBR
-  location: class GounlimitedTo
 svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:168: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:170: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
-        super.checkErrors(br, html, link, account, checkAll);
-             ^
-  required: Browser,String,DownloadLink,Account
-  found:    Browser,String,DownloadLink,Account,boolean
-  reason: actual and formal argument lists differ in length
 svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:181: error: method does not override or implement a method from a supertype
     @Override
     ^
@@ -171,24 +170,13 @@ svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:183: error: method requestFil
   required: DownloadLink,Account
   found:    DownloadLink,Account,boolean
   reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\hoster\GounlimitedTo.java:185: error: cannot find symbol
-        final String dllink = this.getDllink(link, account, br, correctedBR);
-                                                                ^
-  symbol:   variable correctedBR
-  location: class GounlimitedTo
 svn_trunk\src\jd\plugins\hoster\HighstreamTv.java:143: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\HighstreamTv.java:145: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
-        super.checkErrors(br, html, link, account, checkAll);
-             ^
-  required: Browser,String,DownloadLink,Account
-  found:    Browser,String,DownloadLink,Account,boolean
-  reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\hoster\Mp4playerSite.java:108: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+svn_trunk\src\jd\plugins\hoster\Mp4playerSite.java:109: error: incompatible types: String cannot be converted to FILENAME_SOURCE
             link.setFinalFileName(this.correctOrApplyFileNameExtension(title, ".mp4"));
                                                                        ^
-svn_trunk\src\jd\plugins\hoster\PimpRollHostedTube.java:217: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+svn_trunk\src\jd\plugins\hoster\PimpRollHostedTube.java:218: error: incompatible types: String cannot be converted to FILENAME_SOURCE
             filename = this.correctOrApplyFileNameExtension(filename, ".mp4");
                                                             ^
 svn_trunk\src\jd\plugins\hoster\QiwiGg.java:137: error: cannot find symbol
@@ -205,27 +193,7 @@ svn_trunk\src\jd\plugins\hoster\RacatyNet.java:116: error: method scanInfo in cl
   required: String[]
   found:    String[]
   reason: scanInfo(String[]) has private access in XFileSharingProBasic
-svn_trunk\src\jd\plugins\hoster\RacatyNet.java:117: error: cannot find symbol
-        String filename = new Regex(correctedBR, "<title>([^<>\"]+) free download at Racaty\\.[A-Za-z0-9]+</title>").getMatch(0);
-                                    ^
-  symbol:   variable correctedBR
-  location: class RacatyNet
-svn_trunk\src\jd\plugins\hoster\RacatyNet.java:119: error: cannot find symbol
-            filename = new Regex(correctedBR, "<h5>Identity</h5><p>([^<>\"]+)</p>").getMatch(0);
-                                 ^
-  symbol:   variable correctedBR
-  location: class RacatyNet
-svn_trunk\src\jd\plugins\hoster\RacatyNet.java:121: error: cannot find symbol
-        String filesize = new Regex(correctedBR, "b>Size:</b> (\\d+(?:\\.\\d+)? .*?)\\s+").getMatch(0);
-                                    ^
-  symbol:   variable correctedBR
-  location: class RacatyNet
-svn_trunk\src\jd\plugins\hoster\RacatyNet.java:124: error: cannot find symbol
-            filesize = new Regex(correctedBR, ">Size\\s*:([^<>\"]+) / Uploaded:").getMatch(0);
-                                 ^
-  symbol:   variable correctedBR
-  location: class RacatyNet
-svn_trunk\src\jd\plugins\hoster\RarcloudsCom.java:119: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+svn_trunk\src\jd\plugins\hoster\RarcloudsCom.java:120: error: incompatible types: String cannot be converted to FILENAME_SOURCE
             filename = this.correctOrApplyFileNameExtension(filename, "." + fileExtension);
                                                             ^
 svn_trunk\src\jd\plugins\hoster\SmoozedCom.java:230: error: method does not override or implement a method from a supertype
@@ -264,12 +232,6 @@ svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:153: error: incompatible type
 svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:181: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\StreamhideCom.java:183: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
-        super.checkErrors(br, html, link, account, checkAll);
-             ^
-  required: Browser,String,DownloadLink,Account
-  found:    Browser,String,DownloadLink,Account,boolean
-  reason: actual and formal argument lists differ in length
 svn_trunk\src\jd\plugins\hoster\StreamhubTo.java:94: error: method does not override or implement a method from a supertype
     @Override
     ^
@@ -292,32 +254,6 @@ svn_trunk\src\jd\plugins\hoster\StreamsbNet.java:133: error: method requestFileI
   required: DownloadLink,Account
   found:    DownloadLink,Account,boolean
   reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\hoster\StreamsbNet.java:172: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
-        super.checkErrors(br, html, link, account, checkAll);
-             ^
-  required: Browser,String,DownloadLink,Account
-  found:    Browser,String,DownloadLink,Account,boolean
-  reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\hoster\SuperdownComBr.java:114: error: cannot find symbol
-            mhm.runCheck(account, downloadLink);
-               ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
-svn_trunk\src\jd\plugins\hoster\SuperdownComBr.java:192: error: cannot find symbol
-        mhm.runCheck(account, link);
-           ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
-svn_trunk\src\jd\plugins\hoster\TransferChomikujPl.java:104: error: cannot find symbol
-            mhm.runCheck(account, link);
-               ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
-svn_trunk\src\jd\plugins\hoster\TransferChomikujPl.java:111: error: cannot find symbol
-        mhm.runCheck(account, link);
-           ^
-  symbol:   method runCheck(Account,DownloadLink)
-  location: variable mhm of type MultiHosterManagement
 svn_trunk\src\jd\plugins\hoster\TransferChomikujPl.java:254: error: TransferChomikujPlAccountFactory is not abstract and does not override abstract method handleClipboardAutoFill() in AccountBuilderInterface
     public static class TransferChomikujPlAccountFactory extends MigPanel implements AccountBuilderInterface {
                   ^
@@ -330,61 +266,19 @@ svn_trunk\src\jd\plugins\hoster\UploadbankCom.java:120: error: method scanInfo i
   required: String[]
   found:    String[]
   reason: scanInfo(String[]) has private access in XFileSharingProBasic
-svn_trunk\src\jd\plugins\hoster\UploadbankCom.java:122: error: cannot find symbol
-            fileInfo[0] = new Regex(correctedBR, "<b>Name\\s*:([^<>\"]+)</b>").getMatch(0);
-                                    ^
-  symbol:   variable correctedBR
-  location: class UploadbankCom
 svn_trunk\src\jd\plugins\hoster\UploadhubIo.java:118: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\UploadhubIo.java:120: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
-        super.checkErrors(br, correctedBR, link, account, checkAll);
-             ^
-  required: Browser,String,DownloadLink,Account
-  found:    Browser,String,DownloadLink,Account,boolean
-  reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:134: error: method does not override or implement a method from a supertype
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:135: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:156: error: cannot find symbol
-            this.checkErrors(br, correctedBR, link, account, false);
-                                 ^
-  symbol:   variable correctedBR
-  location: class UplodNet
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:172: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:173: error: cannot find symbol
             final String code = this.getCaptchaCodeBase64ImageString(image_b64, link);
                                     ^
   symbol: method getCaptchaCodeBase64ImageString(String,DownloadLink)
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:175: error: cannot find symbol
-            link.setProperty(PROPERTY_captcha_required, true);
-                             ^
-  symbol:   variable PROPERTY_captcha_required
-  location: class UplodNet
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:177: error: cannot find symbol
-            this.checkErrors(br, correctedBR, link, account, true);
-                                 ^
-  symbol:   variable correctedBR
-  location: class UplodNet
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:178: error: cannot find symbol
-            dllink = this.getDllink(link, account, br, correctedBR);
-                                                       ^
-  symbol:   variable correctedBR
-  location: class UplodNet
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:183: error: method does not override or implement a method from a supertype
+svn_trunk\src\jd\plugins\hoster\UplodNet.java:184: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:185: error: method checkErrors in class XFileSharingProBasic cannot be applied to given types;
-        super.checkErrors(br, correctedBR, link, account, checkAll);
-             ^
-  required: Browser,String,DownloadLink,Account
-  found:    Browser,String,DownloadLink,Account,boolean
-  reason: actual and formal argument lists differ in length
-svn_trunk\src\jd\plugins\hoster\UplodNet.java:193: error: cannot find symbol
-                final boolean websiteDidAskForCaptcha = link.getBooleanProperty(PROPERTY_captcha_required, false);
-                                                                                ^
-  symbol:   variable PROPERTY_captcha_required
-  location: class UplodNet
 svn_trunk\src\jd\plugins\hoster\UseruploadNet.java:108: error: method does not override or implement a method from a supertype
     @Override
     ^
@@ -403,22 +297,7 @@ svn_trunk\src\jd\plugins\hoster\WolfstreamTv.java:138: error: method scanInfo in
   required: String[]
   found:    String[]
   reason: scanInfo(String[]) has private access in XFileSharingProBasic
-svn_trunk\src\jd\plugins\hoster\WolfstreamTv.java:139: error: cannot find symbol
-        final String betterFileTitle = new Regex(correctedBR, "CONTENT=\"Watch video ([^\"]+)\"").getMatch(0);
-                                                 ^
-  symbol:   variable correctedBR
-  location: class WolfstreamTv
-svn_trunk\src\jd\plugins\hoster\WolfstreamTv.java:145: error: cannot find symbol
-            fileInfo[1] = new Regex(correctedBR, "<span\\s+class\\s*=\\s*\"\\s*uploadate\\s*\"\\s*>\\s*Size\\s*:\\s*([0-9\\.]+\\s*[KMGTP]{0,1}B)\\s*").getMatch(0);
-                                    ^
-  symbol:   variable correctedBR
-  location: class WolfstreamTv
-svn_trunk\src\jd\plugins\hoster\WyslijNet.java:136: error: cannot find symbol
-            account.setProperty(PROPERTY_ACCOUNT_ALLOW_API_DOWNLOAD_ATTEMPT_IN_WEBSITE_MODE, false);
-                                ^
-  symbol:   variable PROPERTY_ACCOUNT_ALLOW_API_DOWNLOAD_ATTEMPT_IN_WEBSITE_MODE
-  location: class WyslijNet
-svn_trunk\src\jd\plugins\hoster\XingyaodiskCom.java:112: error: incompatible types: String cannot be converted to FILENAME_SOURCE
+svn_trunk\src\jd\plugins\hoster\XingyaodiskCom.java:113: error: incompatible types: String cannot be converted to FILENAME_SOURCE
             filename = this.correctOrApplyFileNameExtension(filename, "." + fileExtension);
                                                             ^
 svn_trunk\src\jd\plugins\hoster\YouWatchOrg.java:179: error: method does not override or implement a method from a supertype
@@ -1055,12 +934,6 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\twocaptcha\TwoCaptchaSolver.java
 svn_trunk\src\org\jdownloader\extensions\eventscripter\sandboxobjects\BrowserSandBox.java:193: warning: [removal] finalize() in Object has been deprecated and marked for removal
     protected void finalize() throws Throwable {
                    ^
-svn_trunk\src\org\jdownloader\gui\GuiUtils.java:90: error: package com.apple.eawt does not exist
-                final com.apple.eawt.Application application = com.apple.eawt.Application.getApplication();
-                                    ^
-svn_trunk\src\org\jdownloader\gui\GuiUtils.java:90: error: package com.apple.eawt does not exist
-                final com.apple.eawt.Application application = com.apple.eawt.Application.getApplication();
-                                                                             ^
 svn_trunk\src\org\jdownloader\gui\toolbar\ConvertCLRScriptAction.java:18: error: cannot find symbol
         setName(_JDT.T.convert_CLR_Reconnect_to_jdownloader());
                       ^
@@ -1076,123 +949,21 @@ svn_trunk\src\org\jdownloader\gui\toolbar\ConvertCLRScriptAction.java:25: error:
                                                                                                                                          ^
   symbol:   method ConvertCLRAction_actionPerformed_msg()
   location: variable T of type GuiTranslation
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogle9KWAction.java:21: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogle9KWAction.java:27: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogle9KWAction.java:33: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleAntiCaptchaAction.java:19: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleAntiCaptchaAction.java:25: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleAntiCaptchaAction.java:31: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleBrowserSolverAction.java:20: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleBrowserSolverAction.java:26: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleBrowserSolverAction.java:32: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleCheapCaptchaAction.java:22: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleCheapCaptchaAction.java:29: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleCheapCaptchaAction.java:36: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDBCAction.java:22: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDBCAction.java:29: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDBCAction.java:36: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
 svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:11: error: cannot find symbol
         super(DialogSolverService.getInstance().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
                                                ^
   symbol:   method getConfig()
   location: class DialogSolverService
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:20: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:26: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleDialogAction.java:32: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleEndCaptchaAction.java:22: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleEndCaptchaAction.java:29: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleEndCaptchaAction.java:36: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleImageTyperzAction.java:22: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleImageTyperzAction.java:29: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleImageTyperzAction.java:36: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
 svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:12: error: cannot find symbol
         super(JACSolver.getInstance().getService().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
                                                   ^
   symbol:   method getConfig()
   location: class JacSolverService
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:21: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:27: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleJACAction.java:33: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
 svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:12: error: cannot find symbol
         super(CaptchaAPISolver.getInstance().getService().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
                                                          ^
   symbol:   method getConfig()
   location: interface SolverService
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:21: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:27: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleMyJDRemoteAction.java:33: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleTwoCaptchaAction.java:19: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
-                                                                                             ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleTwoCaptchaAction.java:25: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
-                                                                                                           ^
-svn_trunk\src\org\jdownloader\gui\toolbar\action\CaptchaToogleTwoCaptchaAction.java:31: error: incompatible types: SolverType cannot be converted to String
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
-                                                                                                          ^
-svn_utils\src\org\appwork\utils\swing\dialog\ExtFileSystemView.java:324: warning: [removal] AccessController in java.security has been deprecated and marked for removal
-        final File[] fileChooserComboBoxFolders = AccessController.doPrivileged(new PrivilegedAction<File[]>() {
-                                                  ^
 svn_trunk\src\org\jdownloader\nativ\NativeProcess.java:62: warning: [removal] AccessController in java.security has been deprecated and marked for removal
         AccessController.doPrivileged(new PrivilegedAction<Object>() {
         ^
@@ -1240,5 +1011,5 @@ Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-287 errors
-21 warnings
+230 errors
+20 warnings

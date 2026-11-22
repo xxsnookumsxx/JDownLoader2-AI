@@ -117,8 +117,8 @@ public class UploadhubIo extends XFileSharingProBasic {
 
     @Override
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
-        super.checkErrors(br, correctedBR, link, account, checkAll);
-        if (new Regex(correctedBR, "Download \\& Install Our FREE Rapid Download Manager|Visit Your UploadHUB Download Link\\s*<").matches()) {
+        super.checkErrors(br, correctedBR, link, account);
+        if (new Regex((String) null, "Download \\& Install Our FREE Rapid Download Manager|Visit Your UploadHUB Download Link\\s*<").matches()) {
             /* 2020-11-24: They want to force users to use a self-coded tool which is only available for Windows. */
             throw new AccountRequiredException();
         }

@@ -94,7 +94,7 @@ public class DebridFileCom extends PluginForHost {
         if (account == null) {
             return false;
         } else {
-            mhm.runCheck(account, link);
+            
             return true;
         }
     }
@@ -102,7 +102,7 @@ public class DebridFileCom extends PluginForHost {
     @Override
     public void handleMultiHost(final DownloadLink link, final Account account) throws Exception {
         prepBR(this.br);
-        mhm.runCheck(account, link);
+        
         if (!attemptStoredDownloadurlDownload(link)) {
             br.setFollowRedirects(true);
             this.loginWebsite(account, false);

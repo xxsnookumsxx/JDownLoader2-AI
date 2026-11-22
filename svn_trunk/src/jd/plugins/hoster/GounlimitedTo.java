@@ -145,7 +145,7 @@ public class GounlimitedTo extends XFileSharingProBasic {
     public String[] scanInfo(final String[] fileInfo) {
         /* 2020-02-04: Prefer filename from other place as it sometimes contains more details than what template plugin would grab. */
         super.scanInfo(fileInfo);
-        final String better_filename = new Regex(correctedBR, "<h2 class=\"the_title mb-2\">([^<>\"]+)</h2>").getMatch(0);
+        final String better_filename = new Regex((String) null, "<h2 class=\"the_title mb-2\">([^<>\"]+)</h2>").getMatch(0);
         if (better_filename != null) {
             logger.info("Found better_filename");
             fileInfo[0] = better_filename;
@@ -167,7 +167,7 @@ public class GounlimitedTo extends XFileSharingProBasic {
 
     @Override
     protected void checkErrors(final Browser br, final String html, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
-        super.checkErrors(br, html, link, account, checkAll);
+        super.checkErrors(br, html, link, account);
         if (br.containsHTML("No such file=")) {
             /* 2024-05-27: Special offline: Broken download of original file [looks like offline] */
             throw new PluginException(LinkStatus.ERROR_FILE_NOT_FOUND, "Server error 'No such file'");
@@ -182,7 +182,7 @@ public class GounlimitedTo extends XFileSharingProBasic {
     public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account, final boolean downloadsStarted) throws Exception {
         final AvailableStatus status = super.requestFileInformationWebsite(link, account, downloadsStarted);
         logger.info("File appears to be online --> Let's deep-check");
-        final String dllink = this.getDllink(link, account, br, correctedBR);
+        final String dllink = this.getDllink(link, account, br, (String) null);
         if (!StringUtils.isEmpty(dllink)) {
             /* Get- and set filesize from directurl */
             boolean dllink_is_valid = false;

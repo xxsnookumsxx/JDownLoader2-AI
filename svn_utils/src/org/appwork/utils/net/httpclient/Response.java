@@ -63,7 +63,7 @@ public class Response {
     public String toString() {
         try {
             return connection + "\r\n\r\n" + getString(Charset.forName("UTF-8"));
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             return connection.toString();
         }
     }
@@ -84,7 +84,7 @@ public class Response {
      * @return
      * @throws IOException
      */
-    public String getString(Charset charset) throws IOException {
+    public String getString(Charset charset) throws IOException, InterruptedException {
         if (charset == null) {
             String ct = connection.getCharset();
             if (StringUtils.isEmpty(ct)) {
@@ -103,7 +103,7 @@ public class Response {
      * @return
      * @throws IOException
      */
-    public byte[] getBytes() throws IOException {
+    public byte[] getBytes() throws IOException, InterruptedException {
         CountingInputStream fromContext = context.getInputStream();
         if (fromContext != null && bytes.size() == 0) {
             IO.readStream(-1, fromContext.getInputStream(), bytes, true);
@@ -115,7 +115,7 @@ public class Response {
      * @return
      * @throws IOException
      */
-    public InputStream getInputStream() throws IOException {
+    public InputStream getInputStream() throws IOException, InterruptedException {
         CountingInputStream fromContext = context.getInputStream();
         if (fromContext != null) {
             return fromContext;

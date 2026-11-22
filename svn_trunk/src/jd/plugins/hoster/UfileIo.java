@@ -156,7 +156,7 @@ public class UfileIo extends antiDDoSForHost {
                 /* generic cleanup */
                 boolean modified = false;
                 for (final String aRegex : regexStuff) {
-                    final String results[] = new Regex(correctedBR, aRegex).getColumn(0);
+                    final String results[] = new Regex((String) null, aRegex).getColumn(0);
                     if (results != null) {
                         for (final String result : results) {
                             final String replace = replaceCorrectBR(br, aRegex, result);

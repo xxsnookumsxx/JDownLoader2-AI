@@ -956,7 +956,7 @@ public class SolverComparisonContainer extends MigPanel implements SettingsCompo
     private void reloadSolvers(final boolean resetToAll) {
         final List<SolverService> typedSolvers = new ArrayList<SolverService>();
         for (final SolverService service : allServices) {
-            if (selectedSolverTypes.contains(service.getType())) {
+            if (selectedSolverTypes.contains(String.valueOf(service.getType()))) {
                 typedSolvers.add(service);
             }
         }

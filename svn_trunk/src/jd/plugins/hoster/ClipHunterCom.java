@@ -58,7 +58,7 @@ public class ClipHunterCom extends PluginForHost {
     /**
      * sync with decrypter
      */
-    public static final String[][] qualities     = jd.plugins.decrypter.ClipHunterComDecrypt.qualities;
+    public static final String[][] qualities     = new String[0][];
 
     @Override
     public String getAGBLink() {

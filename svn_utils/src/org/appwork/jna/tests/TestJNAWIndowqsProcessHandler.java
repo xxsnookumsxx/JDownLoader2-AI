@@ -75,7 +75,7 @@ public class TestJNAWIndowqsProcessHandler extends AWTest {
         testKill(unique, handler);
     }
 
-    protected void testSendCTRL(String unique, ProcessHandler handler) throws IOException, InterruptedException, Exception {
+    protected void testSendCTRL(String unique, JNAWindowsProcessHandler handler) throws IOException, InterruptedException, Exception {
         Command c = new Command("cmd", "/c", "ping localhost -n 1000 -" + unique);
         c.setOutputHandler(new AbstractLineHandler() {
             @Override
@@ -111,7 +111,7 @@ public class TestJNAWIndowqsProcessHandler extends AWTest {
         }
     }
 
-    protected void testKill(String unique, ProcessHandler handler) throws IOException, Exception {
+    protected void testKill(String unique, JNAWindowsProcessHandler handler) throws IOException, Exception {
         final Command command = new Command(CrossSystem.getJavaBinary(), "-cp", java.lang.management.ManagementFactory.getRuntimeMXBean().getClassPath(), TestApp.class.getName(), unique);
         command.setOutputHandler(new AbstractLineHandler() {
             @Override

@@ -39,6 +39,7 @@ import jd.plugins.PluginException;
 
 @HostPlugin(revision = "$Revision: 47798 $", interfaceVersion = 3, names = {}, urls = {})
 public class UplodNet extends XFileSharingProBasic {
+    private static final String PROPERTY_CAPTCHA_REQUIRED = "captcha_required";
     public UplodNet(final PluginWrapper wrapper) {
         super(wrapper);
         // this.enablePremium(super.getPurchasePremiumURL());
@@ -153,7 +154,7 @@ public class UplodNet extends XFileSharingProBasic {
         String dllink = checkDirectLink(link, account);
         if (StringUtils.isEmpty(dllink)) {
             this.requestFileInformationWebsite(link, account, true);
-            this.checkErrors(br, correctedBR, link, account, false);
+            this.checkErrors(br, (String) null, link, account, false);
             final Form dl1 = br.getFormByInputFieldKeyValue("op", "step1");
             if (dl1 == null) {
                 throw new PluginException(LinkStatus.ERROR_PLUGIN_DEFECT);
@@ -172,17 +173,17 @@ public class UplodNet extends XFileSharingProBasic {
             final String code = this.getCaptchaCodeBase64ImageString(image_b64, link);
             dl2.put("captcha", Encoding.urlEncode(code));
             this.waitTime(link, timeBefore);
-            link.setProperty(PROPERTY_captcha_required, true);
+            link.setProperty(PROPERTY_CAPTCHA_REQUIRED, true);
             this.submitForm(dl2);
-            this.checkErrors(br, correctedBR, link, account, true);
-            dllink = this.getDllink(link, account, br, correctedBR);
+            this.checkErrors(br, (String) null, link, account, true);
+            dllink = this.getDllink(link, account, br, (String) null);
         }
         handleDownload(link, account, dllink, null);
     }
 
     @Override
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
-        super.checkErrors(br, correctedBR, link, account, checkAll);
+        super.checkErrors(br, correctedBR, link, account);
         if (checkAll) {
             if (correctedBR.contains("Invalid captcha")) {
                 logger.warning("Wrong captcha (or wrong password as well)!");
@@ -190,7 +191,7 @@ public class UplodNet extends XFileSharingProBasic {
                  * TODO: Find a way to avoid using a property for this or add the property in very plugin which overrides handleCaptcha e.g.
                  * subyshare.com. If a dev forgets to set this, it will cause invalid errormessages on wrong captcha!
                  */
-                final boolean websiteDidAskForCaptcha = link.getBooleanProperty(PROPERTY_captcha_required, false);
+                final boolean websiteDidAskForCaptcha = link.getBooleanProperty(PROPERTY_CAPTCHA_REQUIRED, false);
                 if (websiteDidAskForCaptcha) {
                     throw new PluginException(LinkStatus.ERROR_CAPTCHA);
                 } else {

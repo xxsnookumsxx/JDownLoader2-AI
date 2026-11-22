@@ -111,7 +111,7 @@ public class SuperdownComBr extends antiDDoSForHost {
             /* without account its not possible to download the link */
             return false;
         } else {
-            mhm.runCheck(account, downloadLink);
+            
             return true;
         }
     }
@@ -189,7 +189,7 @@ public class SuperdownComBr extends antiDDoSForHost {
 
     @Override
     public void handleMultiHost(final DownloadLink link, final Account account) throws Exception {
-        mhm.runCheck(account, link);
+        
         login(account, false);
         String dllink = checkDirectLink(link, this.getHost() + "directlink");
         if (dllink == null) {

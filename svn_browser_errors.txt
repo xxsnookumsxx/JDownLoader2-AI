@@ -1,38 +1,4 @@
-svn_utils\src\org\appwork\utils\Files.java:86: warning: [dep-ann] deprecated item is not annotated with @Deprecated
-    public static void deleteRecursiv(final File file) throws IOException {
-                       ^
-svn_utils\src\org\appwork\utils\Files.java:96: warning: [dep-ann] deprecated item is not annotated with @Deprecated
-    public static void deleteRecursiv(final File file, final boolean breakOnError) throws IOException {
-                       ^
-svn_utils\src\org\appwork\utils\Files.java:193: warning: [dep-ann] deprecated item is not annotated with @Deprecated
-    public static String getExtension(final String name) {
-                         ^
-svn_utils\src\org\appwork\utils\logging2\LogSink.java:129: warning: [removal] finalize() in Object has been deprecated and marked for removal
-    protected void finalize() throws Throwable {
-                   ^
-svn_utils\src\org\appwork\utils\logging2\LogSink.java:137: warning: [removal] finalize() in Object has been deprecated and marked for removal
-            super.finalize();
-                 ^
-svn_utils\src\org\appwork\utils\logging2\LogSource.java:159: warning: [removal] finalize() in Object has been deprecated and marked for removal
-    protected void finalize() throws Throwable {
-                   ^
-svn_utils\src\org\appwork\utils\logging2\LogSource.java:165: warning: [removal] finalize() in Object has been deprecated and marked for removal
-            super.finalize();
-                 ^
-svn_utils\src\org\appwork\utils\ReflectionUtils.java:713: warning: [dep-ann] deprecated item is not annotated with @Deprecated
-    public static final boolean isList(final Object object) {
-                                ^
-svn_utils\src\org\appwork\storage\JSonStorage.java:497: warning: [dep-ann] deprecated item is not annotated with @Deprecated
-    public static void saveTo(final File file, final boolean plain, final byte[] key, final byte[] data) throws StorageException {
-                       ^
-svn_utils\src\org\appwork\txtresource\TranslateResource.java:269: warning: [dep-ann] deprecated item is not annotated with @Deprecated
-    public URL getUrl() {
-               ^
-svn_utils\src\org\appwork\utils\os\WindowsUtils.java:839: warning: [dep-ann] deprecated item is not annotated with @Deprecated
-    public static final String SID_LOCAL_SYSTEM = "S-1-5-18";
-                               ^
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-11 warnings

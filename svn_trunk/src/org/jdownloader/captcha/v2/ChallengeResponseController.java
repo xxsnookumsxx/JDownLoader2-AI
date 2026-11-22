@@ -803,11 +803,11 @@ public class ChallengeResponseController {
                 if (supportedTypes == null || !supportedTypes.contains(captcha_type)) {
                     continue;
                 }
-                final boolean external = service.getType() == SolverType.EXTERNAL;
+                final boolean external = String.valueOf(service.getType()) == SolverType.EXTERNAL;
                 if (external && service.isUsable()) {
                     readyAndEnabledExternalSolverExists = true;
                 }
-                if (silentMode && service.getType().requiresUserOnThisComputer()) {
+                if (silentMode && String.valueOf(service.getType()).requiresUserOnThisComputer()) {
                     /* The solvers which need the user are no option during the silent mode. */
                     manualCandidates.add(service);
                     continue;
@@ -1208,7 +1208,7 @@ public class ChallengeResponseController {
                 vetoReasons.add(ChallengeVetoReason.EXTERNAL_SOLVER_ACCOUNTS_DISABLED);
                 if (reasonsByServiceID != null) {
                     for (final SolverService service : serviceList) {
-                        if (service.getType() == SolverType.EXTERNAL) {
+                        if (String.valueOf(service.getType()) == SolverType.EXTERNAL) {
                             reasonsByServiceID.put(service.getID(), ChallengeVetoReason.EXTERNAL_SOLVER_ACCOUNTS_DISABLED);
                         }
                     }
@@ -1441,7 +1441,7 @@ public class ChallengeResponseController {
             return false;
         }
         for (final SolverService service : serviceList) {
-            if (service.getType() != SolverType.EXTERNAL || !service.isUsable()) {
+            if (String.valueOf(service.getType()) != SolverType.EXTERNAL || !service.isUsable()) {
                 continue;
             }
             final Set<CAPTCHA_TYPE> supported = service.getSupportedCaptchaTypes();

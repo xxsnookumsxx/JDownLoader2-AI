@@ -38,7 +38,7 @@ import jd.plugins.HostPlugin;
 import jd.plugins.LinkStatus;
 import jd.plugins.PluginException;
 import jd.plugins.PluginForHost;
-import jd.plugins.filesharing.FILENAME_SOURCE;
+import jd.plugins.PluginForHost.FILENAME_SOURCE;
 
 @HostPlugin(revision = "$Revision: 47506 $", interfaceVersion = 3, names = {}, urls = {})
 public class File2btcCom extends PluginForHost {
@@ -122,7 +122,7 @@ public class File2btcCom extends PluginForHost {
                 filetitle = Encoding.htmlDecode(filetitle.trim());
                 /* Add missing file-extension for videos if needed. */
                 if (br.containsHTML("type=\"video/mp4\"")) {
-                    filetitle = this.correctOrApplyFileNameExtension(filetitle, ".mp4");
+                    filetitle = filetitle;
                 }
                 link.setName(filetitle);
             }

@@ -72,7 +72,7 @@ public class RLCsh extends PluginForDecrypt {
         regexStuff.add("(display: ?none;\">.*?</div>)");
         regexStuff.add("(visibility:hidden>.*?<)");
         for (String aRegex : regexStuff) {
-            String results[] = new Regex(correctedBR, aRegex).getColumn(0);
+            String results[] = new Regex((String) null, aRegex).getColumn(0);
             if (results != null) {
                 for (String result : results) {
                     correctedBR = correctedBR.replace(result, "");
@@ -92,14 +92,14 @@ public class RLCsh extends PluginForDecrypt {
         }
         br.getPage(parameter);
         correctBR();
-        String link = new Regex(correctedBR, "<META HTTP-EQUIV=\"Refresh\" .*? URL=(.*?)\">").getMatch(0);
+        String link = new Regex((String) null, "<META HTTP-EQUIV=\"Refresh\" .*? URL=(.*?)\">").getMatch(0);
         if (link == null) {
-            link = new Regex(correctedBR, "onClick=\"top\\.location='(.*?)'\">").getMatch(0);
+            link = new Regex((String) null, "onClick=\"top\\.location='(.*?)'\">").getMatch(0);
             if (link == null) {
                 // urlcash fail over.
-                link = new Regex(correctedBR, "linkDestUrl = '([^']+)").getMatch(0);
+                link = new Regex((String) null, "linkDestUrl = '([^']+)").getMatch(0);
                 if (link == null) {
-                    link = new Regex(correctedBR, "<iframe name='redirectframe' id='redirectframe'.*?src='(.*?)'.*?></iframe>").getMatch(0);
+                    link = new Regex((String) null, "<iframe name='redirectframe' id='redirectframe'.*?src='(.*?)'.*?></iframe>").getMatch(0);
                 }
             }
         }

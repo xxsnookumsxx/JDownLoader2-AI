@@ -169,7 +169,7 @@ public class StreamsbNet extends XFileSharingProBasic {
     }
 
     protected void checkErrors(final Browser br, final String html, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
-        super.checkErrors(br, html, link, account, checkAll);
+        super.checkErrors(br, html, link, account);
         if (br.containsHTML("(?i)>\\s*File owner disabled downloads")) {
             throw new PluginException(LinkStatus.ERROR_FATAL, "File owner disabled downloads");
         } else if (br.containsHTML("(?i)>\\s*This video is not available for download")) {

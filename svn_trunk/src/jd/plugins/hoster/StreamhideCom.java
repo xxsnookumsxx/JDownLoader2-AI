@@ -180,7 +180,7 @@ public class StreamhideCom extends XFileSharingProBasic {
 
     @Override
     protected void checkErrors(final Browser br, final String html, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
-        super.checkErrors(br, html, link, account, checkAll);
+        super.checkErrors(br, html, link, account);
         if (br.containsHTML(">\\s*Video temporarily not available")) {
             throw new PluginException(LinkStatus.ERROR_TEMPORARILY_UNAVAILABLE, "Video temporarily not available");
         }

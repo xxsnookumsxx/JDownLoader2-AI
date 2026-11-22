@@ -33,7 +33,6 @@
  * ==================================================================================================================================================== */
 package org.appwork.moncompare.test;
 
-import static org.appwork.moncompare.Condition.$ADD;
 import static org.appwork.moncompare.Condition.$AND;
 import static org.appwork.moncompare.Condition.$DIVIDE;
 import static org.appwork.moncompare.Condition.$EQ;
@@ -207,7 +206,7 @@ public class ConditionTest extends AWTest {
         fail(true, FlexiCondition.parse("{set[1]:\"643dfbg\"}").matches(regex));
         fail(true, "a".equals(JSPath.fromPathString("a.§key").resolve(regex)));
         fail(true, FlexiCondition.parse("{\"§§THIS\":1M!365}").matches(TimeSpan.parse("1M!365")));
-        fail(true, FlexiCondition.parse("{\"§§THIS\":2021-10-07T00:00CET}").matches(DateMapper.parseJsonDefault("2021-10-07T00:00CET")));
+        fail(true, FlexiCondition.parse("{\"§§THIS\":2021-10-07T00:00CET}").matches(DateMapper.parse("2021-10-07T00:00CET")));
         fail(true, FlexiCondition.parse("{\"§§THIS\":{§gt:2021-10-07T00:00CET}}").matches(new Date()));
         fail(true, FlexiCondition.parse("{\"§§THIS\":{§gte:2021-10-07T00:00CET}}").matches(new Date()));
         fail(false, FlexiCondition.parse("{\"§§THIS\":{§gt:2121-10-07T00:00CET}}").matches(new Date()));
@@ -253,7 +252,7 @@ public class ConditionTest extends AWTest {
         try {
             FlexiCondition.parse("{§ne:[{§regex:§§this.a},true],§options:{aggregate:true}}").matches(regex);
             throw new WTFException("Excpected bad pattern exception");
-        } catch (CompareException e) {
+        } catch (RuntimeException e) {
             if (e.getCause() instanceof PatternSyntaxException) {
                 // expected
             } else {
@@ -306,7 +305,7 @@ public class ConditionTest extends AWTest {
         fail(true, FlexiCondition.parse("{§gt:[§0.§size,0]}").matches(new String[] { "abc" }));
         fail(false, new Condition("§§THIS.0.§size", new Condition(Condition.$GT, 0)).matches(new String[] { "" }));
         fail(true, new Condition("c", new Condition($EXISTS, new Condition($SUM, new Object[] { "§PARENT.a", "§PARENT.leer", 0, -2, "§§THIS" }))).append($LT, new Object[] { new Condition($SUM, new Object[] { "§test2.sum" }), 10 }).matches(test));
-        fail(true, new Condition("a", new Condition($EQ, new Condition($ADD, Arrays.asList(new Object[] { 1, "§§ROOT.leer" })))).matches(test));
+        fail(true, new Condition("a", new Condition($EQ, new Condition($SUM, Arrays.asList(new Object[] { 1, "§§ROOT.leer" })))).matches(test));
         fail(true, new Condition("boo", new Condition($EQ, Arrays.asList(new Object[] { 1, "§§ROOT.a" })).append($OPTIONS, new Condition(Condition.OPTIONS_AGGREGATE, true))).matches(test));
         fail(true, new Condition($AND, list(new Condition($EXISTS, list("§c", 1)), new Condition($LT, new Object[] { new Condition($SUM, new Object[] { "§§ROOT.test2.sum" }), 10 }))).matches(test));
         fail(true, new Condition("obj." + $TYPE + ".§PARENT.§type", new Condition($REGEX, ".*Embed.*")).matches(test3));
@@ -394,10 +393,10 @@ public class ConditionTest extends AWTest {
             // test evaluate
             fail(120, new Condition($MAX, Arrays.asList(new Object[] { new Condition($SUBTRACT, new Object[] { 2, 2 }), new Condition($MAX, new Object[] { 4, "§§ROOT.c", new Condition($SUM, Arrays.asList(new Object[] { 1, 25, 99, -5 })) }) })).evaluate(test));
             if (true) {
-                fail(true, new Condition("a", new Condition($EQ, new Condition($ADD, Arrays.asList(new Object[] { 1, "§§ROOT.leer" })))).matches(test));
-                fail(true, new Condition("a", new Condition($EQ, new Condition($ADD, Arrays.asList(new Object[] { 1, "§§ROOT.leer" })))).matches(test));
-                fail(true, new Condition("c", new Condition($EQ, new Condition($ADD, Arrays.asList(new Object[] { 1, 1 })))).matches(test));
-                fail(true, new Condition("c", new Condition($EQ, new Condition($ADD, Arrays.asList(new Object[] { "§§ROOT.a", "§§ROOT.b" })))).matches(test));
+                fail(true, new Condition("a", new Condition($EQ, new Condition($SUM, Arrays.asList(new Object[] { 1, "§§ROOT.leer" })))).matches(test));
+                fail(true, new Condition("a", new Condition($EQ, new Condition($SUM, Arrays.asList(new Object[] { 1, "§§ROOT.leer" })))).matches(test));
+                fail(true, new Condition("c", new Condition($EQ, new Condition($SUM, Arrays.asList(new Object[] { 1, 1 })))).matches(test));
+                fail(true, new Condition("c", new Condition($EQ, new Condition($SUM, Arrays.asList(new Object[] { "§§ROOT.a", "§§ROOT.b" })))).matches(test));
             }
             if (false) {
                 return;

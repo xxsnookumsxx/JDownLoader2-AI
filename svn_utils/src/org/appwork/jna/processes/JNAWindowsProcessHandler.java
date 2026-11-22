@@ -36,6 +36,8 @@ package org.appwork.jna.processes;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -46,6 +48,7 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeoutException;
 
 import org.appwork.jna.windows.Kernel32Ext;
+import org.appwork.utils.os.NotSupportedException;
 import org.appwork.jna.wmi.WMIConnector;
 import org.appwork.jna.wmi.WMIQueryFailedException;
 import org.appwork.loggingv3.LogV3;
@@ -110,12 +113,42 @@ public class JNAWindowsProcessHandler implements ProcessHandler {
     }
 
     @Override
+    public boolean terminateForcedAfterRequest(TimeSpan waitForSoftClose, int exitCode, ProcessInfo... processes) throws IOException, NotSupportedException, InterruptedException {
+        return false;
+    }
+
+    @Override
+    public boolean terminateForced(ProcessInfo process, int exitCode) throws NotSupportedException, IOException {
+        return false;
+    }
+
+    @Override
+    public boolean terminateRequest(ProcessInfo process) throws NotSupportedException, IOException {
+        return false;
+    }
+
+    @Override
+    public List<ProcessInfo> listByProcessInfo(ProcessInfo... processes) throws NotSupportedException, IOException, InterruptedException {
+        return new ArrayList<ProcessInfo>();
+    }
+
+    @Override
+    public int toFront(ProcessInfo... processes) throws IOException, InterruptedException, NotSupportedException {
+        return 0;
+    }
+
+    @Override
+    public List<ProcessInfo> getLockingProcesses(File file) throws IOException, NotSupportedException, InterruptedException {
+        throw new NotSupportedException("Not implemented");
+    }
+
+    @Override
     public boolean isProcessesAlive(final ProcessInfo... infos) {
         if (infos == null || infos.length == 0) {
             return false;
         }
         for (final ProcessInfo info : infos) {
-            if (info != null && info.isAlive()) {
+            if (info != null && info.getExitCode() == null) {
                 return true;
             }
         }
@@ -482,7 +515,6 @@ public class JNAWindowsProcessHandler implements ProcessHandler {
      * @throws InterruptedException
      * @see org.appwork.jna.processes.ProcessHandler#requestExit(org.appwork.utils.duration.TimeSpan, org.appwork.processes.ProcessInfo)
      */
-    @Override
     public boolean requestExit(TimeSpan timeout, ProcessInfo... proccesses) throws IOException, InterruptedException {
         boolean result = true;
         for (ProcessInfo p : proccesses) {

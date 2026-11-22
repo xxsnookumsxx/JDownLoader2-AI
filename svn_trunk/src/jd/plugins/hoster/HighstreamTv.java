@@ -142,7 +142,7 @@ public class HighstreamTv extends XFileSharingProBasic {
 
     @Override
     protected void checkErrors(final Browser br, final String html, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
-        super.checkErrors(br, html, link, account, checkAll);
+        super.checkErrors(br, html, link, account);
         final String dllink = this.getDllink(link, account, br, html);
         if (dllink != null && dllink.matches("(?i).*Fly-Up-1080p.*")) {
             /* Dummy video --> Broken stream */

@@ -126,7 +126,7 @@ public class UploadhubWf extends XFileSharingProBasic {
     @Override
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         super.checkErrors(br, correctedBR, link, account);
-        if (new Regex(correctedBR, "Download \\& Install Our FREE Rapid Download Manager|Visit Your UploadHUB Download Link\\s*<").patternFind()) {
+        if (new Regex((String) null, "Download \\& Install Our FREE Rapid Download Manager|Visit Your UploadHUB Download Link\\s*<").patternFind()) {
             /* 2020-11-24: They want to force users to use a self-coded tool which is only available for Windows. */
             throw new AccountRequiredException("File is only downloadable via proprietary download manager software from " + getHost());
         }

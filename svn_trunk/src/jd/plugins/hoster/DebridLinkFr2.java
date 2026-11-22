@@ -563,7 +563,7 @@ public class DebridLinkFr2 extends PluginForHost {
         if (account == null) {
             return false;
         } else {
-            mhm.runCheck(account, link);
+            
             return true;
         }
     }
@@ -578,7 +578,7 @@ public class DebridLinkFr2 extends PluginForHost {
                 hostHasReachedQuotaLimit(link.getHost(), true);
             }
         }
-        mhm.runCheck(account, link);
+        
         this.login(account, false);
         if (!attemptStoredDownloadurlDownload(link)) {
             boolean enteredCorrectPassword = false;

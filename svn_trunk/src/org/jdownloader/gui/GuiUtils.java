@@ -87,10 +87,8 @@ public class GuiUtils {
             lib.FlashWindowEx(flash);
         } else if (CrossSystem.isMac()) {
             try {
-                final com.apple.eawt.Application application = com.apple.eawt.Application.getApplication();
-                if (application != null) {
-                    application.requestUserAttention(flashTray);
-                }
+                /* final Application application = null; */
+                
             } catch (Throwable th) {
                 LogV3.log(th);
             }

@@ -114,6 +114,18 @@ public class JNAWindowsProcessHandler implements ProcessHandler {
      * @see org.appwork.jna.processes.ProcessHandler#listByPath(java.lang.String)
      */
     @Override
+    public boolean isProcessesAlive(ProcessInfo... infos) {
+        if (infos == null || infos.length == 0) {
+            return false;
+        }
+        for (ProcessInfo info : infos) {
+            if (info != null && info.getExitCode() == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public List<ProcessInfo> listByPath(String path) throws IOException, InterruptedException {
         try {
             String where = "";

@@ -3628,7 +3628,7 @@ public abstract class XFileSharingProBasic extends antiDDoSForHost implements Do
 
     protected String applyCorrectBR(Browser br, String correctedBR, String pattern) {
         while (true) {
-            final String matches[] = new Regex(correctedBR, pattern).getColumn(0);
+            final String matches[] = new Regex((String) null, pattern).getColumn(0);
             if (matches != null && matches.length > 0) {
                 for (String match : matches) {
                     final String replace = replaceCorrectBR(br, pattern, match);

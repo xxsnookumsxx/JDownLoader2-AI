@@ -116,13 +116,13 @@ public class FilespaceCom extends XFileSharingProBasic {
         /* 2019-05-21: Special */
         if (link != null && link.getMD5Hash() == null) {
             /* 2023-04-19: Special: Small hack: Look for md5 hash on every page. */
-            final String md5hash = new Regex(correctedBR, "MD5 Checksum:\\s*([a-f0-9]{32})").getMatch(0);
+            final String md5hash = new Regex((String) null, "MD5 Checksum:\\s*([a-f0-9]{32})").getMatch(0);
             if (md5hash != null) {
                 link.setMD5Hash(md5hash);
             }
         }
         super.checkErrors(br, correctedBR, link, account);
-        if (new Regex(correctedBR, "(?i)>\\s*You, or someone with the same IP address, are downloading the").patternFind()) {
+        if (new Regex((String) null, "(?i)>\\s*You, or someone with the same IP address, are downloading the").patternFind()) {
             throw new PluginException(LinkStatus.ERROR_IP_BLOCKED, "You're using all download slots for current IP", 10 * 60 * 1001l);
         } else if (br.containsHTML(">\\s*Bandwidth overload detected")) {
             /* 2023-04-19: Temp account ban because of accountsharing or user used VPN / server IP. */
@@ -133,7 +133,7 @@ public class FilespaceCom extends XFileSharingProBasic {
                 throw new PluginException(LinkStatus.ERROR_TEMPORARILY_UNAVAILABLE, "Bandwidth overload detected");
             }
         }
-        if (new Regex(correctedBR, "(?i)>[^<]*Wrong captcha[^<]*<").patternFind()) {
+        if (new Regex((String) null, "(?i)>[^<]*Wrong captcha[^<]*<").patternFind()) {
             logger.warning("Wrong captcha (or wrong password as well)!");
             if (this.getChallengeRound() >= 1) {
                 throw new PluginException(LinkStatus.ERROR_CAPTCHA);

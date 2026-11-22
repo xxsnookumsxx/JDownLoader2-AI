@@ -119,7 +119,7 @@ public class CloudvideoTv extends XFileSharingProBasic {
         if (new Regex(html, ">\\s*Index page here").patternFind()) {
             throw new PluginException(LinkStatus.ERROR_TEMPORARILY_UNAVAILABLE, "Not (yet) downloadable: Video is still being encoded or broken");
         }
-        super.checkErrors(br, html, link, account, checkAll);
+        super.checkErrors(br, html, link, account);
     }
 
     @Override

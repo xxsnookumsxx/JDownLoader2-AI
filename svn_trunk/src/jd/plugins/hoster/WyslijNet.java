@@ -133,7 +133,7 @@ public class WyslijNet extends XFileSharingProBasic {
             return super.fetchAccountInfoAPI(br, account);
         } finally {
             /* Small hack since API is returning wrong information about whether or not it is possible to download via API. */
-            account.setProperty(PROPERTY_ACCOUNT_ALLOW_API_DOWNLOAD_ATTEMPT_IN_WEBSITE_MODE, false);
+            account.setProperty("PROPERTY_ACCOUNT_ALLOW_API_DOWNLOAD_ATTEMPT_IN_WEBSITE_MODE", false);
         }
     }
 

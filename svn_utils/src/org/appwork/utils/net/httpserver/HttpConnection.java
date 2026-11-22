@@ -631,7 +631,7 @@ public class HttpConnection implements HttpConnectionRunnable, RawHttpConnection
             while (totalRead < bytesToDrain && (len = stream.read(buffer, 0, (int) Math.min(buffer.length, bytesToDrain - totalRead))) != -1) {
                 totalRead += len;
                 if (breakAt > 0 && Time.systemIndependentCurrentJVMTimeMillis() > breakAt) {
-                    LogV3.fine("Drained " + totalRead + " of " + bytesToDrain + " bytes. Break after timeout: " + timeout);
+                    LogV3.fine("Drained " + totalRead + " of " + bytesToDrain + " bytes. Break after timeout: " + timeoutMillis);
                     break;
                 }
             }
@@ -943,6 +943,11 @@ public class HttpConnection implements HttpConnectionRunnable, RawHttpConnection
         return hook;
     }
 
+    @Override
+    public HttpRequest.HTTP_VERSION getHTTPVersion() {
+        return HttpRequest.HTTP_VERSION.HTTP_1_1;
+    }
+
     public void setHook(HttpServerConnection.ConnectionHook hook) {
         this.hook = hook;
     }
@@ -973,7 +978,7 @@ public class HttpConnection implements HttpConnectionRunnable, RawHttpConnection
 
             try {
                 final OutputStream out = this.getRawOutputStream();
-                final ConnectionHook lHook = hook;
+                final HttpServerConnection.ConnectionHook lHook = hook;
                 if (lHook != null) {
                     lHook.onBeforeSendHeaders(response);
                 }

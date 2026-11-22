@@ -120,7 +120,7 @@ public class FlorenfileCom extends XFileSharingProBasic {
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         /* 2020-03-16: Special */
         super.checkErrors(br, correctedBR, link, account);
-        if (new Regex(correctedBR, "(?i)>\\s*There is not enough traffic available to download this file").matches()) {
+        if (new Regex((String) null, "(?i)>\\s*There is not enough traffic available to download this file").matches()) {
             /* 2020-03-16: Typically for account (premium?) users */
             if (account != null) {
                 throw new AccountUnavailableException("Download limit reached", 5 * 60 * 1000l);
@@ -137,7 +137,7 @@ public class FlorenfileCom extends XFileSharingProBasic {
             }
         }
         /* 2020-12-14: Typo on website thus a different errormessage than what our template can handle. Happened in premium mode. */
-        final String preciseWaittime = new Regex(correctedBR, "(?i)((You have reached download(\\-| )limit|You have to wait)[^<>]+)").getMatch(0);
+        final String preciseWaittime = new Regex((String) null, "(?i)((You have reached download(\\-| )limit|You have to wait)[^<>]+)").getMatch(0);
         if (preciseWaittime != null) {
             /* Reconnect waittime with given (exact) waittime usually either up to the minute or up to the second. */
             final String tmphrs = new Regex(preciseWaittime, "\\s*(\\d+)\\s*hours?").getMatch(0);

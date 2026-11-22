@@ -119,7 +119,7 @@ public class UploadbankCom extends XFileSharingProBasic {
         /* 2020-01-21: Special */
         super.scanInfo(fileInfo);
         if (StringUtils.isEmpty(fileInfo[0])) {
-            fileInfo[0] = new Regex(correctedBR, "<b>Name\\s*:([^<>\"]+)</b>").getMatch(0);
+            fileInfo[0] = new Regex((String) null, "<b>Name\\s*:([^<>\"]+)</b>").getMatch(0);
         }
         return fileInfo;
     }

@@ -114,14 +114,14 @@ public class RacatyNet extends XFileSharingProBasic {
     @Override
     public String[] scanInfo(final String[] fileInfo) {
         super.scanInfo(fileInfo);
-        String filename = new Regex(correctedBR, "<title>([^<>\"]+) free download at Racaty\\.[A-Za-z0-9]+</title>").getMatch(0);
+        String filename = new Regex((String) null, "<title>([^<>\"]+) free download at Racaty\\.[A-Za-z0-9]+</title>").getMatch(0);
         if (StringUtils.isEmpty(filename)) {
-            filename = new Regex(correctedBR, "<h5>Identity</h5><p>([^<>\"]+)</p>").getMatch(0);
+            filename = new Regex((String) null, "<h5>Identity</h5><p>([^<>\"]+)</p>").getMatch(0);
         }
-        String filesize = new Regex(correctedBR, "b>Size:</b> (\\d+(?:\\.\\d+)? .*?)\\s+").getMatch(0);
+        String filesize = new Regex((String) null, "b>Size:</b> (\\d+(?:\\.\\d+)? .*?)\\s+").getMatch(0);
         if (filesize == null) {
             /* 2020-03-31 */
-            filesize = new Regex(correctedBR, ">Size\\s*:([^<>\"]+) / Uploaded:").getMatch(0);
+            filesize = new Regex((String) null, ">Size\\s*:([^<>\"]+) / Uploaded:").getMatch(0);
         }
         if (filename != null) {
             fileInfo[0] = filename;

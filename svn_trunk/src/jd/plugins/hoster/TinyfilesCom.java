@@ -139,7 +139,7 @@ public class TinyfilesCom extends XFileSharingProBasic {
     @Override
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         super.checkErrors(br, correctedBR, link, account);
-        if (new Regex(correctedBR, ">\\s*?File not exists").patternFind()) {
+        if (new Regex((String) null, ">\\s*?File not exists").patternFind()) {
             /*
              * 2019-08-15: Rare error which may sometimes happen after sending F1 Form. The file is not really offline in this case - this
              * is more likely a serverside bug!

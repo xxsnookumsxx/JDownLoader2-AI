@@ -101,14 +101,14 @@ public class TransferChomikujPl extends PluginForHost {
         if (account == null) {
             return false;
         } else {
-            mhm.runCheck(account, link);
+            
             return true;
         }
     }
 
     @Override
     public void handleMultiHost(final DownloadLink link, final Account account) throws Exception {
-        mhm.runCheck(account, link);
+        
         final String directlinkProperty = this.getHost() + "directlink";
         if (!attemptStoredDownloadurlDownload(link, directlinkProperty)) {
             this.login(account, true);

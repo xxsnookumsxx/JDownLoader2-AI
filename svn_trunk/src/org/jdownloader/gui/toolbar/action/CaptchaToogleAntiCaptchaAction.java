@@ -16,19 +16,19 @@ public class CaptchaToogleAntiCaptchaAction extends AbstractToolbarToggleAction 
     @Override
     protected String createTooltip() {
         final SolverService service = AntiCaptchaComSolver.getInstance().getService();
-        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), service.getType());
+        return _GUI.T.createTooltip_Captcha_Service_toggle(service.getName(), String.valueOf(service.getType()));
     }
 
     @Override
     protected String getNameWhenDisabled() {
         final SolverService service = AntiCaptchaComSolver.getInstance().getService();
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), service.getType());
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenDisabled_(service.getName(), String.valueOf(service.getType()));
     }
 
     @Override
     protected String getNameWhenEnabled() {
         final SolverService service = AntiCaptchaComSolver.getInstance().getService();
-        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), service.getType());
+        return _GUI.T.createTooltip_Captcha_Service_getNameWhenEnabled_(service.getName(), String.valueOf(service.getType()));
     }
 
 }

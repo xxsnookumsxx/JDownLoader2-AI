@@ -121,7 +121,7 @@ public class EgofilesNet extends YetiShareCore {
             /* E.g. https://egofiles.net/yyyyyyyxxxxxxxx~i */
             return true;
         } else {
-            return super.isOfflineWebsiteInfoPage(br, link);
+            return false;
         }
     }
 

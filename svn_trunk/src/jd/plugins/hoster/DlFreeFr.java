@@ -263,7 +263,7 @@ public class DlFreeFr extends PluginForHost {
         try {
             con = br.openGetConnection(link.getDownloadURL());
             if (con.isOK() && con.isContentDisposition()) {
-                link.setFinalFileName(Plugin.getFileNameFromHeader(con));
+                /* link.setFinalFileName(...); */
                 link.setDownloadSize(con.getCompleteContentLength());
                 return AvailableStatus.TRUE;
             } else {
