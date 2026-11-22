@@ -1,2 +1,14 @@
 .svn/
 .andromity/
+.benchmarks/
+.pytest_cache/
+.venv/
+.vs/
+.vscode/
+__pycache__/
+tmp_build/
+svn_utils/bin/
+svn_browser/bin/
+svn_MyJDownloaderClient/bin/
+svn_trunk/bin/
+*_errors.txt
