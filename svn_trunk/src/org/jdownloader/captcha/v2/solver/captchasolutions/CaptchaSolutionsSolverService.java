@@ -56,12 +56,12 @@ public class CaptchaSolutionsSolverService extends AbstractSolverService impleme
 
     @Override
     public SolverType getType() {
-        return _GUI.T.CaptchaSolver_Type_paid_online_ocr();
+        return SolverType.EXTERNAL;
     }
 
     @Override
     public Icon getIcon(int size) {
-        return new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, size);
+        return new AbstractIcon(IconKey.ICON_OCR, size);
     }
 
     @Override
@@ -69,7 +69,6 @@ public class CaptchaSolutionsSolverService extends AbstractSolverService impleme
         return solver == null ? java.util.Collections.emptySet() : solver.getSupportedCaptchaTypes();
     }
 
-    @Override
     public AbstractCaptchaSolverConfigPanel getConfigPanel() {
         AbstractCaptchaSolverConfigPanel ret = new AbstractCaptchaSolverConfigPanel() {
             private TextInput     username;
@@ -81,8 +80,8 @@ public class CaptchaSolutionsSolverService extends AbstractSolverService impleme
             }
 
             {
-                addHeader(getTitle(), new AbstractIcon(IconKey.ICON_LOGO_CAPTCHASOLUTIONS, 32));
-                addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                addHeader(getTitle(), new AbstractIcon(IconKey.ICON_OCR, 32));
+                addDescription("Paid online OCR captcha solving service.");
                 add(new SettingsButton(new AppAction() {
                     {
                         setName(_GUI.T.lit_open_website());
@@ -99,8 +98,8 @@ public class CaptchaSolutionsSolverService extends AbstractSolverService impleme
                 // addPair(_GUI.T.MyJDownloaderSettingsPanel_MyJDownloaderSettingsPanel_enabled(), null, checkBox);
                 this.addDescriptionPlain(_GUI.T.captchasolver_configpanel_my_account_description(CaptchaSolutionsSolverService.this.getName()));
                 addPair(_GUI.T.captchasolver_configpanel_enabled(CaptchaSolutionsSolverService.this.getName()), null, new Checkbox(CFG_CAPTCHA_SOLUTIONS.ENABLED, username, password));
-                addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
-                addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
+                addPair("Username", null, username);
+                addPair("Password", null, password);
                 // addPair(_GUI.T.DeatchbyCaptcha_Service_createPanel_feedback(), null, new
                 // Checkbox(CFG_CAPTCHA_SOLUTIONS.FEED_BACK_SENDING_ENABLED));
                 addBlackWhiteList(CFG_CAPTCHA_SOLUTIONS.CFG);
@@ -127,17 +126,15 @@ public class CaptchaSolutionsSolverService extends AbstractSolverService impleme
         return ret;
     }
 
-    @Override
     public boolean hasConfigPanel() {
         return true;
     }
 
     @Override
     public String getName() {
-        return _GUI.T.CaptchaSolutionsSolver_gettypeName_();
+        return "CaptchaSolutions.com";
     }
 
-    @Override
     public ChallengeSolverConfig getConfig() {
         return config;
     }
@@ -179,7 +176,6 @@ public class CaptchaSolutionsSolverService extends AbstractSolverService impleme
         }
     }
 
-    @Override
     public Map<String, Integer> getWaitForOthersDefaultMap() {
         HashMap<String, Integer> ret = new HashMap<String, Integer>();
         ret.put(JacSolverService.ID, 30000);

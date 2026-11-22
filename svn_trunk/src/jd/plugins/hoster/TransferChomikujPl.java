@@ -303,6 +303,11 @@ public class TransferChomikujPl extends PluginForHost {
         }
 
         @Override
+        public boolean handleClipboardAutoFill() {
+            return false;
+        }
+
+        @Override
         public void setAccount(Account defaultAccount) {
             if (defaultAccount != null) {
                 // name.setText(defaultAccount.getUser());

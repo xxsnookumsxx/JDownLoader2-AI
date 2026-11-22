@@ -55,6 +55,16 @@ public abstract class SweetCaptchaChallenge extends AbstractBrowserChallenge {
         return false;
     }
 
+    @Override
+    protected String getSiteUrl() {
+        final jd.http.Browser br = getPluginBrowser();
+        if (br != null && br.getURL() != null) {
+            return br.getURL();
+        }
+        final Plugin plugin = getPlugin();
+        return plugin != null ? "https://" + plugin.getHost() + "/" : null;
+    }
+
     protected String getCaptchaNameSpace() {
         return "sweet";
     };

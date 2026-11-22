@@ -32,8 +32,11 @@ public class KeyCaptchaDialogSolver extends ChallengeSolver<String> {
     }
 
     @Override
-    protected boolean isChallengeSupported(Challenge<?> c) {
-        return c instanceof KeyCaptchaPuzzleChallenge || c instanceof KeyCaptchaCategoryChallenge;
+    public ChallengeVetoReason getUnsupportedReason(Challenge<?> c) {
+        if (c instanceof KeyCaptchaPuzzleChallenge || c instanceof KeyCaptchaCategoryChallenge) {
+            return ChallengeVetoReason.NONE;
+        }
+        return ChallengeVetoReason.UNSUPPORTED_BY_SOLVER;
     }
 
     private KeyCaptchaDialogSolver() {

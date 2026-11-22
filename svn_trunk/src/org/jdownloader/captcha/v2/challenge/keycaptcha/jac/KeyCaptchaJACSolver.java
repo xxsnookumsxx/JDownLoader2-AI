@@ -23,8 +23,11 @@ public class KeyCaptchaJACSolver extends ChallengeSolver<String> {
     }
 
     @Override
-    protected boolean isChallengeSupported(Challenge<?> c) {
-        return c instanceof KeyCaptchaPuzzleChallenge && !((KeyCaptchaPuzzleChallenge) c).isNoAutoSolver();
+    public ChallengeVetoReason getUnsupportedReason(Challenge<?> c) {
+        if (c instanceof KeyCaptchaPuzzleChallenge && !((KeyCaptchaPuzzleChallenge) c).isNoAutoSolver()) {
+            return ChallengeVetoReason.NONE;
+        }
+        return ChallengeVetoReason.UNSUPPORTED_BY_SOLVER;
     }
 
     private KeyCaptchaJACSolver() {

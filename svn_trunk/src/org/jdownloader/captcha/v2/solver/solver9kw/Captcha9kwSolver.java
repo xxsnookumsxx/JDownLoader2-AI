@@ -1,7 +1,9 @@
 package org.jdownloader.captcha.v2.solver.solver9kw;
 
 import java.io.IOException;
+import java.util.EnumSet;
 import java.util.Map;
+import java.util.Set;
 
 import jd.http.Browser;
 
@@ -35,12 +37,17 @@ public class Captcha9kwSolver extends AbstractCaptcha9kwSolver<String> {
     }
 
     @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.RECAPTCHA_V2, CAPTCHA_TYPE.HCAPTCHA);
+    }
+
+    @Override
     public ChallengeVetoReason getChallengeVetoReason(Challenge<?> c) {
         if (c instanceof HCaptchaChallenge || c instanceof RecaptchaV2Challenge || c instanceof BasicCaptchaChallenge) {
             try {
                 checkForEnoughCredits();
             } catch (SolverException e) {
-                return ChallengeVetoReason.ACCOUNT_NOT_ENOUGH_CREDITS;
+                return ChallengeVetoReason.ACCOUNT_NOT_ENOUGH_BALANCE;
             }
             return super.getChallengeVetoReason(c);
         } else {

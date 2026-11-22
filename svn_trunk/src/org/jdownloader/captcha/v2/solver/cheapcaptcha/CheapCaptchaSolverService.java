@@ -81,7 +81,7 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
 
             {
                 addHeader(getTitle(), new AbstractIcon(IconKey.ICON_LOGO_CHEAPCAPTCHA, 32));
-                addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                addDescription("Paid online OCR captcha solving service.");
 
                 add(new SettingsButton(new AppAction() {
                     {
@@ -102,8 +102,8 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
                 // addPair(_GUI.T.MyJDownloaderSettingsPanel_MyJDownloaderSettingsPanel_enabled(), null, checkBox);
                 this.addDescriptionPlain(_GUI.T.captchasolver_configpanel_my_account_description(CheapCaptchaSolverService.this.getName()));
                 addPair(_GUI.T.captchasolver_configpanel_enabled(CheapCaptchaSolverService.this.getName()), null, new Checkbox(CFG_CHEAP_CAPTCHA.ENABLED, username, password));
-                addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
-                addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
+                addPair("Username", null, username);
+                addPair("Password", null, password);
 
                 addPair(_GUI.T.DeatchbyCaptcha_Service_createPanel_feedback(), null, new Checkbox(CFG_CHEAP_CAPTCHA.FEED_BACK_SENDING_ENABLED));
 
@@ -186,7 +186,6 @@ public class CheapCaptchaSolverService extends AbstractSolverService implements 
         }
     }
 
-    @Override
     public Map<String, Integer> getWaitForOthersDefaultMap() {
         HashMap<String, Integer> ret = new HashMap<String, Integer>();
 

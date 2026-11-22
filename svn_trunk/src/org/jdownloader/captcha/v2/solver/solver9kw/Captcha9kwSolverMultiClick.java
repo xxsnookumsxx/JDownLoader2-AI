@@ -3,6 +3,8 @@ package org.jdownloader.captcha.v2.solver.solver9kw;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.EnumSet;
+import java.util.Set;
 
 import org.appwork.storage.JSonStorage;
 import org.appwork.storage.TypeRef;
@@ -36,6 +38,11 @@ public class Captcha9kwSolverMultiClick extends AbstractCaptcha9kwSolver<MultiCl
     private Captcha9kwSolverMultiClick() {
         super();
         NineKwSolverService.getInstance().setMultiClickSolver(this);
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE_MULTI_CLICK_CAPTCHA);
     }
 
     @Override

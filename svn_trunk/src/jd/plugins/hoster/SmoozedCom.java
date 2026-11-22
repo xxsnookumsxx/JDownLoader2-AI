@@ -751,7 +751,7 @@ public class SmoozedCom extends antiDDoSForHost {
                 }
             }
             rewriteHosterNames(map, pluginFinder);
-            ai.setMultiHostSupport(this, supportedHosts, pluginFinder);
+            ai.setMultiHostSupport(this, supportedHosts);
         }
         return ai;
     }

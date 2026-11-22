@@ -2,10 +2,13 @@ package org.jdownloader.captcha.v2.solver.captchasolutions;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 import org.appwork.exceptions.WTFException;
 import org.appwork.storage.config.JsonConfig;
@@ -73,8 +76,11 @@ public class CaptchaSolutionsSolver extends CESChallengeSolver<String> implement
     }
 
     @Override
-    protected boolean isChallengeSupported(Challenge<?> c) {
-        return c instanceof RecaptchaV2Challenge || c instanceof BasicCaptchaChallenge;
+    public ChallengeVetoReason getUnsupportedReason(Challenge<?> c) {
+        if (c instanceof RecaptchaV2Challenge || c instanceof BasicCaptchaChallenge) {
+            return ChallengeVetoReason.NONE;
+        }
+        return ChallengeVetoReason.UNSUPPORTED_BY_SOLVER;
     }
 
     protected <T> Challenge<T> getChallenge(CESSolverJob<T> job) throws SolverException {
@@ -158,7 +164,7 @@ public class CaptchaSolutionsSolver extends CESChallengeSolver<String> implement
             job.getLogger().info("CAPTCHA " + challenge.getImageFile() + " solved: " + decaptcha.trim());
             AbstractResponse<String> answer = challenge.parseAPIAnswer(decaptcha.trim(), null, this);
             job.getLogger().info("CAPTCHA " + challenge.getImageFile() + " solved: " + br.toString());
-            job.setAnswer(new CaptchaSolutionsResponse(challenge, this, null, answer.getValue(), answer.getPriority()));
+            job.setAnswer(new CaptchaSolutionsResponse(challenge, this, null, answer.getValue(), 100));
             return;
         } catch (Exception e) {
             job.getChallenge().sendStatsError(this, e);

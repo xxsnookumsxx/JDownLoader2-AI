@@ -66,6 +66,16 @@ public abstract class ConfidentCaptchaChallenge extends AbstractBrowserChallenge
     }
 
     @Override
+    protected String getSiteUrl() {
+        final Browser br = getPluginBrowser();
+        if (br != null && br.getURL() != null) {
+            return br.getURL();
+        }
+        final Plugin plugin = getPlugin();
+        return plugin != null ? "https://" + plugin.getHost() + "/" : null;
+    }
+
+    @Override
     protected String getCaptchaNameSpace() {
         return "confident";
     }

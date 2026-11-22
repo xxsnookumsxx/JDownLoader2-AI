@@ -10,6 +10,7 @@ import org.appwork.utils.images.IconIO;
 import org.jdownloader.captcha.v2.AbstractResponse;
 import org.jdownloader.captcha.v2.Challenge;
 import org.jdownloader.captcha.v2.ChallengeSolver;
+import org.jdownloader.captcha.v2.ValidationResult;
 
 public class KeyCaptchaCategoryChallenge extends Challenge<String> {
     private final KeyCaptcha helper;
@@ -36,11 +37,8 @@ public class KeyCaptchaCategoryChallenge extends Challenge<String> {
     }
 
     @Override
-    public boolean validateResponse(AbstractResponse<String> response) {
-        if (response.getPriority() <= 0) {
-            return false;
-        }
-        return true;
+    public ValidationResult validateResponse(AbstractResponse<String> response) {
+        return super.validateResponse(response);
     }
 
     public static class APIData implements Storable {

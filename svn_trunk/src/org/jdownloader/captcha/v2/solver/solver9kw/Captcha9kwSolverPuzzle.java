@@ -2,7 +2,9 @@ package org.jdownloader.captcha.v2.solver.solver9kw;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Set;
 
 import jd.http.Browser;
 
@@ -35,8 +37,16 @@ public class Captcha9kwSolverPuzzle extends AbstractCaptcha9kwSolver<String> {
     }
 
     @Override
-    protected boolean isChallengeSupported(Challenge<?> c) {
-        return c instanceof KeyCaptchaPuzzleChallenge;
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return Collections.emptySet();
+    }
+
+    @Override
+    public ChallengeVetoReason getUnsupportedReason(Challenge<?> c) {
+        if (c instanceof KeyCaptchaPuzzleChallenge) {
+            return ChallengeVetoReason.NONE;
+        }
+        return ChallengeVetoReason.UNSUPPORTED_BY_SOLVER;
     }
 
     @Override

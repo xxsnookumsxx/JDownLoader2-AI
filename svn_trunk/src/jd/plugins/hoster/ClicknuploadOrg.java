@@ -175,7 +175,7 @@ public class ClicknuploadOrg extends XFileSharingProBasic {
     }
 
     @Override
-public String[] scanInfo(final DownloadLink link, final String[] fileInfo) {
+    public String[] scanInfo(final String html, final String[] fileInfo) {
         // final String betterFilename = new Regex(html, "<title>Download ([^<]+)</title>").getMatch(0);
         // if (betterFilename != null) {
         // fileInfo[0] = betterFilename;

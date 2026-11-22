@@ -149,15 +149,13 @@ public class NineKwSolverService extends AbstractSolverService implements Servic
 
     @Override
     public SolverType getType() {
-        return _GUI.T.Captcha9kwSolver_getName_();
+        return SolverType.EXTERNAL;
     }
 
-    @Override
     public boolean isEnabled() {
         return config.isEnabledGlobally() && (config.ispuzzle() || config.ismouse() || config.isEnabled());
     }
 
-    @Override
     public void setEnabled(boolean b) {
         if (b) {
             config.setEnabledGlobally(true);
@@ -175,6 +173,7 @@ public class NineKwSolverService extends AbstractSolverService implements Servic
     private Captcha9kwSolver           textSolver;
     private Captcha9kwSolverClick      clickSolver;
     private Captcha9kwSolverMultiClick multiclickSolver;
+    private Captcha9kwSolverPuzzle     puzzleSolver;
 
     private void updateServicePanel(boolean b) {
         if (!Application.isHeadless()) {
@@ -248,7 +247,6 @@ public class NineKwSolverService extends AbstractSolverService implements Servic
         }
     }
 
-    @Override
     public Map<String, Integer> getWaitForOthersDefaultMap() {
         HashMap<String, Integer> ret = new HashMap<String, Integer>();
         ret.put(JacSolverService.ID, 30000);
@@ -307,5 +305,9 @@ public class NineKwSolverService extends AbstractSolverService implements Servic
 
     public void setMultiClickSolver(Captcha9kwSolverMultiClick captcha9kwSolverMultiClick) {
         this.multiclickSolver = captcha9kwSolverMultiClick;
+    }
+
+    public void setPuzzleSolver(Captcha9kwSolverPuzzle captcha9kwSolverPuzzle) {
+        this.puzzleSolver = captcha9kwSolverPuzzle;
     }
 }

@@ -132,8 +132,8 @@ public class NotSupportedProcessHandler implements ProcessHandler {
      *
      * @see org.appwork.processes.ProcessHandler#isProcessesAlive(org.appwork.processes.ProcessInfo[])
      */
-@Override
-     public boolean isProcessesAlive(ProcessInfo... infos) throws NotSupportedException {
-         throw new NotSupportedException("No Supported");
-     }
+    @Override
+    public boolean isProcessesAlive(ProcessInfo... infos) {
+        return false;
+    }
 }

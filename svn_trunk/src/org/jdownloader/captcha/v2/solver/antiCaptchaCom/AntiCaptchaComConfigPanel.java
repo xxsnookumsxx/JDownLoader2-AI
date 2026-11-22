@@ -40,7 +40,7 @@ public final class AntiCaptchaComConfigPanel extends AbstractCaptchaSolverConfig
     public AntiCaptchaComConfigPanel(AntiCaptchaComSolverService AntiCaptchaComSolverService) {
         this.service = AntiCaptchaComSolverService;
         addHeader(getTitle(), new AbstractIcon(IconKey.ICON_LOGO_ANTICAPTCHA, 32));
-        addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+        addDescription("Paid online OCR captcha solving service.");
         add(new SettingsButton(new AppAction() {
             private static final long serialVersionUID = 546456487846L;
             {

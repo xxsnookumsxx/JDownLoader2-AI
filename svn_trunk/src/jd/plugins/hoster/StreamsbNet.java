@@ -129,7 +129,7 @@ public class StreamsbNet extends XFileSharingProBasic {
             final String pluginpatternmatcherOld = link.getPluginPatternMatcher();
             try {
                 link.setPluginPatternMatcher("https://" + this.getHost() + "/d/" + this.getFUIDFromURL(link));
-                result = super.requestFileInformationWebsite(link, account, isDownload);
+                result = super.requestFileInformationWebsite(link, account);
                 specialFilenameResult = br.getRegex("(?i)<h3>\\s*Download ([^<]+)</h3>").getMatch(0); // 2023-01-11
                 if (specialFilenameResult == null) {
                     /* 2023-04-19 */

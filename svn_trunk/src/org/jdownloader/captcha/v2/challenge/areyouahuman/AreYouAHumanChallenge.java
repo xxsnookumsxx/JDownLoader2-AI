@@ -3,6 +3,7 @@ package org.jdownloader.captcha.v2.challenge.areyouahuman;
 import java.io.IOException;
 import java.net.URL;
 
+import jd.http.Browser;
 import jd.plugins.Plugin;
 
 import org.appwork.exceptions.WTFException;
@@ -17,6 +18,7 @@ import org.appwork.utils.net.httpserver.requests.HttpRequest;
 import org.appwork.utils.net.httpserver.requests.PostRequest;
 import org.appwork.utils.net.httpserver.responses.HttpResponse;
 import org.jdownloader.captcha.v2.AbstractResponse;
+import org.jdownloader.captcha.v2.ValidationResult;
 import org.jdownloader.captcha.v2.solver.browser.AbstractBrowserChallenge;
 import org.jdownloader.captcha.v2.solver.browser.BrowserReference;
 
@@ -67,21 +69,30 @@ public abstract class AreYouAHumanChallenge extends AbstractBrowserChallenge {
     }
 
     @Override
+    protected String getSiteUrl() {
+        final Browser br = getPluginBrowser();
+        if (br != null && br.getURL() != null) {
+            return br.getURL();
+        }
+        final Plugin plugin = getPlugin();
+        return plugin != null ? "https://" + plugin.getHost() + "/" : null;
+    }
+
+    @Override
     protected String getCaptchaNameSpace() {
         return "areyouahuman";
     }
 
     @Override
-    public boolean validateResponse(AbstractResponse<String> response) {
-        return super.validateResponse(response) && isCaptchaResponseValid();
-    }
-
-    @Override
-    public boolean isCaptchaResponseValid() {
-        if (super.isCaptchaResponseValid() && getResult().getValue().matches("[\\w-]{30,}")) {
-            return true;
-        } else {
-            return false;
+    public ValidationResult validateResponse(AbstractResponse<String> response) {
+        final ValidationResult result = super.validateResponse(response);
+        if (result != ValidationResult.VALID) {
+            return result;
         }
+        final String value = response.getValue();
+        if (value != null && value.matches("[\\w-]{30,}")) {
+            return ValidationResult.VALID;
+        }
+        return ValidationResult.INVALID;
     }
 }

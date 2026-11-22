@@ -80,7 +80,7 @@ public class EnvJSBrowser implements ContextCallback {
 
     public String getCookieStringByUrl(String url) {
         try {
-            return Request.getCookieString(br.getCookies(url), new URL(url));
+            return br.getCookies(url).getCookieString(null, new URL(url));
         } catch (MalformedURLException e) {
             throw new WTFException(e);
         }
@@ -93,7 +93,7 @@ public class EnvJSBrowser implements ContextCallback {
     public void setCookie(String url, String cookie) {
         final String date = br.getRequest().getHttpConnection().getHeaderField("Date");
         final String host = Browser.getHost(br.getRequest().getURL());
-        Cookies cookies = Cookies.parseCookies(cookie, host, date);
+        Cookies cookies = Cookies.parseCookies(cookie, br.getRequest().getURL(), date);
         br.getCookies(host).add(cookies);
     }
 

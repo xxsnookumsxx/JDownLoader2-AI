@@ -15,12 +15,15 @@
 //along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package jd.plugins.hoster;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.appwork.utils.IO;
 import org.appwork.utils.StringUtils;
+import org.appwork.utils.encoding.Base64;
 import org.appwork.utils.formatter.SizeFormatter;
 import org.jdownloader.plugins.components.XFileSharingProBasic;
 
@@ -168,8 +171,9 @@ public class UplodNet extends XFileSharingProBasic {
                 throw new PluginException(LinkStatus.ERROR_PLUGIN_DEFECT);
             }
             final long timeBefore = System.currentTimeMillis();
-            // final String code = this.getCaptchaCode(file, link);
-            final String code = this.getCaptchaCodeBase64ImageString(image_b64, link);
+            final File file = getLocalCaptchaFile(".jpg");
+            IO.writeToFile(file, Base64.decode(image_b64));
+            final String code = this.getCaptchaCode(file, link);
             dl2.put("captcha", Encoding.urlEncode(code));
             this.waitTime(link, timeBefore);
             link.setProperty(PROPERTY_CAPTCHA_REQUIRED, true);
@@ -182,19 +186,17 @@ public class UplodNet extends XFileSharingProBasic {
 
     protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         super.checkErrors(br, correctedBR, link, account);
-        if (checkAll) {
-            if (correctedBR.contains("Invalid captcha")) {
-                logger.warning("Wrong captcha (or wrong password as well)!");
-                /*
-                 * TODO: Find a way to avoid using a property for this or add the property in very plugin which overrides handleCaptcha e.g.
-                 * subyshare.com. If a dev forgets to set this, it will cause invalid errormessages on wrong captcha!
-                 */
-                final boolean websiteDidAskForCaptcha = link.getBooleanProperty(PROPERTY_CAPTCHA_REQUIRED, false);
-                if (websiteDidAskForCaptcha) {
-                    throw new PluginException(LinkStatus.ERROR_CAPTCHA);
-                } else {
-                    throw new PluginException(LinkStatus.ERROR_TEMPORARILY_UNAVAILABLE, "Server says 'wrong captcha' but never prompted for one");
-                }
+        if (correctedBR != null && correctedBR.contains("Invalid captcha")) {
+            logger.warning("Wrong captcha (or wrong password as well)!");
+            /*
+             * TODO: Find a way to avoid using a property for this or add the property in very plugin which overrides handleCaptcha e.g.
+             * subyshare.com. If a dev forgets to set this, it will cause invalid errormessages on wrong captcha!
+             */
+            final boolean websiteDidAskForCaptcha = link.getBooleanProperty(PROPERTY_CAPTCHA_REQUIRED, false);
+            if (websiteDidAskForCaptcha) {
+                throw new PluginException(LinkStatus.ERROR_CAPTCHA);
+            } else {
+                throw new PluginException(LinkStatus.ERROR_TEMPORARILY_UNAVAILABLE, "Server says 'wrong captcha' but never prompted for one");
             }
         }
     }

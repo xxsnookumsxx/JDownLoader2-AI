@@ -3,6 +3,7 @@ package org.jdownloader.captcha.v2.solver.dbc;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -83,7 +84,7 @@ public class DeathByCaptchaSolver extends CESChallengeSolver<String> {
 
     @Override
     public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
-        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.RECAPTCHA_V2, CAPTCHA_TYPE.HCAPTCHA, CAPTCHA_TYPE.CUT_CAPTCHA, CAPTCHA_TYPE.TURNSTILE);
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE, CAPTCHA_TYPE.RECAPTCHA_V2, CAPTCHA_TYPE.HCAPTCHA, CAPTCHA_TYPE.CUTCAPTCHA_V1, CAPTCHA_TYPE.CUTCAPTCHA_V2, CAPTCHA_TYPE.CLOUDFLARE_TURNSTILE);
     }
 
     @Override

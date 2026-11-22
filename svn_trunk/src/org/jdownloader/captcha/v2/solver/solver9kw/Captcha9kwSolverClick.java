@@ -1,6 +1,8 @@
 package org.jdownloader.captcha.v2.solver.solver9kw;
 
 import java.io.IOException;
+import java.util.EnumSet;
+import java.util.Set;
 
 import org.appwork.utils.IO;
 import org.appwork.utils.StringUtils;
@@ -29,6 +31,11 @@ public class Captcha9kwSolverClick extends AbstractCaptcha9kwSolver<ClickedPoint
     private Captcha9kwSolverClick() {
         super();
         NineKwSolverService.getInstance().setClickSolver(this);
+    }
+
+    @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return EnumSet.of(CAPTCHA_TYPE.IMAGE_SINGLE_CLICK_CAPTCHA);
     }
 
     @Override

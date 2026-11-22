@@ -132,8 +132,8 @@ public class JNAWindowsProcessHandler implements ProcessHandler {
      * @throws InterruptedException
      * @see org.appwork.jna.processes.ProcessHandler#listByPath(java.lang.String)
      */
-@Override
-     public List<ProcessInfo> listByPath(String path) throws IOException, NotSupportedException {
+    @Override
+    public List<ProcessInfo> listByPath(String path) throws IOException, InterruptedException {
         final long tStart = System.currentTimeMillis();
         if (VERBOSE_LOGS) {
             LogV3.info("[listByPath] START path=" + (path == null ? "null" : path));
@@ -602,374 +602,62 @@ public class JNAWindowsProcessHandler implements ProcessHandler {
      * @throws InterruptedException
      * @see org.appwork.processes.ProcessHandler#listByProcessInfo(org.appwork.processes.ProcessInfo[])
      */
-@Override
-     public List<ProcessInfo> listByProcessInfo(ProcessInfo... processes) throws IOException, InterruptedException {
-         List<Integer> jnaStillRunningPids = new ArrayList<Integer>();
-         List<ProcessInfo> others = new ArrayList<ProcessInfo>();
-         for (ProcessInfo p : processes) {
-             if (p instanceof JNAProcessInfo) {
-                 if (isProcessStillRunning(((JNAProcessInfo) p).getHandle())) {
-                     jnaStillRunningPids.add(Integer.valueOf(p.getPid()));
-                 }
-             } else {
-                 others.add(p);
-             }
-         }
-         HashSet<Integer> allPidsSet = new HashSet<Integer>(jnaStillRunningPids);
-         for (ProcessInfo o : others) {
-             allPidsSet.add(Integer.valueOf(o.getPid()));
-         }
-         if (allPidsSet.isEmpty()) {
-             return new ArrayList<ProcessInfo>();
-         }
-         int[] pids = new int[allPidsSet.size()];
-         int i = 0;
-         for (Integer pid : allPidsSet) {
-             pids[i++] = pid.intValue();
-         }
-         final List<ProcessInfo> fromWmi = listByPids(pids);
-         HashMap<Integer, ProcessInfo> pidToInfo = new HashMap<Integer, ProcessInfo>();
-         for (ProcessInfo pi : fromWmi) {
-             pidToInfo.put(Integer.valueOf(pi.getPid()), pi);
-         }
-         List<ProcessInfo> jnaStillRunning = new ArrayList<ProcessInfo>();
-         for (Integer pid : jnaStillRunningPids) {
-             ProcessInfo pi = pidToInfo.get(pid);
-             if (pi != null) {
-                 jnaStillRunning.add(pi);
-             }
-         }
-         HashMap<Integer, ProcessInfo> othersByPid = new HashMap<Integer, ProcessInfo>();
-         for (ProcessInfo o : others) {
-             othersByPid.put(Integer.valueOf(o.getPid()), o);
-         }
-         ArrayList<ProcessInfo> ret = new ArrayList<ProcessInfo>(jnaStillRunning);
-         for (ProcessInfo pi : fromWmi) {
-             ProcessInfo fromRequest = othersByPid.get(Integer.valueOf(pi.getPid()));
-             if (fromRequest == null) {
-                 continue;
-             }
-             if (StringUtils.isNotEmpty(fromRequest.getId())) {
-                 if (!fromRequest.getId().equals(pi.getId())) {
-                     continue;
-                 }
-             }
-             ret.add(pi);
-         }
-         return ret;
-     }
-
-     @Override
-     public int toFront(ProcessInfo... processes) throws IOException, InterruptedException {
-         if (processes.length == 0) {
-             return 0;
-         }
-         final HashSet<Integer> set = new HashSet<Integer>();
-         // update pids based on the extended process ids
-         for (ProcessInfo p : listByProcessInfo(processes)) {
-             set.add(p.getPid());
-         }
-         // note: Windows tries to block automated focus changed, thus all of the following is kind of a workaround
-         final Thread th = Thread.currentThread();
-         final int[] count = new int[] { 0 };
-         User32.INSTANCE.EnumWindows(new WinUser.WNDENUMPROC() {
-             @Override
-             public boolean callback(HWND hWnd, Pointer data) {
-                 if (th.isInterrupted()) {
-                     return false;
-                 }
-                 if (User32.INSTANCE.IsWindowVisible(hWnd)) {
-                     IntByReference pid = new IntByReference();
-                     User32.INSTANCE.GetWindowThreadProcessId(hWnd, pid);
-                     if (set.remove(pid.getValue())) {
-                         // tested 11.03.25 with windows 11 23h2
-                         count[0]++;
-                         LogV3.info("Bring Window to Front: PID: " + pid.getValue());
-                         // allow the process to set the active window
-                         if (!User32Ext.INSTANCE.AllowSetForegroundWindow(pid.getValue())) {
-                             if (DebugMode.TRUE_IN_IDE_ELSE_FALSE) {
-                                 System.err.println("Failed to allow foreground for PID " + pid.getValue());
-                             }
-                         }
-                         int currentThreadId = Kernel32.INSTANCE.GetCurrentThreadId();
-                         int targetThreadId = User32Ext.INSTANCE.GetWindowThreadProcessId(hWnd, null);
-                         boolean attached = false;
-                         try {
-                             attached = User32Ext.INSTANCE.AttachThreadInput(currentThreadId, targetThreadId, true);
-                             if (!attached) {
-                                 if (DebugMode.TRUE_IN_IDE_ELSE_FALSE) {
-                                     System.err.println("Failed to attach thread input.");
-                                 }
-                                 // tested 11.03.25 with windows 11 23h2 minimize -> restore is what actuallay worked today.
-                                 // minimize window
-                                 User32Ext.INSTANCE.ShowWindow(hWnd, WinUser.SW_MINIMIZE);
-                                 // restore window
-                                 User32Ext.INSTANCE.ShowWindow(hWnd, WinUser.SW_RESTORE);
-                                 // Send WM_SYSCOMMAND/SC_RESTORE to restore the window
-                                 User32Ext.INSTANCE.SendMessage(hWnd, WinUser.WM_SYSCOMMAND, new WPARAM(WinUser.SW_RESTORE), new LPARAM(0));
-                                 // try to bring the window to front
-                                 if (!User32Ext.INSTANCE.SetForegroundWindow(hWnd)) {
-                                     if (DebugMode.TRUE_IN_IDE_ELSE_FALSE) {
-                                         System.err.println("Failed to set foreground window.");
-                                     }
-                                 }
-                                 // try to show window
-                                 User32Ext.INSTANCE.ShowWindow(hWnd, WinUser.SW_SHOW);
-                             } else {
-                                 if (!User32Ext.INSTANCE.AttachThreadInput(currentThreadId, targetThreadId, false)) {
-                                     if (DebugMode.TRUE_IN_IDE_ELSE_FALSE) {
-                                         System.err.println("Failed to detach thread input.");
-                                     }
-                                 }
-                             }
-                         } finally {
-                             if (attached) {
-                                 if (!User32Ext.INSTANCE.AttachThreadInput(currentThreadId, targetThreadId, false)) {
-                                     if (DebugMode.TRUE_IN_IDE_ELSE_FALSE) {
-                                         System.err.println("Failed to detach thread input.");
-                                     }
-                                 }
-                             }
-                         }
-                     }
-                 }
-                 return set.size() > 0;
-             }
-         }, null);
-         if (Thread.interrupted()) {
-             throw new InterruptedException();
-         }
-         return count[0];
-     }
-
-@Override
-      public boolean terminateForcedAfterRequest(TimeSpan waitForSoftClose, int exitCode, ProcessInfo... processes) throws IOException, NotSupportedException, InterruptedException {
-         boolean result = true;
-         if (processes.length == 0) {
-             return false;
-         }
-         // processes for which nothing was sent: no point in waiting, terminate them forced right away
-         final List<ProcessInfo> notSent = new ArrayList<ProcessInfo>();
-         final List<ProcessInfo> toWaitFor = new ArrayList<ProcessInfo>();
-         for (ProcessInfo p : processes) {
-             fill(p);
-             try {
-                 if (terminateRequest(p)) {
-                     result = true;
-                 }
-                 toWaitFor.add(p);
-             } catch (CTRLNotSentException e) {
-                 LogV3.log(e);
-                 notSent.add(p);
-             } catch (IOException e) {
-                 // swallow - we might be successfull with forced
-                 LogV3.log(e);
-                 toWaitFor.add(p);
-             }
-         }
-         int failed = 0;
-         // Before waiting for the others. No isRunning check: it would swallow errors, and terminateForced handles processes that are
-         // already gone.
-         for (final ProcessInfo p : notSent) {
-             LogV3.info("CTRL was not sent. Terminate forced without waiting: " + p);
-             try {
-                 if (terminateForced(p, exitCode)) {
-                     result = true;
-                 }
-             } catch (final IOException e) {
-                 LogV3.log(e);
-                 failed++;
-             }
-         }
-         final List<ProcessInfo> running = new ArrayList<ProcessInfo>();
-         if (toWaitFor.size() > 0) {
-             LogV3.info("Close requested. Wait Timeout " + waitForSoftClose);
-             running.addAll(waitForExit(waitForSoftClose, toWaitFor.toArray(new ProcessInfo[0])));
-             LogV3.info("Done. Remaining: " + running.size());
-         }
-         if (running.size() > 0) {
-             LogV3.info("Timeout " + waitForSoftClose + " expired. Terminate remaining processes");
-             for (final ProcessInfo p : running) {
-                 try {
-                     if (terminateForced(p, exitCode)) {
-                         result = true;
-                     }
-                 } catch (final IOException e) {
-                     LogV3.log(e);
-                     failed++;
-                 }
-             }
-         }
-         if (failed > 0) {
-             throw new IOException("Failed to exit at least " + failed + " processes");
-         }
-         return result;
-     }
-
-     @Override
-     public boolean terminateForced(ProcessInfo p, final int exitCode) throws IOException {
-         if (p instanceof JNAProcessInfo) {
-             JNAProcessInfo jna = (JNAProcessInfo) p;
-             try {
-                 boolean ok = Kernel32.INSTANCE.TerminateProcess(jna.getHandle(), exitCode);
-                 jna.close();
-                 return ok;
-             } catch (Exception e) {
-                 jna.close();
-                 if (e instanceof IOException) {
-                     throw (IOException) e;
-                 }
-                 throw new IOException(e);
-             }
-         }
-         if (!StringUtils.isEmpty(p.getId())) {
-             // check the internal id
-             if (!isRunning(p)) {
-                 return false;
-             }
-         }
-         final int access = WinNT.PROCESS_QUERY_INFORMATION | Kernel32.PROCESS_TERMINATE;
-         HANDLE hProcess = Kernel32Ext.INSTANCE.OpenProcess(access, false, p.getPid());
-         HANDLE hToken = null;
-         WinNT.TOKEN_PRIVILEGES previousPrivState = null;
-         if (!isValid(hProcess)) {
-             // Retry with SeDebugPrivilege (e.g. to terminate LocalSystem or other elevated processes)
-             final HANDLEByReference phToken = new HANDLEByReference();
-             if (Advapi32.INSTANCE.OpenProcessToken(Kernel32.INSTANCE.GetCurrentProcess(), WinNT.TOKEN_ADJUST_PRIVILEGES | WinNT.TOKEN_QUERY, phToken)) {
-                 hToken = phToken.getValue();
-                 previousPrivState = enableSeDebugPrivilege(hToken);
-                 if (previousPrivState != null) {
-                     hProcess = Kernel32Ext.INSTANCE.OpenProcess(access, false, p.getPid());
-                 }
-             }
-         }
-         if (!isValid(hProcess)) {
-             if (hToken != null) {
-                 Kernel32.INSTANCE.CloseHandle(hToken);
-             }
-             // User may also not have PROCESS_TERMINATE rights
-             LogV3.info("No Process for this PID:" + p.getPid());
-             return false;
-         }
-         try {
-             final String processName = getProcessName(p.getPid());
-             LogV3.info("Terminate PID " + p.getPid() + "(" + processName + ")");
-             final IntByReference processExitCode = new IntByReference();
-             if (Kernel32.INSTANCE.GetExitCodeProcess(hProcess, processExitCode)) {
-                 if (processExitCode.getValue() != WinNT.STILL_ACTIVE) {
-                     // process already gone
-                     LogV3.info("Process already quit:" + p.getPid() + " exitcode: " + processExitCode.getValue());
-                     return false;
-                 }
-             } else {
-                 checkForErrors();
-             }
-             final boolean success = Kernel32.INSTANCE.TerminateProcess(hProcess, exitCode);
-             LogV3.info("Process Exist Result: " + success);
-             // process handler still available check exitcode
-             if (Kernel32.INSTANCE.GetExitCodeProcess(hProcess, processExitCode)) {
-                 if (processExitCode.getValue() == WinNT.STILL_ACTIVE) {
-                     throw new IOException("Could not kill process " + p.getPid() + "(" + getProcessName(p.getPid()) + ")");
-                 } else {
-                     LogV3.info("Process gone. Fine");
-                 }
-             } else {
-                 LogV3.info("Failed to call GetExitCodeProcess.");
-                 if (!success) {
-                     throw new IOException("Failed kill process " + p.getPid() + "(" + getProcessName(p.getPid()) + ")");
-                 }
-             }
-         } finally {
-             if (hToken != null && previousPrivState != null) {
-                 Advapi32.INSTANCE.AdjustTokenPrivileges(hToken, false, previousPrivState, previousPrivState.size(), null, null);
-             }
-             if (hToken != null) {
-                 Kernel32.INSTANCE.CloseHandle(hToken);
-             }
-             Kernel32Ext.INSTANCE.CloseHandle(hProcess);
-         }
-         return true;
-     }
-
-     @Override
-     public boolean terminateRequest(ProcessInfo p) throws IOException {
-         final HWND window = findMainWindow(p.getPid());
-         if (isValid(window)) {
-             LogV3.info("Close " + p + " WindowHandle: " + window);
-             try {
-                 if (!StringUtils.isEmpty(p.getId())) {
-                     // check the internal id
-                     if (isRunning(p) == false) {
-                         LogV3.info("Process with ID " + p.getId() + " is not running. Exit");
-                         return false;
-                     }
-                 } else {
-                     // we found a window for this pid
-                 }
-                 this.sendWMCloseToWindow(window);
-             } finally {
-                 Kernel32.INSTANCE.CloseHandle(window);
-             }
-         } else {
-             if (!StringUtils.isEmpty(p.getId())) {
-                 // check the internal id
-                 if (isRunning(p) == false) {
-                     LogV3.info("Process with ID " + p.getId() + " is not running. Exit");
-                     return false;
-                 }
-             }
-         }
-         LogV3.info("No Window Found");
-         try {
-             this.sendCTRLToPID(p.getPid());
-         } catch (IOException e) {
-             if (!StringUtils.isEmpty(p.getId())) {
-                 if (isRunning(p) == false) {
-                     return true;
-                 }
-             }
-             throw e;
-         }
-         return true;
-     }
-
-     @Override
-     public boolean isProcessesAlive(ProcessInfo... infos) throws NotSupportedException {
-         if (infos == null || infos.length == 0) {
-             return true;
-         }
-         List<ProcessInfo> needIdCheck = new ArrayList<ProcessInfo>();
-         for (ProcessInfo p : infos) {
-             if (p == null) {
-                 continue;
-             }
-             if (p instanceof JNAProcessInfo) {
-                 if (!isProcessStillRunning(((JNAProcessInfo) p).getHandle())) {
-                     return false;
-                 }
-                 continue;
-             }
-             if (StringUtils.isEmpty(p.getId())) {
-                 if (!isPidAlive(p.getPid())) {
-                     return false;
-                 }
-                 continue;
-             }
-             needIdCheck.add(p);
-         }
-         if (needIdCheck.isEmpty()) {
-             return true;
-         }
-         try {
-             List<ProcessInfo> stillRunning = listByProcessInfo(needIdCheck.toArray(new ProcessInfo[needIdCheck.size()]));
-             return stillRunning.size() == needIdCheck.size();
-         } catch (IOException e) {
-             return false;
-         } catch (InterruptedException e) {
-             Thread.currentThread().interrupt();
-             return false;
-         }
-     }
+    @Override
+    public List<ProcessInfo> listByProcessInfo(ProcessInfo... processes) throws IOException, InterruptedException {
+        List<Integer> jnaStillRunningPids = new ArrayList<Integer>();
+        List<ProcessInfo> others = new ArrayList<ProcessInfo>();
+        for (ProcessInfo p : processes) {
+            if (p instanceof JNAProcessInfo) {
+                if (isProcessStillRunning(((JNAProcessInfo) p).getHandle())) {
+                    jnaStillRunningPids.add(Integer.valueOf(p.getPid()));
+                }
+            } else {
+                others.add(p);
+            }
+        }
+        HashSet<Integer> allPidsSet = new HashSet<Integer>(jnaStillRunningPids);
+        for (ProcessInfo o : others) {
+            allPidsSet.add(Integer.valueOf(o.getPid()));
+        }
+        if (allPidsSet.isEmpty()) {
+            return new ArrayList<ProcessInfo>();
+        }
+        int[] pids = new int[allPidsSet.size()];
+        int i = 0;
+        for (Integer pid : allPidsSet) {
+            pids[i++] = pid.intValue();
+        }
+        final List<ProcessInfo> fromWmi = listByPids(pids);
+        HashMap<Integer, ProcessInfo> pidToInfo = new HashMap<Integer, ProcessInfo>();
+        for (ProcessInfo pi : fromWmi) {
+            pidToInfo.put(Integer.valueOf(pi.getPid()), pi);
+        }
+        List<ProcessInfo> jnaStillRunning = new ArrayList<ProcessInfo>();
+        for (Integer pid : jnaStillRunningPids) {
+            ProcessInfo pi = pidToInfo.get(pid);
+            if (pi != null) {
+                jnaStillRunning.add(pi);
+            }
+        }
+        HashMap<Integer, ProcessInfo> othersByPid = new HashMap<Integer, ProcessInfo>();
+        for (ProcessInfo o : others) {
+            othersByPid.put(Integer.valueOf(o.getPid()), o);
+        }
+        ArrayList<ProcessInfo> ret = new ArrayList<ProcessInfo>(jnaStillRunning);
+        for (ProcessInfo pi : fromWmi) {
+            ProcessInfo fromRequest = othersByPid.get(Integer.valueOf(pi.getPid()));
+            if (fromRequest == null) {
+                continue;
+            }
+            if (StringUtils.isNotEmpty(fromRequest.getId())) {
+                if (!fromRequest.getId().equals(pi.getId())) {
+                    continue;
+                }
+            }
+            ret.add(pi);
+        }
+        return ret;
+    }
 
     /**
      * Check if process is still running using its handle (GetExitCodeProcess == STILL_ACTIVE).
@@ -1033,19 +721,18 @@ public class JNAWindowsProcessHandler implements ProcessHandler {
         }
     }
 
-/**
-      * Terminates the process with TerminateProcess. For {@link JNAProcessInfo}, uses the instance's handle directly (no OpenProcess by PID)
-      * and closes the handle after termination. For other {@link ProcessInfo}, opens by PID and uses WMI/"is running" by PID.
-      *
-      * @param p
-      *            process to kill
-      * @param exitCode
-      *            exit code to set
-      * @return true if termination was successful
-      * @throws IOException
-      */
-     @Override
-     public boolean terminateForced(ProcessInfo p, final int exitCode) throws IOException {
+    /**
+     * Terminates the process with TerminateProcess. For {@link JNAProcessInfo}, uses the instance's handle directly (no OpenProcess by PID)
+     * and closes the handle after termination. For other {@link ProcessInfo}, opens by PID and uses WMI/"is running" by PID.
+     *
+     * @param p
+     *            process to kill
+     * @param exitCode
+     *            exit code to set
+     * @return true if termination was successful
+     * @throws IOException
+     */
+    public boolean terminateForced(ProcessInfo p, final int exitCode) throws IOException {
         if (p instanceof JNAProcessInfo) {
             JNAProcessInfo jna = (JNAProcessInfo) p;
             try {

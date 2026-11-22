@@ -9,7 +9,7 @@ import org.jdownloader.gui.translate._GUI;
 public class CaptchaToogleJACAction extends AbstractToolbarToggleAction {
 
     public CaptchaToogleJACAction() {
-        super(JACSolver.getInstance().getService().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
+        super(JACSolver.getInstance().getService().getConfigV3()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
 
         setIconKey(IconKey.ICON_OCR);
 

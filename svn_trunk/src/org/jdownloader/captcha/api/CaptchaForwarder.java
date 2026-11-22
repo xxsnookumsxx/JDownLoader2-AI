@@ -7,12 +7,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 import jd.http.Browser;
+import jd.plugins.PluginException;
 
 import org.appwork.remoteapi.exceptions.FileNotFound404Exception;
 import org.appwork.remoteapi.exceptions.InternalApiException;
 import org.appwork.utils.logging2.LogInterface;
 import org.appwork.utils.logging2.extmanager.LoggerFactory;
 import org.jdownloader.DomainInfo;
+import org.jdownloader.captcha.v2.challenge.recaptcha.v2.AbstractRecaptchaV2;
 import org.jdownloader.captcha.v2.challenge.recaptcha.v2.CaptchaHelperCrawlerPluginRecaptchaV2;
 import org.jdownloader.captcha.v2.challenge.recaptcha.v2.RecaptchaV2Challenge;
 import org.jdownloader.logging.LogController;
@@ -68,7 +70,7 @@ public class CaptchaForwarder implements CaptchaForwarderAPIInterface {
                     };
 
                     @Override
-                    protected org.jdownloader.captcha.v2.challenge.recaptcha.v2.RecaptchaV2Challenge createChallenge() {
+                    protected org.jdownloader.captcha.v2.challenge.recaptcha.v2.RecaptchaV2Challenge createChallenge() throws PluginException {
                         return new RecaptchaV2Challenge(lsiteKey, stoken, null, this.br, this.getSiteDomain()) {
                             @Override
                             public org.jdownloader.DomainInfo getDomainInfo() {
@@ -81,6 +83,31 @@ public class CaptchaForwarder implements CaptchaForwarderAPIInterface {
 
                             public String getHost() {
                                 return domain;
+                            }
+
+                            @Override
+                            public Double getMinScore() {
+                                return null;
+                            }
+
+                            @Override
+                            public boolean isV3() {
+                                return false;
+                            }
+
+                            @Override
+                            public boolean isEnterprise() {
+                                return false;
+                            }
+
+                            @Override
+                            public String getType() {
+                                return AbstractRecaptchaV2.TYPE.NORMAL.name();
+                            }
+
+                            @Override
+                            public String getSiteUrl() {
+                                return "https://" + domain + "/";
                             }
 
                             @Override

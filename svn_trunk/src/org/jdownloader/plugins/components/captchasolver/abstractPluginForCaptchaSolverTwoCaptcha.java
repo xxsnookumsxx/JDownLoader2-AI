@@ -100,7 +100,7 @@ public abstract class abstractPluginForCaptchaSolverTwoCaptcha extends abstractP
             } else if (captchaChallenge instanceof HCaptchaChallenge) {
                 final HCaptchaChallenge challenge = (HCaptchaChallenge) job.getChallenge();
                 task.put("type", "HCaptchaTaskProxyless");
-                task.put("websiteURL", challenge.getSiteUrl());
+                task.put("websiteURL", challenge.getSiteUrl(this));
                 task.put("websiteKey", challenge.getSiteKey());
                 final AbstractHCaptcha<?> hCaptcha = challenge.getAbstractCaptchaHelperHCaptcha();
                 if (hCaptcha != null && AbstractHCaptcha.TYPE.INVISIBLE.equals(hCaptcha.getType())) {
@@ -112,12 +112,12 @@ public abstract class abstractPluginForCaptchaSolverTwoCaptcha extends abstractP
                 task.put("type", "CutCaptchaTaskProxyless");
                 task.put("miseryKey", challenge.getSiteKey());
                 task.put("apiKey", challenge.getApiKey());
-                task.put("websiteURL", challenge.getSiteUrl());
+                task.put("websiteURL", challenge.getSiteUrl(this));
             } else if (captchaChallenge instanceof CloudflareTurnstileChallenge) {
                 /* Cloudflare turnstile: https://2captcha.com/api-docs/cloudflare-turnstile */
                 final CloudflareTurnstileChallenge challenge = (CloudflareTurnstileChallenge) job.getChallenge();
                 task.put("type", "TurnstileTaskProxyless");
-                task.put("websiteURL", challenge.getSiteUrl());
+                task.put("websiteURL", challenge.getSiteUrl(this));
                 task.put("websiteKey", challenge.getSiteKey());
             } else {
                 /* Image captcha: https://2captcha.com/api-docs/normal-captcha */
@@ -190,16 +190,16 @@ public abstract class abstractPluginForCaptchaSolverTwoCaptcha extends abstractP
     }
 
     @Override
-    public boolean setInvalid(AbstractResponse<?> response) {
-        return sendCaptchaFeedback(response, false);
+    public boolean setInvalid(final AbstractResponse<?> response, final Account account) throws Exception {
+        return sendCaptchaFeedback(response, account, false);
     }
 
     @Override
-    public boolean setValid(AbstractResponse<?> response) {
-        return sendCaptchaFeedback(response, true);
+    public boolean setValid(final AbstractResponse<?> response, final Account account) throws Exception {
+        return sendCaptchaFeedback(response, account, true);
     }
 
-    private final boolean sendCaptchaFeedback(final AbstractResponse<?> response, final boolean positiveFeedback) {
+    private final boolean sendCaptchaFeedback(final AbstractResponse<?> response, final Account account, final boolean positiveFeedback) {
         final TwoCaptchaResponse twocaptcharesponse = (TwoCaptchaResponse) response;
         final String captchaID = twocaptcharesponse.getCaptchaID();
         try {
@@ -212,7 +212,8 @@ public abstract class abstractPluginForCaptchaSolverTwoCaptcha extends abstractP
                 url = "/reportIncorrect";
             }
             final Map<String, Object> postdata = new HashMap<String, Object>();
-            postdata.put("clientKey", this.getCurrentAccount().getPass());
+            final Account acc = account != null ? account : this.getCurrentAccount();
+            postdata.put("clientKey", acc.getPass());
             postdata.put("taskId", captchaID);
             final PostRequest req = br.createJSonPostRequest(this.getApiBaseV2() + url, postdata);
             br.getPage(req);

@@ -155,22 +155,6 @@ public class Recaptcha {
             if (this.clearReferer) {
                 this.rcBr.setRequest(null);
             }
-            try {
-                org.jdownloader.captcha.v2.solver.service.BrowserSolverService.fillCookies(rcBr);
-                if (rcBr.getCookie("http://google.com", "SID") != null) {
-                    if (StringUtils.isNotEmpty(org.jdownloader.captcha.v2.solver.service.BrowserSolverService.getInstance().getConfig().getGoogleComCookieValueSID()) && StringUtils.isNotEmpty(org.jdownloader.captcha.v2.solver.service.BrowserSolverService.getInstance().getConfig().getGoogleComCookieValueHSID())) {
-                        helperID = "SID";
-                    } else {
-                        helperID = "ACC";
-                    }
-                }
-            } catch (Throwable e) {
-                if (plg != null) {
-                    plg.getLogger().log(e);
-                } else {
-                    e.printStackTrace();
-                }
-            }
             // end of privacy protection
         }
     }
@@ -221,13 +205,6 @@ public class Recaptcha {
      * @throws PluginException
      */
     protected void runDdosProtection() throws PluginException {
-        if (plg != null) {
-            try {
-                plg.runCaptchaDDosProtection("recaptcha");
-            } catch (InterruptedException e) {
-                throw new PluginException(LinkStatus.ERROR_RETRY);
-            }
-        }
     }
 
     private void track(String string) {

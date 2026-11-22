@@ -9,7 +9,7 @@ import org.jdownloader.gui.translate._GUI;
 public class CaptchaToogleMyJDRemoteAction extends AbstractToolbarToggleAction {
 
     public CaptchaToogleMyJDRemoteAction() {
-        super(CaptchaAPISolver.getInstance().getService().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
+        super(CaptchaAPISolver.getInstance().getService().getConfigV3()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
 
         setIconKey(IconKey.ICON_LOGO_MYJDOWNLOADER);
 

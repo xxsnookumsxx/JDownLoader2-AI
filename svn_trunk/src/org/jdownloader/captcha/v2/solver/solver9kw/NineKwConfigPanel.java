@@ -92,7 +92,7 @@ public final class NineKwConfigPanel extends AbstractCaptchaSolverConfigPanel {
         // Tab 1
         JPanel Tab1_9kw = new JPanel(new MigLayout("ins 0"));
         Tab1_9kw.add(new Header(getTitle(), new AbstractIcon(IconKey.ICON_LOGO_9KW, 32)), "spanx,growx,pushx");
-        JLabel txt = addDescriptionPlain9kw(_GUI.T.AntiCaptchaConfigPanel_onShow_description_ces());
+        JLabel txt = addDescriptionPlain9kw("Paid online captcha exchange service.");
         Tab1_9kw.add(txt, "gaptop 0,spanx,growx,pushx,gapleft " + getLeftGap() + ",gapbottom 5,wmin 10");
         Tab1_9kw.add(new JSeparator(), "gapleft " + getLeftGap() + ",spanx,growx,pushx,gapbottom 5");
         Tab1_9kw.add(new SettingsButton(new AppAction() {
@@ -266,16 +266,16 @@ public final class NineKwConfigPanel extends AbstractCaptchaSolverConfigPanel {
         tabbedPane.addTab(_GUI.T.NinekwService_createPanel_general_header(), Tab1_9kw);
         // Tab 2
         JPanel Tab2_9kw = new JPanel(new MigLayout("ins 0"));
-        Tab2_9kw.add(new Header(_GUI.T.captcha_settings_black_whitelist_header(), NewTheme.I().getIcon(IconKey.ICON_LIST, 32)), "spanx,growx,pushx");
-        JLabel txt_blackwhitelist3 = addDescriptionPlain9kw(_GUI.T.captcha_settings_black_whitelist_description());
+        Tab2_9kw.add(new Header("Blacklist / Whitelist", NewTheme.I().getIcon(IconKey.ICON_LIST, 32)), "spanx,growx,pushx");
+        JLabel txt_blackwhitelist3 = addDescriptionPlain9kw("Configure blacklist and whitelist settings");
         Tab2_9kw.add(txt_blackwhitelist3, "gaptop 0,spanx,growx,pushx,gapleft " + getLeftGap() + ",gapbottom 5,wmin 10");
         BooleanKeyHandler keyHandler = CFG_9KWCAPTCHA.CFG._getStorageHandler().getKeyHandler("BlackWhiteListingEnabled", BooleanKeyHandler.class);
         Pair<Checkbox> condition = null;
         if (keyHandler != null) {
-            condition = addPair9kw(_GUI.T.captcha_settings_blacklist_enabled(), null, new jd.gui.swing.jdgui.views.settings.components.Checkbox(keyHandler), Tab2_9kw);
+            condition = addPair9kw("Enable Blacklist", null, new jd.gui.swing.jdgui.views.settings.components.Checkbox(keyHandler), Tab2_9kw);
         }
-        blacklistnew = addPair9kw(_GUI.T.captcha_settings_blacklist(), null, new CaptchaRegexListTextPane(), Tab2_9kw);
-        whitlistnew = addPair9kw(_GUI.T.captcha_settings_whitelist(), null, new CaptchaRegexListTextPane(), Tab2_9kw);
+        blacklistnew = addPair9kw("Blacklist", null, new CaptchaRegexListTextPane(), Tab2_9kw);
+        whitlistnew = addPair9kw("Whitelist", null, new CaptchaRegexListTextPane(), Tab2_9kw);
         if (condition != null) {
             blacklistnew.setConditionPair(condition);
             whitlistnew.setConditionPair(condition);
@@ -674,6 +674,6 @@ public final class NineKwConfigPanel extends AbstractCaptchaSolverConfigPanel {
     }
 
     public String getDescription() {
-        return _GUI.T.NinekwService_getDescription_tt_();
+        return "9kw.eu";
     }
 }

@@ -17,6 +17,7 @@ import jd.gui.swing.jdgui.views.settings.components.TextInput;
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.AbstractCaptchaSolverConfigPanel;
 
 import org.appwork.storage.config.JsonConfig;
+import org.appwork.swing.components.tooltips.ExtTooltip;
 import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 import org.appwork.utils.Application;
 import org.appwork.utils.os.CrossSystem;
@@ -82,7 +83,7 @@ public class EndCaptchaSolverService extends AbstractSolverService implements Se
 
             {
                 addHeader(getTitle(), new AbstractIcon(IconKey.ICON_LOGO_ENDCAPTCHA, 32));
-                addDescription(_GUI.T.AntiCaptchaConfigPanel_onShow_description_paid_service());
+                addDescription("Paid online OCR captcha solving service.");
 
                 add(new SettingsButton(new AppAction() {
                     {
@@ -103,8 +104,8 @@ public class EndCaptchaSolverService extends AbstractSolverService implements Se
                 // addPair(_GUI.T.MyJDownloaderSettingsPanel_MyJDownloaderSettingsPanel_enabled(), null, checkBox);
                 this.addDescriptionPlain(_GUI.T.captchasolver_configpanel_my_account_description(EndCaptchaSolverService.this.getName()));
                 addPair(_GUI.T.captchasolver_configpanel_enabled(EndCaptchaSolverService.this.getName()), null, new Checkbox(CFG_END_CAPTCHA.ENABLED, username, password));
-                addPair(_GUI.T.captchabrotherhoodService_createPanel_username(), null, username);
-                addPair(_GUI.T.captchabrotherhoodService_createPanel_password(), null, password);
+                addPair("Username", null, username);
+                addPair("Password", null, password);
 
                 addPair(_GUI.T.DeatchbyCaptcha_Service_createPanel_feedback(), null, new Checkbox(CFG_END_CAPTCHA.FEED_BACK_SENDING_ENABLED));
 
@@ -187,7 +188,6 @@ public class EndCaptchaSolverService extends AbstractSolverService implements Se
         }
     }
 
-    @Override
     public Map<String, Integer> getWaitForOthersDefaultMap() {
         HashMap<String, Integer> ret = new HashMap<String, Integer>();
 

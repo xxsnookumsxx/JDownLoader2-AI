@@ -5217,4 +5217,3 @@ svn_trunk\src\org\jdownloader\utils\SubtitleConverter.java
 svn_trunk\src\org\jdownloader\webcache\CachedHeader.java
 svn_trunk\src\org\jdownloader\webcache\CachedRequest.java
 svn_trunk\src\org\jdownloader\webcache\WebCache.java
-svn_trunk\ressourcen\code-ressourcen\image4j\ICODecoder.java

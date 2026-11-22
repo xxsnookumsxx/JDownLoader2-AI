@@ -112,7 +112,6 @@ public class TwoCaptchaSolverService extends AbstractSolverService implements Se
         });
     }
 
-    @Override
     public Map<String, Integer> getWaitForOthersDefaultMap() {
         HashMap<String, Integer> ret = new HashMap<String, Integer>();
         ret.put(JacSolverService.ID, 30000);

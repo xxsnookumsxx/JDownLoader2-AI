@@ -105,7 +105,7 @@ public abstract class AbstractCaptcha9kwSolver<T> extends CESChallengeSolver<T> 
         final HashMap<String, Integer> map = config.getBubbleTimeoutByHostMap();
         Integer ret = map.get(challenge.getHost().toLowerCase(Locale.ENGLISH));
         if (ret == null || ret < 0) {
-            ret = CFG_CAPTCHA.CFG.getCaptchaExchangeChanceToSkipBubbleTimeout();
+            ret = 60000;
         }
         return ret;
     }
@@ -206,7 +206,7 @@ public abstract class AbstractCaptcha9kwSolver<T> extends CESChallengeSolver<T> 
     }
 
     @Override
-    public boolean setUnused(final AbstractResponse<?> response) {
+    protected boolean onUnused(final AbstractResponse<?> response) {
         if (config.isfeedback() && response instanceof Captcha9KWResponseInterface) {
             final String captchaID = ((Captcha9KWResponseInterface) response).getCaptcha9kwID();
             setFeedback(ResponseFeedback.UNUSED, captchaID);
@@ -242,7 +242,7 @@ public abstract class AbstractCaptcha9kwSolver<T> extends CESChallengeSolver<T> 
     }
 
     @Override
-    public boolean setValid(final AbstractResponse<?> response) {
+    protected boolean onValid(final AbstractResponse<?> response) {
         if (config.isfeedback() && response instanceof Captcha9KWResponseInterface) {
             final String captchaID = ((Captcha9KWResponseInterface) response).getCaptcha9kwID();
             setFeedback(ResponseFeedback.VALID, captchaID);
@@ -313,7 +313,7 @@ public abstract class AbstractCaptcha9kwSolver<T> extends CESChallengeSolver<T> 
         String ret = "";
         Challenge<T> captchaChallenge = getChallenge(solverJob);
         setdebug(solverJob, "Upload Captcha - GetTypeID: " + captchaChallenge.getTypeID() + " - Plugin: " + captchaChallenge.getPlugin());
-        solverJob.showBubble(this, getBubbleTimeout(captchaChallenge));
+        solverJob.showBubble(getBubbleTimeout(captchaChallenge));
         counter.incrementAndGet();
         solverJob.setStatus(SolverStatus.UPLOADING);
         captchaChallenge.sendStatsSolving(this);

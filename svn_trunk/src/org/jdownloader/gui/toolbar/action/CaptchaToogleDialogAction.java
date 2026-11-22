@@ -8,7 +8,7 @@ import org.jdownloader.gui.translate._GUI;
 public class CaptchaToogleDialogAction extends AbstractToolbarToggleAction {
 
     public CaptchaToogleDialogAction() {
-        super(DialogSolverService.getInstance().getConfig()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
+        super(DialogSolverService.getInstance().getConfigV3()._getStorageHandler().getKeyHandler("enabled", BooleanKeyHandler.class));
 
         setIconKey(IconKey.ICON_OCR);
 

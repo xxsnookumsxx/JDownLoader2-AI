@@ -132,7 +132,7 @@ public class BigwarpIo extends XFileSharingProBasic {
     }
 
     @Override
-public String[] scanInfo(final DownloadLink link, final String[] fileInfo) {
+    public String[] scanInfo(final String html, final String[] fileInfo) {
         super.scanInfo(html, fileInfo);
         final String betterFilename = new Regex(html, "<th colspan=2>Download ([^<]+)</th>").getMatch(0);
         if (betterFilename != null) {
