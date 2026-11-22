@@ -1,4 +1,4 @@
-﻿ackage jd.gui.swing.jdgui.views.settings.panels.anticaptcha;
+package jd.gui.swing.jdgui.views.settings.panels.anticaptcha;
 
 import java.awt.CardLayout;
 import java.awt.Cursor;

@@ -215,7 +215,7 @@ public class PimpRollHostedTube extends PluginForHost {
         }
         if (filename != null) {
             filename = Encoding.htmlDecode(filename).trim();
-            filename = this.correctOrApplyFileNameExtension(filename, ".mp4");
+            filename = this.correctOrApplyFileNameExtension(filename, ".mp4", null);
             link.setFinalFileName(filename);
         }
         if (dllink != null) {

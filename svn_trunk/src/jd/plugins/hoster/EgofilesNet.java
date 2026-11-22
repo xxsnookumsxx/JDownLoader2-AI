@@ -115,7 +115,6 @@ public class EgofilesNet extends YetiShareCore {
         return false;
     }
 
-    @Override
     protected boolean isOfflineWebsiteInfoPage(final Browser br, final DownloadLink link) throws Exception {
         if (br.containsHTML("(?i)>\\s*File not found")) {
             /* E.g. https://egofiles.net/yyyyyyyxxxxxxxx~i */

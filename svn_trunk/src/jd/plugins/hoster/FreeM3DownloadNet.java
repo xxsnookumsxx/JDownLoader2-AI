@@ -318,7 +318,7 @@ public class FreeM3DownloadNet extends PluginForHost {
                         /* Correct extension in filename */
                         final String currentFilename = link.getFinalFileName();
                         if (currentFilename != null) {
-                            link.setFinalFileName(this.correctOrApplyFileNameExtension(currentFilename, "." + fileExtension));
+                            link.setFinalFileName(this.correctOrApplyFileNameExtension(currentFilename, "." + fileExtension, null));
                         }
                         if (filesizeStr != null) {
                             link.setDownloadSize(SizeFormatter.getSize(filesizeStr));

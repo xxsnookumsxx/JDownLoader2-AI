@@ -110,7 +110,7 @@ public class XingyaodiskCom extends PluginForHost {
         if (filename != null) {
             final String fileExtension = br.getRegex("src='images/filetype_\\d+/([a-z0-9]+)\\.gif'").getMatch(0);
             filename = Encoding.htmlDecode(filename).trim();
-            filename = this.correctOrApplyFileNameExtension(filename, "." + fileExtension);
+            filename = this.correctOrApplyFileNameExtension(filename, "." + fileExtension, null);
             link.setName(filename);
         }
         String filesize = br.getRegex("<span class=\"h4\">(\\d+[^<>\"]+)</span>").getMatch(0);

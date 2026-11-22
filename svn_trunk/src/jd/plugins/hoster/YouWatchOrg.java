@@ -176,10 +176,8 @@ public class YouWatchOrg extends XFileSharingProBasic {
     // return dllink;
     // }
 
-    @Override
     public String[] scanInfo(final String[] fileInfo) {
         /* 2020-06-12: Special: Encrypted filenames */
-        super.scanInfo(fileInfo);
         String filename = br.getRegex("<h3 id=\"title\">([^<>\"]*?)</h3>").getMatch(0);
         if (!StringUtils.isEmpty(filename)) {
             // Decode Caesar's shift code

@@ -106,7 +106,7 @@ public class Mp4playerSite extends PluginForHost {
         if (title != null) {
             title = Encoding.htmlDecode(title);
             title = title.trim();
-            link.setFinalFileName(this.correctOrApplyFileNameExtension(title, ".mp4"));
+                        link.setFinalFileName(this.correctOrApplyFileNameExtension(title, ".mp4", null));
         }
         return AvailableStatus.TRUE;
     }

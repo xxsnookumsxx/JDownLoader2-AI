@@ -179,7 +179,7 @@ public abstract class AbstractCaptcha9kwSolver<T> extends CESChallengeSolver<T> 
     }
 
     @Override
-    public boolean setInvalid(final AbstractResponse<?> response) {
+    protected boolean onInvalid(final AbstractResponse<?> response) {
         if (config.isfeedback() && response instanceof Captcha9KWResponseInterface) {
             final String captchaID = ((Captcha9KWResponseInterface) response).getCaptcha9kwID();
             setFeedback(ResponseFeedback.INVALID, captchaID);

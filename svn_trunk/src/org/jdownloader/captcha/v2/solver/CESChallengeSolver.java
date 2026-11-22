@@ -50,7 +50,7 @@ public abstract class CESChallengeSolver<T> extends ChallengeSolver<T> {
             return;
         }
         checkInterruption();
-        final CESSolverJob<T> cesJob = new CESSolverJob<T>(job);
+        final CESSolverJob<T> cesJob = new CESSolverJob<T>(job, this);
         try {
             solveCES(cesJob);
         } finally {

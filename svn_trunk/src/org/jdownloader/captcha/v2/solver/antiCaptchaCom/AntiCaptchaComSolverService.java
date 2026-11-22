@@ -26,6 +26,8 @@ import jd.gui.swing.jdgui.components.premiumbar.ServicePanelExtender;
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.AbstractCaptchaSolverConfigPanel;
 import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
+import org.jdownloader.captcha.v2.solver.jac.JacSolverService;
+
 public class AntiCaptchaComSolverService extends AbstractSolverService implements ServicePanelExtender {
     private AntiCaptchaComConfigInterface config;
     private AntiCaptchaComSolver          solver;
@@ -110,7 +112,6 @@ public class AntiCaptchaComSolverService extends AbstractSolverService implement
         }
     }
 
-    @Override
     public Map<String, Integer> getWaitForOthersDefaultMap() {
         HashMap<String, Integer> ret = new HashMap<String, Integer>();
         ret.put(JacSolverService.ID, 30000);

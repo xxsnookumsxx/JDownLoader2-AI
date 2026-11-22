@@ -274,7 +274,7 @@ public class File2btcCom extends PluginForHost {
         login(account, true);
         final String spaceUsed = br.getRegex("Storage:\\s*<br>\\s*<font [^>]*>\\s*(\\d+ [^/<]+)").getMatch(0);
         if (spaceUsed != null) {
-            ai.setUsedSpace(spaceUsed.trim());
+            ai.setUsedSpace(SizeFormatter.getSize(spaceUsed.trim()));
         }
         final Regex trafficToday = br.getRegex("Traffic Today:\\s*<br>\\s*<font [^>]*>\\s*(\\d+ [^/]+)/([^<]+)");
         final String trafficUsed = trafficToday.getMatch(0);

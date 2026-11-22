@@ -134,7 +134,7 @@ public class QiwiGg extends PluginForHost {
             requestFileInformation(link);
             // 2023-07-31: See: https://qiwi.gg/_next/static/chunks/app/file/%5Bslug%5D/page-b157d4d328d1d6f4.js
             String dllink = "https://spyderrock.com/" + this.getFID(link);
-            dllink = Plugin.getCorrectOrApplyFileNameExtension(dllink, Plugin.getFileNameExtensionFromString(link.getName()));
+            dllink = Plugin.getCorrectOrApplyFileNameExtension(dllink, Plugin.getFileNameExtensionFromString(link.getName()), null);
             dl = jd.plugins.BrowserAdapter.openDownload(br, link, dllink, resumable, maxchunks);
             if (!this.looksLikeDownloadableContent(dl.getConnection())) {
                 br.followConnection(true);

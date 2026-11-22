@@ -187,7 +187,7 @@ public class TwoCaptchaSolver extends CESChallengeSolver<String> {
                 task.put("comment", challenge.getExplain());
             }
             postdata.put("task", task);
-            job.showBubble(this);
+            job.showBubble();
             checkInterruption();
             job.getChallenge().sendStatsSolving(this);
             job.setStatus(SolverStatus.SOLVING);
@@ -268,12 +268,12 @@ public class TwoCaptchaSolver extends CESChallengeSolver<String> {
     }
 
     @Override
-    public boolean setInvalid(final AbstractResponse<?> response) {
+    protected boolean onInvalid(final AbstractResponse<?> response) {
         return sendCaptchaFeedback(response, false);
     }
 
     @Override
-    public boolean setValid(final AbstractResponse<?> response) {
+    protected boolean onValid(final AbstractResponse<?> response) {
         return sendCaptchaFeedback(response, true);
     }
 

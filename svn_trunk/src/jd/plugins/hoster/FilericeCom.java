@@ -78,16 +78,11 @@ public class FilericeCom extends XFileSharingProBasic {
     }
 
     @Override
-    protected boolean trustAccountInfoAPI(Browser br, Account account, AccountInfo ai) throws Exception {
+    protected Boolean trustAccountInfoAPI(Account account) {
         if (account.getType() == AccountType.FREE) {
-            final Long expire_milliseconds = fetchAccountInfoWebsiteExpireDate(br.cloneBrowser(), account, ai);
-            if (expire_milliseconds != null && expire_milliseconds > 0) {
-                ai.setValidUntil(expire_milliseconds);
-                setAccountLimitsByType(account, AccountType.PREMIUM);
-                return false;
-            }
+            return true;
         }
-        return true;
+        return null;
     }
 
     @Override

@@ -228,8 +228,8 @@ public class SmoozedCom extends antiDDoSForHost {
     }
 
     @Override
-    protected AskToUsePremiumDialog createAskToUsePremiumDialog(String domain) {
-        final AskToUsePremiumDialog ret = super.createAskToUsePremiumDialog(domain);
+    protected AskToUsePremiumDialog createAskToUsePremiumDialog() {
+        final AskToUsePremiumDialog ret = super.createAskToUsePremiumDialog();
         ret.setMessage(TranslationFactory.create(SmoozedTranslation.class).free_trial_end());
         return ret;
     }

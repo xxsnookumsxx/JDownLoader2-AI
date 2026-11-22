@@ -63,6 +63,16 @@ public class CaptchaSolutionsSolver extends CESChallengeSolver<String> implement
     }
 
     @Override
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+        return java.util.Collections.emptySet();
+    }
+
+    @Override
+    protected LogSource getLogger() {
+        return logger;
+    }
+
+    @Override
     protected boolean isChallengeSupported(Challenge<?> c) {
         return c instanceof RecaptchaV2Challenge || c instanceof BasicCaptchaChallenge;
     }
@@ -109,7 +119,7 @@ public class CaptchaSolutionsSolver extends CESChallengeSolver<String> implement
     }
 
     protected void solveBasicCaptchaChallenge(CESSolverJob<String> job, BasicCaptchaChallenge challenge) throws InterruptedException, SolverException {
-        job.showBubble(this);
+        job.showBubble();
         checkInterruption();
         job.getChallenge().sendStatsSolving(this);
         try {

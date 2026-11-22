@@ -15,6 +15,7 @@ import jd.gui.swing.jdgui.views.settings.components.PasswordInput;
 import jd.gui.swing.jdgui.views.settings.components.SettingsButton;
 import jd.gui.swing.jdgui.views.settings.components.TextInput;
 import jd.gui.swing.jdgui.views.settings.panels.anticaptcha.AbstractCaptchaSolverConfigPanel;
+import jd.plugins.CaptchaType.CAPTCHA_TYPE;
 
 import org.appwork.storage.config.JsonConfig;
 import org.appwork.swing.components.tooltips.ExtTooltip;
@@ -35,6 +36,8 @@ import org.jdownloader.settings.advanced.AdvancedConfigManager;
 import org.jdownloader.settings.staticreferences.CFG_IMAGE_TYPERZ;
 import org.jdownloader.captcha.v2.ChallengeSolver.SolverType;
 
+import java.util.Set;
+
 public class ImageTyperzSolverService extends AbstractSolverService implements ServicePanelExtender {
     private ImageTyperzConfigInterface config;
     private ImageTyperzCaptchaSolver   solver;
@@ -50,7 +53,7 @@ public class ImageTyperzSolverService extends AbstractSolverService implements S
 
     @Override
     public SolverType getType() {
-        return _GUI.T.CaptchaSolver_Type_paid_online();
+        return SolverType.EXTERNAL;
     }
 
     @Override

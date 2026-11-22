@@ -132,8 +132,7 @@ public class UplodNet extends XFileSharingProBasic {
         return -1;
     }
 
-    @Override
-    public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account, final boolean downloadsStarted) throws Exception {
+    public AvailableStatus requestFileInformationWebsite(final DownloadLink link, final Account account) throws Exception {
         this.getPage(link.getPluginPatternMatcher());
         if (br.getHttpConnection().getResponseCode() == 404) {
             throw new PluginException(LinkStatus.ERROR_FILE_NOT_FOUND);
@@ -153,8 +152,8 @@ public class UplodNet extends XFileSharingProBasic {
         /* First bring up saved final links */
         String dllink = checkDirectLink(link, account);
         if (StringUtils.isEmpty(dllink)) {
-            this.requestFileInformationWebsite(link, account, true);
-            this.checkErrors(br, (String) null, link, account, false);
+            this.requestFileInformationWebsite(link, account);
+            this.checkErrors(br, (String) null, link, account);
             final Form dl1 = br.getFormByInputFieldKeyValue("op", "step1");
             if (dl1 == null) {
                 throw new PluginException(LinkStatus.ERROR_PLUGIN_DEFECT);
@@ -175,14 +174,13 @@ public class UplodNet extends XFileSharingProBasic {
             this.waitTime(link, timeBefore);
             link.setProperty(PROPERTY_CAPTCHA_REQUIRED, true);
             this.submitForm(dl2);
-            this.checkErrors(br, (String) null, link, account, true);
+            this.checkErrors(br, (String) null, link, account);
             dllink = this.getDllink(link, account, br, (String) null);
         }
         handleDownload(link, account, dllink, null);
     }
 
-    @Override
-    protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account, final boolean checkAll) throws NumberFormatException, PluginException {
+    protected void checkErrors(final Browser br, final String correctedBR, final DownloadLink link, final Account account) throws NumberFormatException, PluginException {
         super.checkErrors(br, correctedBR, link, account);
         if (checkAll) {
             if (correctedBR.contains("Invalid captcha")) {
