@@ -86,7 +86,7 @@ public class BeatexsCom extends XFileSharingProBasic {
     }
 
     @Override
-    public String[] scanInfo(final String html, final String[] fileInfo) {
+public String[] scanInfo(final DownloadLink link, final String[] fileInfo) {
         /* 2019-07-03: Special */
         super.scanInfo(html, fileInfo);
         if (StringUtils.isEmpty(fileInfo[0])) {

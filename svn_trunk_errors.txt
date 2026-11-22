@@ -1,3 +1,13 @@
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:66: error: cannot find symbol
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+           ^
+  symbol:   class Set
+  location: class CaptchaSolutionsSolver
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:66: error: cannot find symbol
+    public Set<CAPTCHA_TYPE> getSupportedCaptchaTypes() {
+               ^
+  symbol:   class CAPTCHA_TYPE
+  location: class CaptchaSolutionsSolver
 svn_trunk\src\org\jdownloader\net\BCSSLSocketStreamFactory.java:589: warning: [removal] getPeerCertificateChain() in SSLSession has been deprecated and marked for removal
         public javax.security.cert.X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
                                                      ^
@@ -49,6 +59,51 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\BrowserReference.java:22
 svn_trunk\src\org\jdownloader\captcha\v2\solver\browser\BrowserReference.java:229: warning: [removal] finalize() in Object has been deprecated and marked for removal
             super.finalize();
                  ^
+svn_trunk\src\jd\plugins\hoster\BeatexsCom.java:88: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\BeatexsCom.java:91: error: cannot find symbol
+        super.scanInfo(html, fileInfo);
+                       ^
+  symbol:   variable html
+  location: class BeatexsCom
+svn_trunk\src\jd\plugins\hoster\BigwarpIo.java:134: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\BigwarpIo.java:136: error: cannot find symbol
+        super.scanInfo(html, fileInfo);
+                       ^
+  symbol:   variable html
+  location: class BigwarpIo
+svn_trunk\src\jd\plugins\hoster\BigwarpIo.java:137: error: cannot find symbol
+        final String betterFilename = new Regex(html, "<th colspan=2>Download ([^<]+)</th>").getMatch(0);
+                                                ^
+  symbol:   variable html
+  location: class BigwarpIo
+svn_trunk\src\jd\plugins\hoster\ClicknuploadOrg.java:177: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\jd\plugins\hoster\ClicknuploadOrg.java:183: error: cannot find symbol
+        final String betterFilesize = new Regex(html, ">\\s*size\\s*</span>\\s*<span>([^<]+)</span>").getMatch(0);
+                                                ^
+  symbol:   variable html
+  location: class ClicknuploadOrg
+svn_trunk\src\org\jdownloader\plugins\components\XFileSharingProBasicSpecialFilejoker.java:70: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+svn_trunk\src\org\jdownloader\plugins\components\XFileSharingProBasicSpecialFilejoker.java:73: error: variable link is already defined in method scanInfo(DownloadLink,String[])
+        final DownloadLink link = this.getDownloadLink();
+                           ^
+svn_trunk\src\org\jdownloader\plugins\components\XFileSharingProBasicSpecialFilejoker.java:80: error: cannot find symbol
+            final String internal_file_id = new Regex(html, "'aff_file',\\s*'(\\d+)").getMatch(0);
+                                                      ^
+  symbol:   variable html
+  location: class XFileSharingProBasicSpecialFilejoker
+svn_trunk\src\org\jdownloader\plugins\components\XFileSharingProBasicSpecialFilejoker.java:85: error: cannot find symbol
+        return super.scanInfo(html, fileInfo);
+                              ^
+  symbol:   variable html
+  location: class XFileSharingProBasicSpecialFilejoker
 svn_trunk\src\jd\plugins\hoster\QiwiGg.java:137: error: cannot find symbol
             dllink = Plugin.getCorrectOrApplyFileNameExtension(dllink, Plugin.getFileNameExtensionFromString(link.getName()), null);
                            ^
@@ -239,13 +294,10 @@ svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolution
   required: Challenge<String>,Object,String
   found:    Challenge<String>,CaptchaSolutionsSolver,String,int
   reason: actual and formal argument lists differ in length
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:35: error: CaptchaSolutionsSolver is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
-public class CaptchaSolutionsSolver extends CESChallengeSolver<String> implements GenericConfigEventListener<String> {
-       ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:70: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:75: error: method does not override or implement a method from a supertype
     @Override
     ^
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:156: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:161: error: cannot find symbol
             job.setAnswer(new CaptchaSolutionsResponse(challenge, this, null, answer.getValue(), answer.getPriority()));
                                                                                                        ^
   symbol:   method getPriority()
@@ -602,5 +654,5 @@ Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-123 errors
+135 errors
 20 warnings

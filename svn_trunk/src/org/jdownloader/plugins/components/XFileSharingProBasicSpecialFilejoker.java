@@ -68,7 +68,7 @@ public class XFileSharingProBasicSpecialFilejoker extends XFileSharingProBasic {
     }
 
     @Override
-    public String[] scanInfo(final String html, final String[] fileInfo) {
+public String[] scanInfo(final DownloadLink link, final String[] fileInfo) {
         /* Small dirty hack to find and store internal file_id for better dupe detection. */
         final DownloadLink link = this.getDownloadLink();
         if (!link.hasProperty(PROPERTY_INTERNAL_FILE_ID)) {

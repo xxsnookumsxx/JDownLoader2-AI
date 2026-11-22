@@ -124,14 +124,15 @@ public class EgofilesNet extends YetiShareCore {
         }
     }
 
-    public String[] scanInfo(final String[] fileInfo) {
-        /* 2023-03-27 */
-        final String betterFilesize = br.getRegex(">\\s*Filesize\\s*</p>\\s*<h5 class=\"text-white\">([^<]+)").getMatch(0);
-        if (betterFilesize != null) {
-            fileInfo[1] = betterFilesize;
-        }
-        return fileInfo;
+public String[] scanInfo(final DownloadLink link, final String[] fileInfo) {
+    /* 2023-03-27 */
+    final String betterFilesize = br.getRegex(">\\s*Filesize\\s*</p>\\s*<h5 class=\"text-white\">([^<]+)").getMatch(0);
+    if (betterFilesize != null) {
+        fileInfo[1] = betterFilesize;
     }
+    super.scanInfo(link, fileInfo);
+    return fileInfo;
+}
 
     @Override
     protected AccountInfo fetchAccountInfoWebsite(final Account account) throws Exception {

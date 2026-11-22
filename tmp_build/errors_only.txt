@@ -1,4 +1,17 @@
-﻿svn_trunk\src\jd\plugins\hoster\QiwiGg.java:137: error: cannot find symbol
+﻿svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:66: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:66: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\BeatexsCom.java:88: error: method does not override or implement a method from a supertype
+svn_trunk\src\jd\plugins\hoster\BeatexsCom.java:91: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\BigwarpIo.java:134: error: method does not override or implement a method from a supertype
+svn_trunk\src\jd\plugins\hoster\BigwarpIo.java:136: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\BigwarpIo.java:137: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\ClicknuploadOrg.java:177: error: method does not override or implement a method from a supertype
+svn_trunk\src\jd\plugins\hoster\ClicknuploadOrg.java:183: error: cannot find symbol
+svn_trunk\src\org\jdownloader\plugins\components\XFileSharingProBasicSpecialFilejoker.java:70: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\plugins\components\XFileSharingProBasicSpecialFilejoker.java:73: error: variable link is already defined in method scanInfo(DownloadLink,String[])
+svn_trunk\src\org\jdownloader\plugins\components\XFileSharingProBasicSpecialFilejoker.java:80: error: cannot find symbol
+svn_trunk\src\org\jdownloader\plugins\components\XFileSharingProBasicSpecialFilejoker.java:85: error: cannot find symbol
+svn_trunk\src\jd\plugins\hoster\QiwiGg.java:137: error: cannot find symbol
 svn_trunk\src\jd\plugins\hoster\SmoozedCom.java:754: error: method setMultiHostSupport in class AccountInfo cannot be applied to given types;
 svn_trunk\src\jd\plugins\hoster\StreamsbNet.java:132: error: cannot find symbol
 svn_trunk\src\jd\plugins\hoster\TransferChomikujPl.java:254: error: TransferChomikujPlAccountFactory is not abstract and does not override abstract method handleClipboardAutoFill() in AccountBuilderInterface
@@ -41,9 +54,8 @@ svn_trunk\src\org\jdownloader\captcha\v2\challenge\sweetcaptcha\CaptchaHelperCra
 svn_trunk\src\org\jdownloader\captcha\v2\challenge\sweetcaptcha\CaptchaHelperHostPluginSweetCaptcha.java:41: error: <anonymous org.jdownloader.captcha.v2.challenge.sweetcaptcha.CaptchaHelperHostPluginSweetCaptcha$1> is not abstract and does not override abstract method getSiteUrl() in AbstractBrowserChallenge
 svn_trunk\src\org\jdownloader\captcha\v2\solver\antiCaptchaCom\AntiCaptchaComConfigPanel.java:43: error: cannot find symbol
 svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsResponse.java:14: error: constructor CaptchaResponse in class CaptchaResponse cannot be applied to given types;
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:35: error: CaptchaSolutionsSolver is not abstract and does not override abstract method getSupportedCaptchaTypes() in ChallengeSolver
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:70: error: method does not override or implement a method from a supertype
-svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:156: error: cannot find symbol
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:75: error: method does not override or implement a method from a supertype
+svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolver.java:161: error: cannot find symbol
 svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:59: error: cannot find symbol
 svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:64: error: cannot find symbol
 svn_trunk\src\org\jdownloader\captcha\v2\solver\captchasolutions\CaptchaSolutionsSolverService.java:72: error: method does not override or implement a method from a supertype
